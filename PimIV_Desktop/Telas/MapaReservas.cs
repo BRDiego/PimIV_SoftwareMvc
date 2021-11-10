@@ -27,31 +27,6 @@ namespace PimIV_Desktop.Telas
 
         private void MapaReservas_VisibleChanged(object sender, EventArgs e)
         {
-            string connection = "Data Source=DESKTOP-6FNB3PC\\SQLEXPRESS;Initial Catalog=Pim4Dev;Integrated Security=True";
-            try
-            {
-                string query = "SELECT R.Idreserva AS [ID RESERVA], R.datacheckin AS [DATA CHECK-IN], " +
-                               "h.nome AS [HOSPEDE], q.numero AS [NUM QUARTO] " +
-                               "FROM Reserva R, Hospede h, Quarto q " +
-                               "WHERE R.Id_quarto = Q.IDQuarto AND R.ID_Hospede = H.IDHospede";
-
-                SqlConnection conn = new SqlConnection(connection);
-                SqlDataAdapter dAdapter = new SqlDataAdapter(query, conn);
-
-                DataTable resTable = new DataTable();
-
-                dAdapter.Fill(resTable);
-
-                dgviewReservas.DataSource = resTable;
-                foreach (DataGridViewColumn coluna in dgviewReservas.Columns)
-                {
-                    coluna.SortMode = 0;
-                }
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
         }
 
         private void checkStatus_CheckedChanged(object sender, EventArgs e)
