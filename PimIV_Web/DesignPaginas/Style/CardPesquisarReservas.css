@@ -1,0 +1,163 @@
+﻿#Reservas {
+    margin: 0;
+    top: -30px;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    font-size: 1rem;
+    zoom: 100%;
+}
+
+    #Reservas .w--halves {
+        color: red;
+        width: 5.7em;
+        float: left;
+    }
+
+    #Reservas .destination {
+        margin-top: 20px;
+        margin-left: 10%;
+        margin-right: auto;
+        font-size: 140%;
+        color: black;
+    }
+
+    #Reservas .hotel_form {
+        position: relative;
+        width: 20rem;
+        padding: 1rem 0;
+        margin: 6rem auto;
+        font-family: 'Lato', sans-serif;
+        color: #e0e0e0;
+        box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+        border-radius: 20px;
+        z-index: 1;
+        background: inherit;
+    }
+
+        #Reservas .hotel_form input {
+            border: 0;
+            border-radius: 0.25rem;
+        }
+
+    #Reservas .w--whole {
+        width: 5rem;
+    }
+
+    #Reservas .title {
+        position: absolute;
+        width: 100%;
+        bottom: 100%;
+        margin: 0 0 2rem;
+        font-size: 2rem;
+        line-height: 1;
+        font-weight: normal;
+        text-align: center;
+        color: black;
+    }
+
+    #Reservas .text_input {
+        margin-top: 30px;
+        margin-left: 1rem;
+        margin-bottom: 40px;
+        display: block;
+        float: left;
+        height: 2rem;
+        width: 26%;
+        padding: 0;
+        font-size: 1rem;
+        color: black;
+        -webkit-appearance: none;
+        border-radius: 10px;
+        text-align: center;
+        background: #a1c6c8;
+    }
+
+        #Reservas .text_input:hover,
+        #Reservas .text_input:active,
+        #Reservas .text_input:focus {
+            background: #EfF9Ff;
+        }
+
+    #Reservas .label {
+        display: block;
+        float: left;
+        text-align: center;
+        margin: 0 0 0.9rem 2.6rem;
+        color: black;
+        /*line-height: 1;  
+    text-align: center;
+    padding:11px;
+    margin:-20px 40px 7px 0px;*/
+    }
+
+    #Reservas .calender {
+        text-align: center;
+        float: left;
+        margin: 0 0 3rem 2.5rem;
+        height: 6rem;
+        border-radius: 0.25rem;
+        overflow: hidden;
+        width: 30%;
+    }
+
+    #Reservas .select {
+        width: calc(100% + 17px);
+        text-align: center;
+        cursor: pointer;
+        border: 0;
+        font-family: 'Lato', sans-serif;
+        text-indent: -3px;
+    }
+
+        #Reservas .select > option {
+            color: black;
+            font-size: 1rem;
+            background: #fff;
+        }
+
+    #Reservas .month {
+        height: 2rem;
+        font-size: 1rem;
+        color: black;
+        transition: 240ms ease-out;
+        background: #1565C0;
+    }
+
+        #Reservas .month:hover,
+        #Reservas .month:active,
+        #Reservas .month:focus {
+            background: #1976D2;
+        }
+
+    #Reservas .day {
+        height: 4rem;
+        font-size: 2rem;
+        color: #0D47A1;
+        transition: 240ms ease-out;
+        background: #E3F2FD;
+    }
+
+        #Reservas .day:hover,
+        #Reservas .day:active,
+        #Reservas .day:focus {
+            background: #EfF9Ff;
+        }
+
+    #Reservas .submit {
+        height: 3rem;
+        margin: 0 0 0 2rem;
+        color: #eee;
+        line-height: 1;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: 240ms;
+        background: #ACABAB;
+        border-radius: 10px;
+        font-family: 'Lato', sans-serif;
+        width: 16rem;
+    }
+
+        #Reservas .submit:hover {
+            background: #00d855;
+        }

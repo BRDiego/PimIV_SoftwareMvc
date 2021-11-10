@@ -1,0 +1,240 @@
+﻿@using DAL;
+@model Model.Reserva 
+@{
+    ViewBag.title = "Página Inicial";
+    TipoCustoDAO tDAO = new TipoCustoDAO();
+    List<string> tipos = tDAO.ListaTiposQuarto();
+}
+<link href="~/DesignPaginas/Style/Inicial.css" rel="stylesheet" />
+<section id="Inicial">
+    <!-----------------animação que muda meio tela------->
+    <div class="text">
+        <center>
+            <p>Quiet time </p>
+            <p>
+                <span class="word wisteria">prático.</span>
+                <span class="word belize">confortável.</span>
+                <span class="word pomegranate">elegante.</span>
+                <span class="word green">acessível.</span>
+                <span class="word midnight">seguro.</span>
+            </p>
+        </center>
+    </div>
+
+    <div class="arrow-down">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+
+
+    <!--SETA ----------------------->
+    <div class="arrow-down">
+
+
+        <div class="left"></div>
+        <div class="right"></div>
+
+    </div>
+
+
+
+</section>
+
+<!----------------PARTE DO CARD---------------->
+<section id="card">
+    <div class="box">
+        <div class="card">
+            <div class="imgBx">
+                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="images">
+            </div>
+            <div class="details">
+                <h2>
+                    BANHEIRO <br><span>
+                        PRIVATIVO PARA CADA QUARTO
+                    </span>
+                </h2>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="imgBx">
+                <img src="https://images.unsplash.com/photo-1586611292717-f828b167408c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">
+            </div>
+            <div class="details">
+                <h2>ÁREA DE LAZER<br><span>Confortável para sua estadia</span></h2>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="imgBx">
+                <img src="https://images.unsplash.com/photo-1576675784432-994941412b3d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="images">
+            </div>
+            <div class="details">
+                <h2>
+                    5 TIPOS DE QUARTOS
+                    <br><span>Para cada necessidade </span>
+                </h2>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+</section>
+
+<!----------------PARTE DO RESERVA---------------->
+<section id="Reservas">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <form method="post" action="@Url.Action("Index", "Reservas")" class="hotel_form up6">
+        <h1 class="title"><i>Encontre um quarto</i></h1>
+
+        <p class="destination">Selecione o tipo de quarto: </p>
+        <select class="text_input w--whole up1" name="nAdultos" required>
+            <option label="Adultos"></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+
+        <select class="text_input w--whole up1" name="nCriancas" required>
+            <option label="Crianças"></option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+
+
+        <select class="text_input w--whole up1" name="tQuarto">
+            <option label="Camas"></option>
+            <option value="@tipos[0].ToString()">@tipos[0].ToString()</option>
+            <option value="@tipos[1].ToString()">@tipos[1].ToString()</option>
+            <option value="@tipos[2].ToString()">@tipos[2].ToString()</option>
+            <option value="@tipos[3].ToString()">@tipos[3].ToString()</option>
+            <option value="@tipos[4].ToString()">@tipos[4].ToString()</option>
+        </select>
+
+        <br>  <br> <br>  <br>
+        <label class="label w--halves">Check in</label>
+        <label class="label w--halves">Check out</label>
+
+        <div class="calender w--halves up1">
+            <select class="select month" name="monthIn" required>
+                <option label="mês"></option>
+                <option value="1">Janeiro</option>
+                <option value="2">Fevereiro</option>
+                <option value="3">Março</option>
+                <option value="4">Abril</option>
+                <option value="5">Maio</option>
+                <option value="6">Junho</option>
+                <option value="7">Julho</option>
+                <option value="8">Agosto</option>
+                <option value="9">Setembro</option>
+                <option value="10">Outubro</option>
+                <option value="11">Novembro</option>
+                <option value="12">Dezembro</option>
+            </select>
+
+            <select class="select day" name="dayIn" required>
+                <option label="dia"></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+
+            </select>
+        </div>
+
+        <div class="calender w--halves up1">
+            <select class="select month" name="monthOut" required>
+                <option label="mês"></option>
+                <option value="1">Janeiro</option>
+                <option value="2">Fevereiro</option>
+                <option value="3">Março</option>
+                <option value="4">Abril</option>
+                <option value="5">Maio</option>
+                <option value="6">Junho</option>
+                <option value="7">Julho</option>
+                <option value="8">Agosto</option>
+                <option value="9">Setembro</option>
+                <option value="10">Outubro</option>
+                <option value="11">Novembro</option>
+                <option value="12">Dezembro</option>
+            </select>
+
+            <select class="select day" name="dayOut" required>
+                <option label="dia"></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+            </select>
+
+        </div>
+
+        <input class="submit w--whole up1" type="submit" value="Pesquisar" />
+
+    </form>
+</section>
+
+<script src="~/DesignPaginas/Scripts/Inicial.js"></script>

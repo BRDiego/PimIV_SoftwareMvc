@@ -1,0 +1,117 @@
+﻿@model Model.Conta
+
+@{
+    ViewBag.Title = "FazerLogin";
+}
+
+<script src="~/DesignPaginas/Scripts/FazerLogin.js"></script>
+<link href="~/DesignPaginas/Style/FazerLogin.css" rel="stylesheet" />
+<div class="containerLogin">
+    <div class="content first-content">
+
+        <div class="first-column">
+            <h2 class="title title-primary"> Bem-vind@@!</h2><br>
+            <p class="description description-primary"> Para garantir sua reserva</p>
+            <p class="description description-primary">por favor, logue com seus dados pessoais</p><br>
+
+            <button id="signin" class="btn btn-primary">Entrar</button>
+        </div>
+
+        <div class="second-column">
+            <h2 class="title title-second"> Criar uma conta </h2>
+            <p class="description description-second">Cadastre-se usando seus dados pessoais.</p>
+            <form class="form">
+
+                <label class="label-input">
+                    <i class="fas fa-user icon-modify"></i>
+                    <input type="text" placeholder="Nome" required>
+                </label>
+                <label class="label-input">
+                    <i class="fas fa-calendar icon-modify"></i>
+                    <input type="date" required>
+                </label>
+
+
+                <label class="label-input">
+                    <i class="fas fa-venus-mars icon-modify"></i>
+                    <input type="text" placeholder="Gênero (F/M/Outro)" required>
+
+                </label>
+
+                <label class="label-input">
+                    <i class="fas fa-address-card icon-modify"></i>
+                    <input type="text" placeholder="CPF/Passaporte" required>
+                </label>
+
+
+                <label class="label-input ">
+                    <i class="fas fa-envelope icon-modify"></i>
+                    <input type="email" placeholder="Email" required>
+                </label>
+
+                <label class="label-input ">
+                    <i class="fas fa-lock icon-modify"></i>
+                    <input type="password" placeholder="Senha" required>
+                </label>
+
+                <button class="btn btn-second">Cadastrar</button>
+
+            </form>
+        </div><!-- second column -->
+
+    </div> <!--final first-content-->
+
+
+    <div class="content second-content">
+        <div class="first-column">
+            <h2 class="title title-primary">Olá!</h2>
+            <p class="description description-primary "> Cadastre-se com suas informações pessoais</p>
+            <p class="description description-primary">e comece sua jornada conosco.</p>
+            <button id="signup" class="btn btn-primary">Cadastre-se</button>
+        </div>
+
+        <div class="second-column">
+            <h2 class="title title-second">Acessar conta </h2>
+            <p class=" description description-second">Use os seus dados de acesso para entrar</p>
+            @*@using (Html.BeginForm("AcessarConta", "Contas", FormMethod.Post))
+            {*@            
+                <form class="form">
+                <label class="label-input ">
+                    <i class="fas fa-envelope icon-modify"></i>
+                    <input type="email" placeholder="Email" required>
+                </label>
+
+                <label class="label-input ">
+                    <i class="fas fa-lock icon-modify"></i>
+                    <input type="password" placeholder="Senha" required>
+                </label>
+                        
+                <button type="submit" class="btn btn-second">Entrar</button>
+                
+
+            </form>
+            @*}*@
+        </div>
+
+    </div> <!--final first-content-->
+</div> <!--div do container-->
+</div>     <!--Second content-->
+
+<script src="app.js"></script>
+
+
+<script>
+    var btnSingnin = document.querySelector("#signin");
+    var btnSingnup = document.querySelector("#signup");
+
+
+    var body = document.querySelector("body");
+
+    btnSingnin.addEventListener("click", function () {
+        body.className = "signin-js";
+    });
+
+    btnSingnup.addEventListener("click", function () {
+        body.className = "signup-js";
+    });
+</script>   

@@ -1,0 +1,625 @@
+﻿.menu {
+    position: fixed;
+}
+
+
+.ajuda {
+    margin-right: 5px;
+    margin-left: -57px; /* deixa icone mais perto da palavra*/
+    margin-top: 20px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-family: sans-serif;
+    display: fixed;
+}
+
+.login {
+    margin-right: -10px;
+    margin: 0px;
+    margin-top: 20px;
+    border-radius: 20px;
+    margin-right: 05px;
+    margin-left: -57px;
+}
+
+
+
+/*nav {
+    justify-content: space-between;
+    margin-left: 50px;
+    width: 93%;
+    padding: 10px 30px;
+    display: flex;
+    z-index: 99;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    position: absolute;
+    height: 65px;
+}
+
+    nav a {
+        color: black;
+        text-decoration: none;
+        display: block;
+        position: relative;
+        overflow: hidden;
+        padding: 0 6px;
+        text-transform: uppercase;
+        transition: color .3s cubic-bezier(0.11, 0.7, 0, 1);
+        font-size: 0.875rem;
+        letter-spacing: .15rem;
+        line-height: 1.8;
+        display: flex;
+        margin-left: 80px;
+        align-items: center;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    nav ul {
+        display: inline-block;
+        list-style-type: none;
+    }
+
+    nav li {
+        float: left;
+        list-style: none;
+        margin-top: 20px;
+        margin-left: -90px;
+        margin-right: 50px;
+        text-align: center;
+    }*/
+
+nav {
+    margin-left: 15px;
+    width: 93%;
+    padding: 10px 30px;
+    justify-content: space-between;
+    display: flex;
+    z-index: 99;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    position: absolute;
+    font-weight: bold;
+    height: 55px;
+}
+
+    nav a {
+        color: black;
+        /*display: block;*/
+        position: relative;
+        overflow: hidden;
+        padding: 0 6px;
+        text-transform: uppercase;
+        transition: color 0.3s cubic-bezier(0.11, 0.7, 0, 1);
+        font-size: 0.872rem;
+        letter-spacing: 0.15rem;
+        line-height: 1.8;
+        display: flex;
+        margin: -10px 23px auto 30px;
+        align-items: center;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    nav ul {
+        display: inline-block;
+        list-style-type: none;
+        margin-left: 35px;
+    }
+
+    nav li {
+        float: left;
+        list-style: none;
+        margin-top: 20px;
+        margin-left: -90px;
+        margin-right: 50px;
+        text-align: center;
+    }
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap'); /*display shap modo de carregamento da fonte*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/*ESSA FORMATAÇÃO DEIXA O CONTEÚDO CENTRALIZADO */
+.containerLogin {
+    display: flex;
+    /* border: 2px solid red; */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background-color: #a1c6c8;   */
+    background: url(https://images.unsplash.com/photo-1603085429201-64dadaec4061?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1374&q=80) no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+}
+
+.content {
+    border-radius: 15px;
+    /* background-color: #fff; para usar se estiver sem fundo de vidro*/
+    /*para o fundo de vidro ↓ */
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    background: inherit;
+    width: 960px;
+    height: 75%;
+    justify-content: space-between;
+    align-items: center; /*Funcoina em conjunto com a altura*/
+    position: relative;
+}
+
+    .content::before {
+        content: "";
+        position: absolute;
+        background-color: #58af9b;
+        width: 40.1%;
+        height: 100%;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        left: 0;
+    }
+
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.title-primary {
+    color: #fff;
+}
+
+.title-second {
+    color: black;
+}
+
+.description {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 30px; /*altura de linha*/
+}
+
+.description-primary {
+    color: #fff;
+}
+
+.description-second {
+    color: black;
+}
+
+.btn {
+    border-radius: 15px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 10px;
+    padding: 10px 50px; /*10px cima baixo*/ /*50px direito e esquerdo*/
+    cursor: pointer;
+    margin-top: 5px;
+    font-weight: bold;
+    width: 175px;
+    align-self: center;
+    border-width: 0px;
+    margin-top: 1rem 0;
+}
+
+.btn-primary {
+    background-color: transparent;
+    border: 1px solid #fff;
+    transition: background-color 0.5s;
+}
+
+    .btn-primary:hover {
+        background-color: #fff;
+        color: #58af9b;
+    }
+
+.btn-second {
+    background-color: #58af9b;
+    border: 1px solid #58af9b;
+    transition: background-color 0.5s;
+}
+
+    .btn-second:hover {
+        background-color: #fff;
+        border: 1px solid #58af9b;
+        color: #58af9b;
+    }
+
+.first-content {
+    display: flex;
+}
+
+    .first-content .second-column {
+        z-index: 11;
+    }
+
+.first-column {
+    text-align: center;
+    width: 40%;
+    z-index: 10; /*trabalha com o absolute e
+    faz as palavras ficarem na frente*/
+}
+
+.second-column {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+}
+
+    .form input {
+        height: 45px;
+        border: none;
+        width: 100%;
+        background-color: #ecf0f1;
+    }
+
+.label-input {
+    background-color: #ecf0f1;
+    display: flex;
+    align-items: center;
+    margin: 8px;
+}
+
+.icon-modify {
+    color: #7f8c8d;
+    padding: 0 7px;
+}
+
+.second-content {
+    position: absolute;
+    display: flex;
+}
+
+    .second-content .first-column {
+        order: 2;
+        z-index: -1;
+    }
+
+    .second-content .second-column {
+        order: 1;
+        z-index: -1;
+    }
+
+.signin-js .first-content .first-column {
+    z-index: -1;
+}
+
+.signin-js .second-content .second-column {
+    z-index: 11;
+}
+
+.signin-js .second-content .first-column {
+    z-index: 13;
+}
+
+
+.signin-js .content::before {
+    left: 60%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    animation: slidein 3s;
+    z-index: 12;
+}
+
+.signin-js .content::before {
+    z-index: 12;
+}
+
+.signup-js .content::before {
+    animation: slideout 3s;
+    z-index: 12;
+}
+
+.signup-js .second-content .first-column,
+.signup-js .second-content .second-column {
+    z-index: -1;
+}
+
+
+.signup-js .first-content .second-column {
+    z-index: 11;
+}
+
+.signup-js .first-content .first-column {
+    z-index: 13;
+}
+
+/* DESLOCAMENTO CONTEÚDO ATRÁS DO CONTENT:BEFORE*/
+.signin-js .first-content .second-column {
+    z-index: -1;
+    position: relative;
+    animation: deslocamentoEsq 1.3s;
+}
+
+.signup-js .second-content .second-column {
+    position: relative; /*para não sair do fluxo*/
+    z-index: -1;
+    animation: deslocamentoDir 1.3s;
+}
+
+
+
+
+
+/* Animação CSS para o conteúdo */
+
+@keyframes deslocamentoEsq {
+    from {
+        left: 0;
+        opacity: 1;
+        z-index: 12;
+    }
+
+    25% {
+        left: -80px;
+        opacity: .5;
+    }
+
+    50% {
+        left: -100px;
+        opacity: .2;
+    }
+
+    to {
+        left: -110px;
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+@keyframes deslocamentoDir {
+    from {
+        left: 0;
+    }
+
+    25% {
+        left: 80px;
+        z-index: 10;
+        opacity: 3;
+    }
+
+    50% {
+        left: 100px;
+    }
+
+    to {
+        left: 110px;
+        z-index: -1;
+        opacity: 0;
+    }
+}
+
+
+
+/* Animação CSS */
+
+@keyframes slidein {
+    from {
+        left: 0;
+        width: 40%;
+    }
+
+    25% {
+        left: 5%;
+        width: 50%;
+    }
+
+    50% {
+        left: 25%;
+        width: 60%;
+    }
+
+    75% {
+        left: 45%;
+        width: 50%;
+    }
+
+    to {
+        left: 60%;
+        width: 40%;
+    }
+}
+
+@keyframes slideout {
+
+
+    from {
+        left: 60%;
+        width: 40%;
+    }
+
+    25% {
+        left: 45%;
+        width: 50%;
+    }
+
+    50% {
+        left: 25%;
+        width: 60%;
+    }
+
+    75% {
+        left: 5%;
+        width: 50%;
+    }
+
+    to {
+        left: 0;
+        width: 40%;
+    }
+}
+
+/*versão mobile*/
+
+@media screen and (max-width:1040px) { /*até 1041px*/ /* a partir desta resolução o media vai funcionar. Break point*/
+    .content {
+        width: 100%;
+        height: 100%;
+    }
+
+        .content::before {
+            width: 100%;
+            height: 40%;
+            top: 0;
+            border-radius: 0;
+        }
+
+    .first-content, .second-content {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .Prodape {
+        background: inherit;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+
+
+
+    .first-column, .second-column {
+        width: 100%;
+    }
+
+
+    .signin-js .content::before {
+        top: 60%;
+        left: 0;
+        border-radius: 0;
+    }
+
+
+
+    /* animação mobile css*/
+
+
+    @keyframes deslocamentoEsq {
+        from {
+            top: 0;
+            opacity: 1;
+            z-index: 12;
+        }
+
+        25% {
+            top: -80px;
+            opacity: .5;
+        }
+
+        50% {
+            top: -100px;
+            opacity: .2;
+        }
+
+        to {
+            top: -110px;
+            opacity: 0;
+            z-index: -1;
+        }
+    }
+
+    @keyframes deslocamentoDir {
+        from {
+            top: 0;
+        }
+
+        25% {
+            top: 80px;
+            z-index: 10;
+            opacity: 3;
+        }
+
+        50% {
+            top: 100px;
+        }
+
+        to {
+            top: 110px;
+            z-index: -1;
+            opacity: 0;
+        }
+    }
+
+    /* Animação CSS */
+
+    @keyframes slidein {
+        from {
+            top: 0;
+            height: 40%;
+        }
+
+        25% {
+            top: 5%;
+            height: 50%;
+        }
+
+        50% {
+            top: 25%;
+            height: 60%;
+        }
+
+        75% {
+            top: 45%;
+            height: 50%;
+        }
+
+        to {
+            top: 60%;
+            height: 40%;
+        }
+    }
+
+    @keyframes slideout {
+
+
+        from {
+            top: 60%;
+            height: 40%;
+        }
+
+        25% {
+            top: 45%;
+            height: 50%;
+        }
+
+        50% {
+            top: 25%;
+            height: 60%;
+        }
+
+        75% {
+            top: 5%;
+            height: 50%;
+        }
+
+        to {
+            top: 0;
+            height: 40%;
+        }
+    }
+}

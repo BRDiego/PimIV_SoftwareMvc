@@ -1,0 +1,99 @@
+﻿@model PimIV_Web.Models.ViewModels.HospedeViewModel
+
+@{
+    ViewBag.Title = "AcessarConta";
+}
+@Styles.Render("~/Content/css")
+
+<div class="exibirDados">
+<h2>AcessarConta</h2>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Hospede.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hospede.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hospede.DataNascimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hospede.DataNascimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hospede.Sexo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hospede.Sexo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hospede.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hospede.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hospede.Telefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hospede.Telefone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hospede.CPF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hospede.CPF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hospede.Passaporte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hospede.Passaporte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hospede.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hospede.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hospede.DataAtualizacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hospede.DataAtualizacao)
+        </dd>
+
+        <dd>
+            @Html.DisplayFor(model => model.Conta.NomeUsuario)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+<style>
+    .exibirDados {
+        margin-top: 12vh;
+        margin-left: 185px;
+    }
+</style>

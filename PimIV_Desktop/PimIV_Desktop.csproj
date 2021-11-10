@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{83839CE6-7B77-43E9-8851-C289CBE0A1EB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Pim4SemestreDesktop</RootNamespace>
+    <AssemblyName>Pim4SemestreDesktop</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Telas\DadosFuncionario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\DadosFuncionario.Designer.cs">
+      <DependentUpon>DadosFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\DadosHospede.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\DadosHospede.Designer.cs">
+      <DependentUpon>DadosHospede.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\EditarPrecos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\EditarPrecos.Designer.cs">
+      <DependentUpon>EditarPrecos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\FormConteudo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\FormConteudo.Designer.cs">
+      <DependentUpon>FormConteudo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\GerirConsumos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\GerirConsumos.Designer.cs">
+      <DependentUpon>GerirConsumos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\GerirProdutos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\GerirProdutos.Designer.cs">
+      <DependentUpon>GerirProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\ListaFuncionarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\ListaFuncionarios.Designer.cs">
+      <DependentUpon>ListaFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\ListaHospedes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\ListaHospedes.Designer.cs">
+      <DependentUpon>ListaHospedes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\MapaQuartos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\MapaQuartos.Designer.cs">
+      <DependentUpon>MapaQuartos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\MapaReservas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\MapaReservas.Designer.cs">
+      <DependentUpon>MapaReservas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\NovaReserva.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\NovaReserva.Designer.cs">
+      <DependentUpon>NovaReserva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Relatorios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Relatorios.Designer.cs">
+      <DependentUpon>Relatorios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\ValidacoesForms.cs" />
+    <Compile Include="Telas\VerReserva.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\VerReserva.Designer.cs">
+      <DependentUpon>VerReserva.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Telas\DadosFuncionario.resx">
+      <DependentUpon>DadosFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\DadosHospede.resx">
+      <DependentUpon>DadosHospede.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\EditarPrecos.resx">
+      <DependentUpon>EditarPrecos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\FormConteudo.resx">
+      <DependentUpon>FormConteudo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\GerirConsumos.resx">
+      <DependentUpon>GerirConsumos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\GerirProdutos.resx">
+      <DependentUpon>GerirProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\ListaFuncionarios.resx">
+      <DependentUpon>ListaFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\ListaHospedes.resx">
+      <DependentUpon>ListaHospedes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\MapaQuartos.resx">
+      <DependentUpon>MapaQuartos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\MapaReservas.resx">
+      <DependentUpon>MapaReservas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\NovaReserva.resx">
+      <DependentUpon>NovaReserva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Relatorios.resx">
+      <DependentUpon>Relatorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\VerReserva.resx">
+      <DependentUpon>VerReserva.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{e3fc05d8-f812-49d0-8a67-46553541432e}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{a957b5f6-2400-46d5-87cc-61bef6b9ae74}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

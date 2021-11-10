@@ -1,0 +1,56 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Hotel Quiet Time</title>
+    <link href="~/DesignPaginas/Style/EstiloPadrao.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <nav style="text-decoration:none" class="menu">
+            <ul>
+
+                <li class="active">@Html.ActionLink("Página Inicial", "Index", "Inicial")</li>
+                @if (ViewBag.Title == "Página Inicial")
+                {
+                    <li class="active"><a href="#Reservas"> Reservas</a> </li>
+                }
+                else
+                {
+                    <li class="active">@Html.ActionLink("Reservas", "Index", "Reservas")</li>
+                }
+                <li class="active">@Html.ActionLink("Saiba Mais", "SaibaMais", "Inicial")</li>
+            </ul>
+
+            <!-------------------inicio DO icone------------------>
+
+            <ul>
+                <li class="login"> <a href="/Contas/FazerLogin"><i data-feather="user"></i></a></li>
+                <li class="ajuda">@Html.ActionLink("Ajuda", "Ajuda", "Inicial")</li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container body-content">
+
+        @RenderBody()
+
+
+        <div class="Prodape">
+            <center>
+                <p>
+                    &copy; @DateTime.Now.Year - Hotel Quiet Time. Alguns direitos reservados.
+                    Website desenvolvido por: SofTech Desenvolvimento
+                </p>
+            </center>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="https://unpkg.com/feather-icons">
+</script>
+<script>
+    feather.replace()
+</script>

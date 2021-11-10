@@ -1,0 +1,89 @@
+﻿html {
+    scroll-snap-type: auto;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+section {
+    scroll-snap-align: start;
+    min-block-size: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.agrupamento {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.lista-resultados {
+    margin-top: 70px;
+    font-size: 1.2rem;
+}
+
+.total_reservar{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.total_palavra{
+}
+
+nav {
+    margin-left: 15px;
+    width: 93%;
+    padding: 10px 30px;
+    justify-content: space-between;
+    display: flex;
+    z-index: 99;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    position: absolute;
+    font-weight: bold;
+    height: 55px;
+}
+
+    nav a {
+        color: black;
+        /*display: block;*/
+        position: relative;
+        overflow: hidden;
+        padding: 0 6px;
+        text-transform: uppercase;
+        transition: color 0.3s cubic-bezier(0.11, 0.7, 0, 1);
+        font-size: 0.872rem;
+        letter-spacing: 0.15rem;
+        line-height: 1.8;
+        display: flex;
+        margin: -10px 23px auto 30px;
+        align-items: center;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    nav ul {
+        display: inline-block;
+        list-style-type: none;
+    }
+
+    nav li {
+        float: left;
+        list-style: none;
+        margin-top: 20px;
+        margin-left: -90px;
+        margin-right: 50px;
+        text-align: center;
+    }
+
+.mensagem_erro{
+    /*display: flex;*/
+    align-self: center;
+    justify-self:center;
+    color:black;
+}
