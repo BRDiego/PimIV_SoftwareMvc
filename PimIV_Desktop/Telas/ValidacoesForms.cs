@@ -20,9 +20,9 @@ namespace PimIV_Desktop.Telas
                 if (item is TextBox || item is MaskedTextBox)
                 {
                     TextBoxBase aux = item as TextBoxBase;
-                    if (aux.Text == "")
+                    if (aux.Text == "" || aux.Text.Length < 2)
                     {
-                        mensagem =  "Há campos de dados vazios";
+                        mensagem =  "Há dados incorretos. Verifique-os";
                         break;
                     }
                 }

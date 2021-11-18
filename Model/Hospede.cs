@@ -26,7 +26,7 @@ namespace Model
         public char Sexo { get => _Sexo; set => _Sexo = value; }
         public string Email { get => _Email; set => _Email = value; }
         public string Telefone { get => _Telefone; set => _Telefone = value; }
-        public string CPF { get => _CPF; set => _CPF = value; }
+        public string CPF { get => _CPF; private set => _CPF = value; }
         public string Passaporte { get => _Passaporte; set => _Passaporte = value; }
         public string Status { get => _Status; set => _Status = value; }
         public DateTime DataAtualizacao { get => _DataAtualizacao; set => _DataAtualizacao = value; }
@@ -34,7 +34,46 @@ namespace Model
 
         public Hospede()
         {
+            Telefone = "";
+            Passaporte = "";
+            CPF = "";
+            Status = "ATIVO";
         }
 
+        public void setarCPF(string cpfPass)
+        {
+            string aux = "";
+            foreach (char letra in cpfPass)
+            {
+                if (letra != '.' && letra != '-')
+                {
+                    aux += letra;
+                }
+            }
+            CPF = aux;
+        }
+
+        public bool HospedeValido(out string mensagem)
+        {
+            mensagem = "";
+            bool valido = true;
+            if(CPF == "" || Passaporte == "")
+            {
+                valido = false;
+                mensagem = "Informe o CPF ou Passaporte";
+            }
+            try
+            {
+                foreach(char numero in Telefone)
+                {
+                    int teste = int.Parse(numero.ToString()) / 1;
+                }
+            }
+            catch(Exception)
+            {
+                mensagem = "Telefone inválido";
+            }
+            return valido;
+        }
     }
 }

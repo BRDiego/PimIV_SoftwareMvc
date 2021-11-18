@@ -1,11 +1,10 @@
-﻿using System;
-using Model;
+﻿using Model;
 
 namespace PimIV_Web.Models.ViewModels
 {
     public class HospedeViewModel
     {
-        public Hospede Hospede = new Hospede();
-        public Conta Conta = new Conta();
+        public Hospede Hospede;
+        public Conta Conta;
     }
 }

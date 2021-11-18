@@ -8,7 +8,7 @@ namespace DAL
 {
     public class TipoCustoDAO
     {
-        ConexaoSQLServer _conn = new ConexaoSQLServer();
+        readonly ConexaoSQLServer _conn = new ConexaoSQLServer();
 
         public List<string> ListaTiposQuarto()
         {

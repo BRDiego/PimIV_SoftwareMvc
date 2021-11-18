@@ -25,6 +25,9 @@ namespace PimIV_Desktop.Telas
             txtPassaporte.Clear();
             lblAttDados.Text = "dataAt";
             comboStatus.SelectedItem = null;
+            lblAttLogin.Text = "dataAt";
+            txtNomeUsuario.Clear();
+            txtSenha.Clear();
         }
 
         public void PreencherCampos(Hospede hosp)
@@ -38,6 +41,13 @@ namespace PimIV_Desktop.Telas
             dudSexo.Text = hosp.Sexo.ToString();
             comboStatus.Text = hosp.Status;
             lblAttDados.Text = hosp.DataAtualizacao.ToString();
+            if (hosp.Conta != null)
+            {
+                txtNomeUsuario.Text = hosp.Conta.NomeUsuario;
+                txtSenha.Text = hosp.Conta.Senha;
+                lblAttLogin.Text = hosp.Conta.DataAtualizacao.ToString();
+
+            }
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
@@ -72,7 +82,7 @@ namespace PimIV_Desktop.Telas
                 hosp.Sexo = dudSexo.SelectedItem.ToString()[0];
                 hosp.Email = txtEmail.Text;
                 hosp.Telefone = txtTelefone.Text;
-                hosp.CPF = txtCPF.Text;
+                hosp.setarCPF(txtCPF.Text);
                 hosp.Passaporte = txtPassaporte.Text;
                 hosp.Status = comboStatus.SelectedItem.ToString();
                 _hospedeDAO.InserirHospede(hosp, out string msg);
@@ -86,31 +96,26 @@ namespace PimIV_Desktop.Telas
             LimparDadosHospede();
         }
 
-        private void DadosHospede_Enter(object sender, EventArgs e)
-        {
-        }
-
         private void btnSalvarLogin_Click(object sender, EventArgs e)
         {
-            if(txtCPF.Text.Length == 11)
+            if(txtCPF.Text.Length == 11 || txtPassaporte.Text.Length > 5)
             {
                 Hospede hospede = new Hospede();
-                hospede.Id = 32;
-                hospede.CPF = txtCPF.Text;
+                hospede.setarCPF(txtCPF.Text);
+                hospede = _hospedeDAO.Carregar(hospede.CPF);
                 Conta conta = new Conta();
                 conta.NomeUsuario = txtNomeUsuario.Text;
                 conta.Senha = txtSenha.Text;
                 conta.HospAssociado = hospede;
-                Funcionario func = new Funcionario();
-                conta.FuncAssociado = func;
                 string mensagem;
                 ContaDAO cDAO = new ContaDAO();
                 mensagem = cDAO.Inserir_Att(conta);
                 ValidacoesForms.ExibirMensagem(mensagem);
+                LimparDadosHospede();
             }
             else
             {
-                MessageBox.Show("CPF NÂO INSERIDO");
+                ValidacoesForms.ExibirMensagem("CPF não inserido");
             }
         }
 

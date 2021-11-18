@@ -3,11 +3,14 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using Model;
+using DAL;
 
 namespace PimIV_Desktop.Telas
 {
     public partial class MapaReservas : UserControl
     {
+        private readonly ReservaDAO resDAO = new ReservaDAO();
+
         public MapaReservas()
         {
             InitializeComponent();
@@ -76,29 +79,17 @@ namespace PimIV_Desktop.Telas
         {
             if (comboStatus.Enabled)
             {
-                MessageBox.Show("Busca por status");
-            }
-            else if (dtpChin.Enabled && dtpChout.Enabled)
-            {
-                MessageBox.Show("Busca por entrada e saida");
-            }
-            else if (dtpChin.Enabled)
-            {
-                MessageBox.Show("Busca por entrada");
-            }
-            else if (dtpChout.Enabled)
-            {
-                MessageBox.Show("Busca por saida");
-            }
-            else
-            {
-                MessageBox.Show("Buscar tudo tudo");
+                if(comboStatus.Text != "")
+                {
+                    dgviewReservas.DataSource = resDAO.ListarReservasStatus(
+                        comboStatus.Text);
+                }
             }
         }
 
-        private void comboStatus_KeyUp(object sender, KeyEventArgs e)
+
+        private void MapaReservas_Layout(object sender, LayoutEventArgs e)
         {
-            comboStatus.Text = "";
         }
     }
 }

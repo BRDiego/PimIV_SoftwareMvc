@@ -81,9 +81,11 @@ nav {
         text-align: center;
     }
 
-.mensagem_erro{
+.mensagem_erro {
+    position: fixed;
+    top: 150px;
     /*display: flex;*/
     align-self: center;
-    justify-self:center;
-    color:black;
+    justify-self: center;
+    color: black;
 }

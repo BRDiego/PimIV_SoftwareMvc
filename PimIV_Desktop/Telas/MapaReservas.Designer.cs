@@ -105,7 +105,6 @@ namespace PimIV_Desktop.Telas
             this.comboStatus.Name = "comboStatus";
             this.comboStatus.Size = new System.Drawing.Size(179, 28);
             this.comboStatus.TabIndex = 64;
-            this.comboStatus.KeyUp += new System.Windows.Forms.KeyEventHandler(this.comboStatus_KeyUp);
             // 
             // dtpChin
             // 
@@ -226,6 +225,7 @@ namespace PimIV_Desktop.Telas
             this.Name = "MapaReservas";
             this.Size = new System.Drawing.Size(1000, 600);
             this.VisibleChanged += new System.EventHandler(this.MapaReservas_VisibleChanged);
+            this.Layout += new System.Windows.Forms.LayoutEventHandler(this.MapaReservas_Layout);
             ((System.ComponentModel.ISupportInitialize)(this.dgviewReservas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

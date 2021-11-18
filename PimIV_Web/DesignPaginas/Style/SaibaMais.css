@@ -6,7 +6,7 @@
     height: 100vh;
 }
 
-#parte1 {
+#parte1, #parte2 {
     background: linear-gradient(-45deg, #a1c6c8, #B9B7BD, #a1c6c8, #E2DED0);
     /*////animação de css//// */
     background-size: 400% 400%;
@@ -29,11 +29,11 @@
 }
 
 .titulo {
-    margin-top: 13%;
+    margin-top: -600px;
     position: fixed;
     z-index: 12;
     /* background-color: red; */
-    height: 100%;
+    height: 10%;
     font-size:38px;
 }
 

@@ -14,6 +14,8 @@ namespace PimIV_Desktop.Telas
         {
             InitializeComponent();
             qtde += 1;
+            mcaEstadia.MinDate = DateTime.Now.Date;
+
         }
 
         private void LimparNovaReserva()
@@ -31,7 +33,6 @@ namespace PimIV_Desktop.Telas
             nudCriancas.Value = 0;
             dudQuartos.ResetText();
             lblDespesas.ResetText();
-            lblMensagem.Text = "";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -91,11 +92,10 @@ namespace PimIV_Desktop.Telas
             if (mensagem == "")
             {
                 MessageBox.Show("LEGAL");
-                lblMensagem.Text = "";
             }
             else
             {
-                lblMensagem.Text = mensagem;
+                //exibir mensagem
             }
         }
 
@@ -106,6 +106,30 @@ namespace PimIV_Desktop.Telas
             dudQuartos.Items.Add("1 Casal");
             dudQuartos.Items.Add("1 Casal 1 Solteiro");
             dudQuartos.Items.Add("1 Casal 2 Solteiro");
+        }
+
+        private void txtPassaporte_TextChanged(object sender, EventArgs e)
+        {
+            if(txtPassaporte.Text == "")
+            {
+                txtCPF.Enabled = true;
+            }
+            else
+            {
+                txtCPF.Enabled = false;
+            }
+        }
+
+        private void txtCPF_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCPF.Text == "")
+            {
+                txtPassaporte.Enabled = true;
+            }
+            else
+            {
+                txtPassaporte.Enabled = false;
+            }
         }
     }
 }

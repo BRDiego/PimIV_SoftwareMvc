@@ -27,10 +27,12 @@ namespace PimIV_Desktop.Telas
                 HospedeDAO hDAO = new HospedeDAO();
                 Hospede hospede = new Hospede();
                 hospede = hDAO.Carregar(cpf);
-                if(hospede != null)
+                if(hospede.Id > 0)
                 {
                     dadosHospede1.BringToFront();
                     dadosHospede1.PreencherCampos(hospede);
+                    dadosHospede1.Visible = true;
+
                 }
                 else
                 {

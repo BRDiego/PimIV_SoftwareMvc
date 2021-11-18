@@ -91,7 +91,7 @@ namespace PimIV_Desktop.Telas
             this.txtCPF.Margin = new System.Windows.Forms.Padding(2);
             this.txtCPF.Mask = "000,000,000-00";
             this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(131, 28);
+            this.txtCPF.Size = new System.Drawing.Size(143, 28);
             this.txtCPF.TabIndex = 5;
             this.txtCPF.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
@@ -102,7 +102,7 @@ namespace PimIV_Desktop.Telas
             this.txtTelefone.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefone.Mask = "(99) 00000-0000";
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(131, 28);
+            this.txtTelefone.Size = new System.Drawing.Size(144, 28);
             this.txtTelefone.TabIndex = 1;
             this.txtTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
@@ -331,7 +331,6 @@ namespace PimIV_Desktop.Telas
             this.txtSenha.Location = new System.Drawing.Point(201, 104);
             this.txtSenha.Margin = new System.Windows.Forms.Padding(2);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(258, 28);
             this.txtSenha.TabIndex = 1;
             // 
@@ -450,7 +449,6 @@ namespace PimIV_Desktop.Telas
             this.Name = "DadosHospede";
             this.Size = new System.Drawing.Size(980, 580);
             this.Load += new System.EventHandler(this.DadosHospede_Load);
-            this.Enter += new System.EventHandler(this.DadosHospede_Enter);
             this.Leave += new System.EventHandler(this.DadosHospede_Leave);
             this.groupDadosPessoais.ResumeLayout(false);
             this.groupDadosPessoais.PerformLayout();

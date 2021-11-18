@@ -9,15 +9,15 @@ namespace DAL
 {
     public class HospedeDAO
     {
-        ConexaoSQLServer _conexao = new ConexaoSQLServer();
+        readonly ConexaoSQLServer _conexao = new ConexaoSQLServer();
         
         public void InserirHospede(Hospede hospede, out string mensagem)
         {
             try
             {
-                using (SqlConnection conexao = GeradorConexao.AbrirConexao())
+                using (SqlConnection conexao = _conexao.AbrirConexao())
                 {
-                    SqlCommand procedure = new SqlCommand("InserirHospede", conexao);
+                    SqlCommand procedure = new SqlCommand("HOSP_Inserir", conexao);
                     procedure.CommandType = CommandType.StoredProcedure;
 
                     procedure.Parameters.Add("@Nome",SqlDbType.VarChar)
@@ -51,35 +51,46 @@ namespace DAL
         
         public Hospede Carregar(string cpfPass)
         {
-            Hospede hospede = new Hospede();
-            using (SqlConnection conn = _conexao.AbrirConexao())
+            try
             {
-                SqlCommand procedure = new SqlCommand("CarregarHospede", conn);
-                procedure.CommandType = CommandType.StoredProcedure;
-                procedure.Parameters.Add("@CPF", SqlDbType.VarChar)
-                    .Value = cpfPass;
-                procedure.Parameters.Add("@Passaporte", SqlDbType.VarChar)
-                    .Value = "";
-
-                SqlDataReader leitor = procedure.ExecuteReader();
-                leitor.Read();
-                if (leitor.HasRows)
+                Hospede hospede = new Hospede();
+                using (SqlConnection conn = _conexao.AbrirConexao())
                 {
-                    hospede.Id = int.Parse(leitor["Id"].ToString());
-                    hospede.Nome = leitor["Nome"].ToString();
-                    hospede.DataNascimento = DateTime.Parse(leitor[2].ToString());
-                    hospede.Sexo = char.Parse(leitor[3].ToString());
-                    hospede.Email = leitor["Email"].ToString();
-                    hospede.Telefone = leitor["Telefone"].ToString();
-                    hospede.CPF = leitor["CPF"].ToString();
-                    hospede.Passaporte = leitor["Passaporte"].ToString();
-                    hospede.Status = leitor[8].ToString();
-                    hospede.DataAtualizacao = 
-                        DateTime.Parse(leitor["DataAtualizacao"].ToString());
+                    SqlCommand procedure = new SqlCommand("HOSP_Carregar", conn);
+                    procedure.CommandType = CommandType.StoredProcedure;
+                    procedure.Parameters.Add("@CpfPass", SqlDbType.VarChar)
+                        .Value = cpfPass;
+
+                    SqlDataReader leitor = procedure.ExecuteReader();
+                    leitor.Read();
+                    if (leitor.HasRows)
+                    {
+                        hospede.Id = int.Parse(leitor["Id"].ToString());
+                        hospede.Nome = leitor["Nome"].ToString();
+                        hospede.DataNascimento = DateTime.Parse(leitor[2].ToString());
+                        hospede.Sexo = char.Parse(leitor[3].ToString());
+                        hospede.Email = leitor["Email"].ToString();
+                        hospede.Telefone = leitor["Telefone"].ToString();
+                        hospede.setarCPF(leitor["CPF"].ToString());
+                        hospede.Passaporte = leitor["Passaporte"].ToString();
+                        hospede.Status = leitor[8].ToString();
+                        hospede.DataAtualizacao =
+                            DateTime.Parse(leitor["DataAtualizacao"].ToString());
+                        ContaDAO cDAO = new ContaDAO();
+                        int nConta = cDAO.PossuiConta(hospede.CPF);
+                        if (nConta > 0)
+                        {
+                            hospede.Conta = cDAO.Carregar(nConta);
+                        }
+                    }
+                    leitor.Close();
                 }
-                leitor.Close();
+                return hospede;
             }
-            return hospede;
+            catch (Exception err)
+            {
+                throw new Exception(err.Message);
+            }
         }
     }
 }

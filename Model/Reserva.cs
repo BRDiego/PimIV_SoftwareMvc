@@ -23,8 +23,8 @@ namespace Model
         public DateTime CheckOut { get => _CheckOut; set => _CheckOut = value; }
         public int Adultos { get => _Adultos; set => _Adultos = value; }
         public int Criancas { get => _Criancas; set => _Criancas = value; }
-        public double Despesas { get => _Despesas; set => _Despesas = value; }
-        public string Status { get => _Status; set => _Status = value; }
+        public double Despesas { get => _Despesas; private set => _Despesas = value; }
+        public string Status { get => _Status; private set => _Status = value; }
         public Hospede Hospede { get => _Hospede; set => _Hospede = value; }
         public Quarto Quarto { get => _Quarto; set => _Quarto = value; }
 
@@ -55,32 +55,21 @@ namespace Model
 
         }
 
-        public void SetData(out string msg)
-        {
-            msg = "";
-        }
-
         public bool ReservaValida(out string msg)
         {
             bool valida = true;
             msg = "";
+            if(CheckIn.Date < DateTime.Now.Date)
+            {
+                valida = false;
+                msg = "Data de CheckIn não pode ser anterior ao dia de hoje";
+            }
             if (CheckOut < CheckIn)
             {
                 valida = false;
                 msg = "Data de saída (CheckOut) não pode ser anterior " +
                     "a data de entrada (CheckIn)";
             }
-            return valida;
-        }
-        
-        public bool ReservaWebValida()
-        {
-            bool valida = true;
-            if (CheckIn.Date > CheckOut.Date)
-            {
-                valida = false;
-            }
-
             return valida;
         }
     }

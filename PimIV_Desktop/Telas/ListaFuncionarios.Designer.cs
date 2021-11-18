@@ -148,7 +148,7 @@ namespace PimIV_Desktop.Telas
             this.txtBuscaCPF.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscaCPF.Mask = "000,000,000-00";
             this.txtBuscaCPF.Name = "txtBuscaCPF";
-            this.txtBuscaCPF.Size = new System.Drawing.Size(131, 28);
+            this.txtBuscaCPF.Size = new System.Drawing.Size(138, 28);
             this.txtBuscaCPF.TabIndex = 0;
             this.txtBuscaCPF.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 

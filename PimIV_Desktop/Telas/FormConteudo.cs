@@ -16,6 +16,7 @@ namespace PimIV_Desktop.Telas
         private Point posicaoPainel;
         private Point novaPosicao = new Point();
         private Point posIniBotoes;
+        int contador = 0;
 
         public formConteudo(string nome, string cargo)
         {
@@ -208,6 +209,26 @@ namespace PimIV_Desktop.Telas
                     UserControl aux = item as UserControl;
                     aux.Location = panel_Inicial.Location;
                 }
+            }
+        }
+
+        private void lblMensagem_TextChanged(object sender, EventArgs e)
+        {
+            timerMensagem.Start();
+        }
+
+        private void timerMensagem_Tick(object sender, EventArgs e)
+        {
+            if(contador < 6)
+            {
+                contador++;
+                MessageBox.Show(contador.ToString());
+            }
+            else
+            {
+                contador = 0;
+                lblMensagem.Text = "";
+                timerMensagem.Stop();
             }
         }
     }

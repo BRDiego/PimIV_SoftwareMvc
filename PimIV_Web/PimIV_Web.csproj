@@ -123,9 +123,12 @@
     <Compile Include="Controllers\ContasController.cs" />
     <Compile Include="Controllers\InicialController.cs" />
     <Compile Include="Controllers\ReservasController.cs" />
+    <Compile Include="Controllers\TesteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\SessaoSite.cs" />
+    <Compile Include="Models\ViewModels\DadosEstaticos.cs" />
     <Compile Include="Models\ViewModels\HospedeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -179,10 +182,10 @@
     <Content Include="Views\Reservas\Confirmar.cshtml" />
     <Content Include="Views\Contas\AcessarConta.cshtml" />
     <Content Include="Views\Contas\Edit.cshtml" />
-    <Content Include="Views\Contas\teste2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Teste\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -7,51 +7,55 @@
 <script src="~/DesignPaginas/Scripts/FazerLogin.js"></script>
 <link href="~/DesignPaginas/Style/FazerLogin.css" rel="stylesheet" />
 <div class="containerLogin">
+
+    
     <div class="content first-content">
 
         <div class="first-column">
             <h2 class="title title-primary"> Bem-vind@@!</h2><br>
             <p class="description description-primary"> Para garantir sua reserva</p>
             <p class="description description-primary">por favor, logue com seus dados pessoais</p><br>
-
+            <p><span>@ViewBag.LoginInvalido</span></p>
+            <p><span>@ViewBag.ErroCadastro</span></p>
             <button id="signin" class="btn btn-primary">Entrar</button>
         </div>
 
         <div class="second-column">
             <h2 class="title title-second"> Criar uma conta </h2>
             <p class="description description-second">Cadastre-se usando seus dados pessoais.</p>
-            <form class="form">
+            
+        <form class="form" method="post" action="@Url.Action("CadastrarHospede","Contas")">
 
                 <label class="label-input">
                     <i class="fas fa-user icon-modify"></i>
-                    <input type="text" placeholder="Nome" required>
+                    <input type="text" placeholder="Nome" name="nome" required>
                 </label>
                 <label class="label-input">
                     <i class="fas fa-calendar icon-modify"></i>
-                    <input type="date" required>
+                    <input type="date" name="nasc" required>
                 </label>
 
 
                 <label class="label-input">
                     <i class="fas fa-venus-mars icon-modify"></i>
-                    <input type="text" placeholder="Gênero (F/M/Outro)" required>
+                    <input type="text" placeholder="Gênero (F/M/Outro)" name="sexo" required>
 
                 </label>
 
                 <label class="label-input">
                     <i class="fas fa-address-card icon-modify"></i>
-                    <input type="text" placeholder="CPF/Passaporte" required>
+                    <input type="text" placeholder="CPF/Passaporte" name="cpfPass" required>
                 </label>
 
 
                 <label class="label-input ">
                     <i class="fas fa-envelope icon-modify"></i>
-                    <input type="email" placeholder="Email" required>
+                    <input type="email" placeholder="Email" name="email" required>
                 </label>
 
                 <label class="label-input ">
                     <i class="fas fa-lock icon-modify"></i>
-                    <input type="password" placeholder="Senha" required>
+                    <input type="password" placeholder="Senha" name="senha" required>
                 </label>
 
                 <button class="btn btn-second">Cadastrar</button>
@@ -73,29 +77,26 @@
         <div class="second-column">
             <h2 class="title title-second">Acessar conta </h2>
             <p class=" description description-second">Use os seus dados de acesso para entrar</p>
-            @*@using (Html.BeginForm("AcessarConta", "Contas", FormMethod.Post))
-            {*@            
-                <form class="form">
+            <form method="post" action="@Url.Action("ValidarHosp","Contas")" class="form">
                 <label class="label-input ">
                     <i class="fas fa-envelope icon-modify"></i>
-                    <input type="email" placeholder="Email" required>
+                    <input type="email" name="email" placeholder="Email" required>
                 </label>
 
                 <label class="label-input ">
                     <i class="fas fa-lock icon-modify"></i>
-                    <input type="password" placeholder="Senha" required>
+                    <input type="password" name="senha" placeholder="Senha" required>
                 </label>
-                        
+
                 <button type="submit" class="btn btn-second">Entrar</button>
-                
+
 
             </form>
-            @*}*@
         </div>
 
     </div> <!--final first-content-->
 </div> <!--div do container-->
-</div>     <!--Second content-->
+<!--</div>-->     <!--Second content-->
 
 <script src="app.js"></script>
 

@@ -8,36 +8,75 @@
         <div class="texto2">
             <ul class="infosTopicos">
                 <li>
-                    <h2>Estrutura Hotel Quiet Time:</h2>
-                    <p>Estacionamento e Restaurante próprios.</p>
-                    <p>Área de lazer para todas as idades.</p>
+                    <h2>Estrutura dos quartos Hotel Quiet Time:</h2>
+                    <ul class="quartos_lista">
+                        <li>Varanda</li>
+                        <li>Banheiro privativo</li>
+                        <li>TV à cabo</li>
+                        <li>Ar condicionado</li>
+                        <li>Escrivaninha</li>
+                        <li>Conexão internet via cabo e Wi-fi</li>
+                        <li>Frigobar</li>
+                        <li>Telefone para contato com gerência 24h</li>
+                    </ul>
+                </li>
+                <li>
+                    <h2>Características Quiet Time:</h2>
+                    <p>Você pode conferir <b>dúvidas comuns </b><a href="#parte2">AQUI</a>.</p>
                     <p>
-                        Quartos com:
-                        <ul class="quartos_lista">
-                            <li>Varanda</li>
-                            <li>Banheiro privativo</li>
-                            <li>TV à cabo</li>
-                            <li>Ar condicionado</li>
-                            <li>Escrivaninha</li>
-                            <li>Conexão internet via cabo e Wi-fi</li>
-                            <li>Frigobar</li>
-                            <li>Telefone para contato com gerência 24h</li>
-                        </ul>
+                        Aqui no (Hotel Quiet Time) você pode contar com quartos bem
+                        arejados, ventilados e climatizados com ar-condicionado privativo.
                     </p>
-                </li>
-                <li>
-                    <h2>Atendimento prático:</h2>
-                    <p>Funcionários prontos para ajudar 24h durante hospedagem.</p>
-                    <p>Você pode conferir dúvidas comuns aqui.</p>
-                    @*@Html.ActionLink("Aqui", "Index", "inicial")*@
-                </li>
-                <li>
-                    <h2>Segurança Digital:</h2>
+                    <p>
+                        Sabemos o quanto higiene se tornou algo em cheque nos
+                        ultimos tempos, então nossa equipe de limpeza está sempre à
+                        disposição para qualquer necessidade e preparada para atuar
+                        contra o COVID-19 diariamente.
+                    </p>
+                    <p>
+                        O café da manhã servido aqui é preparado pelas melhores
+                        equipes de cozinha da cidade, e o cardápio vai desde chás até
+                        pães fresquinhos da nossa padaria.
+                    </p>
+                    <p>
+                        Com portaria 24h e recepção, nossos funcionários estão sempre a
+                        disposição para qualquer dúvida ou necessidade dos nossos hóspedes.
+                    </p>
                     <p>Adesão total à Lei Geral de Proteção de Dados (LGPD).</p>
-                    <p>Dados pessoais são utilizados somente em processos internos do hotel, conforme termos de uso.</p>
-                    <p>Hóspedes podem acessar seus dados a qualquer momento.</p>
+                    <p>Hóspedes podem acessar seus dados a qualquer momento via site ou contatando o Hotel.</p>
                 </li>
             </ul>
+        </div>
+    </div>
+</section>
+<section id="parte2">
+    <div class="container">
+        <div class="texto2">
+            <h1>Dúvidas frequentes:</h1>
+            <p>
+                Acesse a @Html.ActionLink("Página de ajuda", "Ajuda", "Inicial") e
+                contate o hotel para solucionar qualquer outra dúvida.
+            </p>
+            <h2>Como fazer uma reserva?</h2>
+            <p>
+                Crie uma conta clicando
+                @Html.ActionLink("AQUI", "FazerLogin", "Contas"). Depois,
+                Acesse @Html.ActionLink("RESERVAS", "Index", "Reservas") e 
+                busque reservas de acordo com suas preferências.
+            </p>
+            <p>Certifique-se de estar logado no site para confirmar a reserva.</p>
+            <h2>Como acessar meus dados?</h2>
+            <p>
+                Acesse a página de login pelo ícone na barra superior ou
+                clicando @Html.ActionLink("AQUI", "FazerLogin", "Contas").
+            </p>
+            <h2>Como cancelar minha reserva?</h2>
+            <h2>Como cancelar minha conta?</h2>
+            <h2>Esqueci a senha, como alterar?</h2>
+            <p>
+                Entre em contato com o hotel na
+                @Html.ActionLink("Página de ajuda", "Ajuda", "Inicial").
+            </p>
         </div>
     </div>
 </section>

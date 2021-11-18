@@ -92,7 +92,7 @@ namespace PimIV_Desktop.Telas
             this.btnCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.ForeColor = System.Drawing.Color.White;
-            this.btnCadastrar.Location = new System.Drawing.Point(469, 302);
+            this.btnCadastrar.Location = new System.Drawing.Point(474, 302);
             this.btnCadastrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(119, 45);
@@ -141,18 +141,20 @@ namespace PimIV_Desktop.Telas
             this.txtCPF.Margin = new System.Windows.Forms.Padding(2);
             this.txtCPF.Mask = "000,000,000-00";
             this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(131, 28);
+            this.txtCPF.Size = new System.Drawing.Size(144, 28);
             this.txtCPF.TabIndex = 29;
+            this.txtCPF.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // txtTelefone
             // 
             this.txtTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefone.Location = new System.Drawing.Point(694, 58);
+            this.txtTelefone.Location = new System.Drawing.Point(688, 58);
             this.txtTelefone.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefone.Mask = "(99) 00000-0000";
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(131, 28);
+            this.txtTelefone.Size = new System.Drawing.Size(137, 28);
             this.txtTelefone.TabIndex = 26;
+            this.txtTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // dtpNasc
             // 
@@ -190,7 +192,7 @@ namespace PimIV_Desktop.Telas
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(591, 60);
+            this.label5.Location = new System.Drawing.Point(585, 60);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(99, 24);

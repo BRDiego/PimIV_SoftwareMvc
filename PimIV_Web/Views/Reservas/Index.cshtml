@@ -1,7 +1,10 @@
-﻿@model Model.Reserva
+﻿@using DAL;
+@model Model.Reserva
 
 @{
     ViewBag.Title = "Pesquisar Reservas";
+    TipoCustoDAO tDAO = new TipoCustoDAO();
+    List<string> tipos = tDAO.ListaTiposQuarto();
 }
 @Styles.Render("~/Content/css")
 <link href="~/DesignPaginas/Style/Reservas.css" rel="stylesheet" />
@@ -82,36 +85,38 @@
 }
 <section id="Reservas">
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-    <form action="Reservas/PesquisaReservas" class="hotel_form up6">
-        <span class="mensagem_erro">@ViewBag.MensagemErro</span>
+    <span class="mensagem_erro">@ViewBag.MensagemErro</span>
+    <form method="post" action="@Url.Action("Index", "Reservas")" class="hotel_form up6">
         <h1 class="title"><i>Encontre um quarto</i></h1>
 
         <p class="destination">Selecione o tipo de quarto: </p>
-        <select class="text_input w--whole up1">
-            <option value="Selecione" disabled selected>Adultos</option>
-            <option value="January">1</option>
-            <option value="February">2</option>
-            <option value="January">3</option>
-            <option value="February">4</option>
-            <option value="January">5</option>
+        <select class="text_input w--whole up1" name="nAdultos" required>
+            <option label="Adultos"></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
         </select>
 
 
-        <select class="text_input w--whole up1">
-            <option value="Selecione" disabled selected>Crianças</option>
-            <option value="27">1</option>
-            <option value="28">2</option>
-            <option value="29">3</option>
-            <option value="30">4</option>
+        <select class="text_input w--whole up1" name="nCriancas" required>
+            <option label="Crianças"></option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
         </select>
 
 
-        <select class="text_input w--whole up1">
-            <option value="Selecione" disabled selected>Quarto</option>
-            <option value="27"> 1 cama C</option>
-            <option value="28">  2 camas C </option>
-            <option value="29">  1 cama S</option>
-            <option value="30">   2 camas S </option>
+        <select class="text_input w--whole up1" name="tQuarto">
+            <option label="Camas"></option>
+            <option value="@tipos[0].ToString()">@tipos[0].ToString()</option>
+            <option value="@tipos[1].ToString()">@tipos[1].ToString()</option>
+            <option value="@tipos[2].ToString()">@tipos[2].ToString()</option>
+            <option value="@tipos[3].ToString()">@tipos[3].ToString()</option>
+            <option value="@tipos[4].ToString()">@tipos[4].ToString()</option>
         </select>
 
         <br>  <br> <br>  <br>
@@ -119,23 +124,24 @@
         <label class="label w--halves">Check out</label>
 
         <div class="calender w--halves up1">
-            <select class="select month" name="month-in">
-
-                <option name="legal" value="Janeiro">Janeiro</option>
-                <option value="Fevereiro">Fevereiro</option>
-                <option value="Marco">Março</option>
-                <option value="Abril">Abril</option>
-                <option value="Maio">Maio</option>
-                <option value="Junho">Junho</option>
-                <option value="Julho">Julho</option>
-                <option value="Agosto">Agosto</option>
-                <option value="Setembro">Setembro</option>
-                <option value="Outubro">Outubro</option>
-                <option value="Novembro">Novembro</option>
-                <option value="Dezembro">Dezembro</option>
+            <select class="select month" name="monthIn" required>
+                <option label="mês"></option>
+                <option value="1">Janeiro</option>
+                <option value="2">Fevereiro</option>
+                <option value="3">Março</option>
+                <option value="4">Abril</option>
+                <option value="5">Maio</option>
+                <option value="6">Junho</option>
+                <option value="7">Julho</option>
+                <option value="8">Agosto</option>
+                <option value="9">Setembro</option>
+                <option value="10">Outubro</option>
+                <option value="11">Novembro</option>
+                <option value="12">Dezembro</option>
             </select>
 
-            <select class="select day" name="day-in">
+            <select class="select day" name="dayIn" required>
+                <option label="dia"></option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -172,22 +178,24 @@
         </div>
 
         <div class="calender w--halves up1">
-            <select class="select month" name="month-out">
-                <option value="Janeiro">Janeiro</option>
-                <option value="Fevereiro">Fevereiro</option>
-                <option value="Marco">Março</option>
-                <option value="Abril">Abril</option>
-                <option value="Maio">Maio</option>
-                <option value="Junho">Junho</option>
-                <option value="Julho">Julho</option>
-                <option value="Agosto">Agosto</option>
-                <option value="Setembro">Setembro</option>
-                <option value="Outubro">Outubro</option>
-                <option value="Novembro">Novembro</option>
-                <option value="Dezembro">Dezembro</option>
+            <select class="select month" name="monthOut" required>
+                <option label="mês"></option>
+                <option value="1">Janeiro</option>
+                <option value="2">Fevereiro</option>
+                <option value="3">Março</option>
+                <option value="4">Abril</option>
+                <option value="5">Maio</option>
+                <option value="6">Junho</option>
+                <option value="7">Julho</option>
+                <option value="8">Agosto</option>
+                <option value="9">Setembro</option>
+                <option value="10">Outubro</option>
+                <option value="11">Novembro</option>
+                <option value="12">Dezembro</option>
             </select>
 
-            <select class="select day" name="day-out">
+            <select class="select day" name="dayOut" required>
+                <option label="dia"></option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>

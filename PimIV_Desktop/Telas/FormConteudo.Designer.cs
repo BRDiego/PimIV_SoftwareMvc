@@ -53,6 +53,7 @@ namespace PimIV_Desktop.Telas
             this.panelBotoes = new System.Windows.Forms.Panel();
             this.panelBoasvindas = new System.Windows.Forms.Panel();
             this.lblMensagem = new System.Windows.Forms.Label();
+            this.timerMensagem = new System.Windows.Forms.Timer(this.components);
             this.mapaQuartos1 = new PimIV_Desktop.Telas.MapaQuartos();
             this.mapaReservas1 = new PimIV_Desktop.Telas.MapaReservas();
             this.novaReserva1 = new PimIV_Desktop.Telas.NovaReserva();
@@ -335,6 +336,12 @@ namespace PimIV_Desktop.Telas
             this.lblMensagem.Size = new System.Drawing.Size(21, 20);
             this.lblMensagem.TabIndex = 56;
             this.lblMensagem.Text = "...";
+            this.lblMensagem.TextChanged += new System.EventHandler(this.lblMensagem_TextChanged);
+            // 
+            // timerMensagem
+            // 
+            this.timerMensagem.Interval = 1000;
+            this.timerMensagem.Tick += new System.EventHandler(this.timerMensagem_Tick);
             // 
             // mapaQuartos1
             // 
@@ -489,5 +496,6 @@ namespace PimIV_Desktop.Telas
         private NovaReserva novaReserva1;
         private MapaReservas mapaReservas1;
         private MapaQuartos mapaQuartos1;
+        private System.Windows.Forms.Timer timerMensagem;
     }
 }

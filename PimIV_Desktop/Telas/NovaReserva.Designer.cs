@@ -60,7 +60,6 @@ namespace PimIV_Desktop.Telas
             this.label13 = new System.Windows.Forms.Label();
             this.lblDespesas = new System.Windows.Forms.Label();
             this.GBoxDespesas = new System.Windows.Forms.GroupBox();
-            this.lblMensagem = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudCriancas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAdultos)).BeginInit();
             this.GBoxDespesas.SuspendLayout();
@@ -203,6 +202,7 @@ namespace PimIV_Desktop.Telas
             this.txtCheckOut.Location = new System.Drawing.Point(375, 512);
             this.txtCheckOut.Margin = new System.Windows.Forms.Padding(2);
             this.txtCheckOut.Name = "txtCheckOut";
+            this.txtCheckOut.ReadOnly = true;
             this.txtCheckOut.Size = new System.Drawing.Size(130, 28);
             this.txtCheckOut.TabIndex = 60;
             // 
@@ -212,6 +212,7 @@ namespace PimIV_Desktop.Telas
             this.txtCheckIn.Location = new System.Drawing.Point(375, 445);
             this.txtCheckIn.Margin = new System.Windows.Forms.Padding(2);
             this.txtCheckIn.Name = "txtCheckIn";
+            this.txtCheckIn.ReadOnly = true;
             this.txtCheckIn.Size = new System.Drawing.Size(130, 28);
             this.txtCheckIn.TabIndex = 59;
             // 
@@ -255,6 +256,7 @@ namespace PimIV_Desktop.Telas
             // 
             this.mcaEstadia.Location = new System.Drawing.Point(132, 372);
             this.mcaEstadia.Margin = new System.Windows.Forms.Padding(7);
+            this.mcaEstadia.MaxDate = new System.DateTime(2022, 12, 31, 0, 0, 0, 0);
             this.mcaEstadia.MaxSelectionCount = 45;
             this.mcaEstadia.Name = "mcaEstadia";
             this.mcaEstadia.TabIndex = 55;
@@ -267,6 +269,8 @@ namespace PimIV_Desktop.Telas
             this.txtPassaporte.Name = "txtPassaporte";
             this.txtPassaporte.Size = new System.Drawing.Size(130, 28);
             this.txtPassaporte.TabIndex = 42;
+            this.txtPassaporte.Text = "X";
+            this.txtPassaporte.TextChanged += new System.EventHandler(this.txtPassaporte_TextChanged);
             // 
             // label3
             // 
@@ -287,9 +291,10 @@ namespace PimIV_Desktop.Telas
             this.txtCPF.Margin = new System.Windows.Forms.Padding(2);
             this.txtCPF.Mask = "000,000,000-00";
             this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(131, 28);
+            this.txtCPF.Size = new System.Drawing.Size(143, 28);
             this.txtCPF.TabIndex = 41;
             this.txtCPF.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtCPF.TextChanged += new System.EventHandler(this.txtCPF_TextChanged);
             // 
             // label2
             // 
@@ -306,7 +311,7 @@ namespace PimIV_Desktop.Telas
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(348, 132);
+            this.txtEmail.Location = new System.Drawing.Point(350, 132);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(368, 28);
@@ -317,7 +322,7 @@ namespace PimIV_Desktop.Telas
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(279, 135);
+            this.label4.Location = new System.Drawing.Point(281, 135);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 24);
@@ -331,7 +336,7 @@ namespace PimIV_Desktop.Telas
             this.txtTelefone.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefone.Mask = "(99) 00000-0000";
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(131, 28);
+            this.txtTelefone.Size = new System.Drawing.Size(143, 28);
             this.txtTelefone.TabIndex = 39;
             this.txtTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
@@ -439,23 +444,11 @@ namespace PimIV_Desktop.Telas
             this.GBoxDespesas.TabStop = false;
             this.GBoxDespesas.Text = "Valor hospedagem:";
             // 
-            // lblMensagem
-            // 
-            this.lblMensagem.AutoSize = true;
-            this.lblMensagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensagem.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lblMensagem.Location = new System.Drawing.Point(35, 565);
-            this.lblMensagem.Name = "lblMensagem";
-            this.lblMensagem.Size = new System.Drawing.Size(21, 20);
-            this.lblMensagem.TabIndex = 67;
-            this.lblMensagem.Text = "...";
-            // 
             // NovaReserva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.Controls.Add(this.lblMensagem);
             this.Controls.Add(this.GBoxDespesas);
             this.Controls.Add(this.CboxSexo);
             this.Controls.Add(this.MtxtNasc);
@@ -532,6 +525,5 @@ namespace PimIV_Desktop.Telas
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label lblDespesas;
         private System.Windows.Forms.GroupBox GBoxDespesas;
-        private System.Windows.Forms.Label lblMensagem;
     }
 }
