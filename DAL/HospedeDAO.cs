@@ -10,8 +10,8 @@ namespace DAL
     public class HospedeDAO
     {
         readonly ConexaoSQLServer _conexao = new ConexaoSQLServer();
-        
-        public void InserirHospede(Hospede hospede, out string mensagem)
+                
+        public string Inserir_Att(Hospede hospede)
         {
             try
             {
@@ -40,12 +40,12 @@ namespace DAL
                         .Direction = ParameterDirection.Output;
 
                     procedure.ExecuteNonQuery();
-                    mensagem = procedure.Parameters["@Retorno"].Value.ToString();
+                    return procedure.Parameters["@Retorno"].Value.ToString();
                 }
             }
             catch (Exception err)
             {
-                mensagem = err.Message;
+                throw new Exception(err.Message);
             }
         }
         
@@ -77,7 +77,7 @@ namespace DAL
                         hospede.DataAtualizacao =
                             DateTime.Parse(leitor["DataAtualizacao"].ToString());
                         ContaDAO cDAO = new ContaDAO();
-                        int nConta = cDAO.PossuiConta(hospede.CPF);
+                        int nConta = cDAO.HospPossuiConta(hospede.CPF);
                         if (nConta > 0)
                         {
                             hospede.Conta = cDAO.Carregar(nConta);
@@ -92,5 +92,30 @@ namespace DAL
                 throw new Exception(err.Message);
             }
         }
+
+        public bool EmailRegistrado(string email)
+        {
+            bool registrado = false;
+            try
+            {
+                using (SqlConnection conn = _conexao.AbrirConexao())
+                {
+                    string query = "SELECT Id from Hospede where Email = '"+email+"'";
+                    SqlCommand comando = new SqlCommand(query, conn);
+                    object resultado = comando.ExecuteScalar();
+                    if(resultado != null)
+                    {
+                        registrado = true;
+                    }
+                }
+                return registrado;
+            }
+            catch (Exception err)
+            {
+                throw new Exception(err.Message);
+            }
+        }
+
+        //lista status
     }
 }

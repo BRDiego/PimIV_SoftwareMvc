@@ -20,7 +20,7 @@ namespace Model
         public DateTime DataAtualizacaoFunc { get => _DataAtualizacaoFunc; set => _DataAtualizacaoFunc = value; }
         public Conta ContaFuncionario { get => _ContaFuncionario; set => _ContaFuncionario = value; }
 
-        public Funcionario()
+        public Funcionario():base()
         {
         }
     }

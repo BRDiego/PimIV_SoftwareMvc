@@ -20,6 +20,7 @@ namespace Model
 
         public Quarto()
         {
+            _Tipo = new TipoCusto();
         }
 
         public Quarto(TipoCusto tipo)

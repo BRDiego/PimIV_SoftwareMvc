@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAL;
+using Model;
 
 namespace PimIV_Desktop.Telas
 {
     public partial class DadosFuncionario : UserControl
     {
+        private FuncionarioDAO fDAO = new FuncionarioDAO();
         public DadosFuncionario()
         {
             InitializeComponent();
@@ -56,24 +53,25 @@ namespace PimIV_Desktop.Telas
             LimparDadosFuncionario();
         }
 
-        private void comboStatusHos_KeyUp(object sender, KeyEventArgs e)
-        {
-            comboStatusHos.Text = "";
-        }
-
-        private void comboStatusFun_KeyUp(object sender, KeyEventArgs e)
-        {
-            comboStatusFun.Text = "";
-        }
-
-        private void dudSexo_KeyUp(object sender, KeyEventArgs e)
-        {
-            dudSexo.Text = "";
-        }
-
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(btnCadastrar.Parent.Name);
+            Funcionario func = new Funcionario();
+            func.Nome = txtNome.Text;
+            func.DataNascimento = dtpNasc.Value;
+            func.Sexo = dudSexo.Text[0];
+            func.Email = txtEmail.Text;
+            func.Telefone = txtTelefone.Text;
+            func.setarCPF(txtCPF.Text);
+            func.Passaporte = txtPassaporte.Text;
+            func.Status = comboStatusHos.SelectedItem.ToString();
+
+            func.Cargo = txtCargo.Text;
+            func.Salario = double.Parse(txtSalario.Text);
+            func.StatusFunc = (comboStatusFun.Text);
+
+            string retorno = fDAO.Inserir_Att(func);
+            ValidacoesForms.ExibirMensagem(retorno);
+
         }
 
         private void btnSalvarLogin_Click(object sender, EventArgs e)

@@ -81,7 +81,7 @@ namespace PimIV_Desktop.Telas
             {
                 if(comboStatus.Text != "")
                 {
-                    dgviewReservas.DataSource = resDAO.ListarReservasStatus(
+                    dgviewReservas.DataSource = resDAO.ListarStatus(
                         comboStatus.Text);
                 }
             }

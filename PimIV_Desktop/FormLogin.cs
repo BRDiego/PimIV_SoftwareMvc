@@ -94,7 +94,8 @@ namespace PimIV_Desktop
         {
             string nome = txtNomeUsuario.Text;
             string senha = txtSenha.Text;
-            if (_conta.LoginCorreto(nome, senha, out string func, out string cargo))
+            if (_conta.ValidarFuncionario(nome, senha, out string func, 
+                out string cargo))
             {
                 lblMensagem.Text = "Carregando aplicação...";
                 formConteudo conteudo = new formConteudo(func, cargo);

@@ -7,7 +7,7 @@ using ConexaoDB;
 
 namespace DAL
 {
-    public class ReservaDAO
+    public class ReservaDAO : IListaPorStatus
     {
         readonly ConexaoSQLServer  _conexao = new ConexaoSQLServer();
 
@@ -53,7 +53,7 @@ namespace DAL
                         .Value = reserva.CheckIn;
                     procedure.Parameters.Add("@Chout", SqlDbType.DateTime)
                         .Value = reserva.CheckOut;
-                    procedure.Parameters.Add("@StatusRes", SqlDbType.DateTime)
+                    procedure.Parameters.Add("@StatusRes", SqlDbType.VarChar)
                         .Value = reserva.Status;
                     procedure.Parameters.Add("@NumAdultos", SqlDbType.Int)
                         .Value = reserva.Adultos;
@@ -67,7 +67,6 @@ namespace DAL
                         .Value = reserva.Quarto.Numero;
                     procedure.Parameters.Add("@Retorno", SqlDbType.VarChar, 100)
                         .Direction = ParameterDirection.Output;
-
                     procedure.ExecuteNonQuery();
                     string retorno = procedure.Parameters["@Retorno"].Value.ToString();
                     return retorno;
@@ -79,7 +78,9 @@ namespace DAL
             }
         }
 
-        public DataTable ListarReservasStatus(string status)
+        //carregar
+
+        public DataTable ListarStatus(string status)
         {
             DataTable tabela = new DataTable();
             try
@@ -102,7 +103,7 @@ namespace DAL
             }
         }
 
-        public DataTable ListarReservasData(DateTime periodo)
+        public DataTable ListarData(DateTime periodo)
         {
             DataTable tabela = new DataTable();
             try
@@ -124,5 +125,42 @@ namespace DAL
                 throw new Exception(err.Message);
             }
         }
+
+        public bool TipoDisponivel(DateTime entrada, string tipo, out int quarto)
+        {
+            quarto = 0;
+            bool temVagas = false;
+            try
+            {
+                using(SqlConnection conn = _conexao.AbrirConexao())
+                {
+                    SqlCommand procedure = new SqlCommand("RESE_TipoDisponivel", conn);
+                    procedure.CommandType = CommandType.StoredProcedure;
+
+                    procedure.Parameters.Add("@Entrada", SqlDbType.Date)
+                        .Value = entrada;
+                    procedure.Parameters.Add("@TipoDeQuarto", SqlDbType.VarChar)
+                        .Value = tipo;
+
+                    SqlDataReader leitor = procedure.ExecuteReader();
+                    leitor.Read();
+                    int result = int.Parse(leitor["RETORNO"].ToString());
+                    if (result == 1)
+                    {
+                        quarto = int.Parse(leitor["numero"].ToString());
+                        temVagas = true;
+                    }
+                    return temVagas;
+                }
+            }
+            catch(Exception err)
+            {
+                throw new Exception(err.Message);
+            }
+        }
+
+        //ocupacao
+
+        //receita
     }
 }

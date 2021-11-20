@@ -53,27 +53,34 @@ namespace Model
             CPF = aux;
         }
 
-        public bool HospedeValido(out string mensagem)
+        public string HospedeValido()
         {
-            mensagem = "";
-            bool valido = true;
-            if(CPF == "" || Passaporte == "")
+            string mensagem = "";
+            if(CPF == "" && Passaporte == "")
             {
-                valido = false;
                 mensagem = "Informe o CPF ou Passaporte";
             }
-            try
+
+            if(Telefone != "")
             {
-                foreach(char numero in Telefone)
+                try
                 {
-                    int teste = int.Parse(numero.ToString()) / 1;
+                    foreach (char numero in Telefone)
+                    {
+                        int teste = int.Parse(numero.ToString()) / 1;
+                    }
+                }
+                catch (Exception)
+                {
+                    mensagem = "Telefone inválido";
                 }
             }
-            catch(Exception)
+            
+            if(DataNascimento.Date.Year > (DateTime.Now.Year - 18))
             {
-                mensagem = "Telefone inválido";
+                mensagem = "Data de nascimento inválida.";
             }
-            return valido;
+            return mensagem;
         }
     }
 }

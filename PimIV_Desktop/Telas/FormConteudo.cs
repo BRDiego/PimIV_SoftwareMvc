@@ -222,7 +222,6 @@ namespace PimIV_Desktop.Telas
             if(contador < 6)
             {
                 contador++;
-                MessageBox.Show(contador.ToString());
             }
             else
             {

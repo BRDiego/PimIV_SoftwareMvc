@@ -60,6 +60,7 @@ namespace PimIV_Desktop.Telas
             this.label13 = new System.Windows.Forms.Label();
             this.lblDespesas = new System.Windows.Forms.Label();
             this.GBoxDespesas = new System.Windows.Forms.GroupBox();
+            this.txtSalario = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudCriancas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAdultos)).BeginInit();
             this.GBoxDespesas.SuspendLayout();
@@ -428,12 +429,13 @@ namespace PimIV_Desktop.Telas
             this.lblDespesas.Location = new System.Drawing.Point(5, 94);
             this.lblDespesas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDespesas.Name = "lblDespesas";
-            this.lblDespesas.Size = new System.Drawing.Size(116, 31);
+            this.lblDespesas.Size = new System.Drawing.Size(51, 31);
             this.lblDespesas.TabIndex = 62;
-            this.lblDespesas.Text = "R$ 0,00";
+            this.lblDespesas.Text = "R$";
             // 
             // GBoxDespesas
             // 
+            this.GBoxDespesas.Controls.Add(this.txtSalario);
             this.GBoxDespesas.Controls.Add(this.lblDespesas);
             this.GBoxDespesas.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GBoxDespesas.ForeColor = System.Drawing.SystemColors.Control;
@@ -443,6 +445,18 @@ namespace PimIV_Desktop.Telas
             this.GBoxDespesas.TabIndex = 66;
             this.GBoxDespesas.TabStop = false;
             this.GBoxDespesas.Text = "Valor hospedagem:";
+            // 
+            // txtSalario
+            // 
+            this.txtSalario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSalario.Location = new System.Drawing.Point(61, 96);
+            this.txtSalario.Mask = "00000.00";
+            this.txtSalario.Name = "txtSalario";
+            this.txtSalario.ReadOnly = true;
+            this.txtSalario.Size = new System.Drawing.Size(91, 29);
+            this.txtSalario.TabIndex = 63;
+            this.txtSalario.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtSalario.ValidatingType = typeof(int);
             // 
             // NovaReserva
             // 
@@ -525,5 +539,6 @@ namespace PimIV_Desktop.Telas
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label lblDespesas;
         private System.Windows.Forms.GroupBox GBoxDespesas;
+        private System.Windows.Forms.MaskedTextBox txtSalario;
     }
 }

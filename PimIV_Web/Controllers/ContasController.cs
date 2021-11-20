@@ -14,16 +14,23 @@ namespace PimIV_Web.Controllers
         // GET: Contas
         public ActionResult FazerLogin()
         {
+            if(SessaoSite.Conta != null)
+            {
+                return RedirectToAction("AcessarConta");
+            }
             switch (SessaoSite.Mensagem)
             {
                 case 1:
-                    ViewBag.ErroCadastro = "Hóspede já cadastrado. Faça login.";
+                    ViewBag.ErroCadastro = "Hóspede já possui conta. Faça login.";
                     break;
                 case 2:
                     ViewBag.ErroCadastro = "Ocorreu um erro no cadastro\nVerifique seus dados";
                     break;
                 case 3:
                     ViewBag.LoginInvalido = "Dados de login inválidos";
+                    break;
+                case 4:
+                    ViewBag.ErroCadastro = "Faça login ou crie uma conta\npara registrar sua reserva";
                     break;
                 default:
                     break;
@@ -41,6 +48,11 @@ namespace PimIV_Web.Controllers
             {
                 SessaoSite.Conta = conta;
                 SessaoSite.Conta.HospAssociado = conta.HospAssociado;
+                if(SessaoSite.Reserva != null)
+                {
+                    return RedirectToAction("Confirmar","Reservas",
+                        new {tipo = SessaoSite.Reserva.Quarto.Tipo.NomeTipo });
+                }
                 return RedirectToAction("AcessarConta");
             }
             else
@@ -56,25 +68,41 @@ namespace PimIV_Web.Controllers
         {
             Hospede hospede = new Hospede();
             Conta conta = new Conta();
-            hospede.Nome = nome;
-            hospede.DataNascimento = nasc;
-            hospede.Sexo = char.Parse(sexo);
-            hospede.Email = email;
-            if (cpfPass.Contains(".") || cpfPass.Contains("-") || cpfPass.Length == 11)
+            try
             {
-                hospede.setarCPF(cpfPass);
+                hospede.Nome = nome;
+                hospede.DataNascimento = nasc;
+                hospede.Sexo = sexo[0];
+                hospede.Email = email;
+                if ((cpfPass.Contains(".") || cpfPass.Contains("-")) && cpfPass.Length == 11)
+                {
+                    hospede.setarCPF(cpfPass);
+                }
+                else
+                {
+                    hospede.Passaporte = cpfPass;
+                }
             }
-            else
+            catch(Exception)
             {
-                hospede.Passaporte = cpfPass;
+                SessaoSite.Mensagem = 2;
+                return RedirectToAction("FazerLogin");
             }
             string buscar = hospede.CPF != "" ? hospede.CPF : hospede.Passaporte;
-            if(hDAO.Carregar(buscar).Id != 0)
+            if(cDAO.HospPossuiConta(buscar) > 0 || hDAO.EmailRegistrado(email))
             {
                 SessaoSite.Mensagem = 1;
                 return RedirectToAction("FazerLogin");
             }
-            hDAO.InserirHospede(hospede, out string mensagem);
+            if (hospede.HospedeValido() == "")
+            {
+                hDAO.Inserir_Att(hospede);
+            }
+            else
+            {
+                SessaoSite.Mensagem = 2;
+                return RedirectToAction("FazerLogin");
+            }
             hospede = hDAO.Carregar(buscar);
             if(hospede == null)
             {
@@ -86,6 +114,11 @@ namespace PimIV_Web.Controllers
             conta.NomeUsuario = " ";
             cDAO.Inserir_Att(conta);
             SessaoSite.Conta = conta;
+            if (SessaoSite.Reserva != null)
+            {
+                return RedirectToAction("Confirmar", "Reservas",
+                    new { tipo = SessaoSite.Reserva.Quarto.Tipo.NomeTipo });
+            }
             return RedirectToAction("AcessarConta");
         }
 
@@ -98,6 +131,18 @@ namespace PimIV_Web.Controllers
 
         public ActionResult AcessarConta()
         {
+            switch (SessaoSite.Mensagem)
+            {
+                case 5:
+                    ViewBag.MensagemHospede = "Dados atualizados!";
+                    break;
+                case 6:
+                    ViewBag.MensagemHospede = "Reserva registrada com sucesso!";
+                    break;
+                default:
+                    break;
+            }
+            SessaoSite.Mensagem = 0;
             HospedeViewModel mostrar = new HospedeViewModel();
             if(SessaoSite.Conta != null)
             {
@@ -141,7 +186,7 @@ namespace PimIV_Web.Controllers
             hospede.Passaporte = collection[7].ToString();
             conta.NomeUsuario = collection[8].ToString();
             conta.Senha = collection[9].ToString();
-            hDAO.InserirHospede(hospede, out string mensagem);
+            hDAO.Inserir_Att(hospede);
             string cpfPass = !hospede.CPF.Contains(" ")
                 ? hospede.CPF : hospede.Passaporte;
             hospede = hDAO.Carregar(cpfPass);
@@ -149,6 +194,7 @@ namespace PimIV_Web.Controllers
             cDAO.Inserir_Att(conta);
             SessaoSite.Conta = conta;
             SessaoSite.Conta.HospAssociado = conta.HospAssociado;
+            SessaoSite.Mensagem = 5;
             return RedirectToAction("AcessarConta");
         }
     }

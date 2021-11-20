@@ -85,7 +85,7 @@ namespace PimIV_Desktop.Telas
                 hosp.setarCPF(txtCPF.Text);
                 hosp.Passaporte = txtPassaporte.Text;
                 hosp.Status = comboStatus.SelectedItem.ToString();
-                _hospedeDAO.InserirHospede(hosp, out string msg);
+                string msg = _hospedeDAO.Inserir_Att(hosp);
                 ValidacoesForms.ExibirMensagem(msg);
                 LimparDadosHospede();
             }

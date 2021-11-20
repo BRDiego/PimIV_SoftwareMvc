@@ -182,6 +182,7 @@
     <Content Include="Views\Reservas\Confirmar.cshtml" />
     <Content Include="Views\Contas\AcessarConta.cshtml" />
     <Content Include="Views\Contas\Edit.cshtml" />
+    <Content Include="Views\Inicial\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

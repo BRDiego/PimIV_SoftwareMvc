@@ -2,6 +2,10 @@
 
 @{
     ViewBag.Title = "FazerLogin";
+    int dia = DateTime.Now.Day;
+    int mes = DateTime.Now.Month;
+    int ano = DateTime.Now.Year - 18;
+    string NascMax = ano + "-" + mes + "-" + dia;
 }
 
 <script src="~/DesignPaginas/Scripts/FazerLogin.js"></script>
@@ -32,7 +36,8 @@
                 </label>
                 <label class="label-input">
                     <i class="fas fa-calendar icon-modify"></i>
-                    <input type="date" name="nasc" required>
+                    <input type="date" name="nasc" min="1910-01-01" 
+                           max="@NascMax" required>
                 </label>
 
 

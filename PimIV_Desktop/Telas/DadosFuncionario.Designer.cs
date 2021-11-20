@@ -31,7 +31,6 @@ namespace PimIV_Desktop.Telas
         {
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
-            this.txtSalario = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtCPF = new System.Windows.Forms.MaskedTextBox();
@@ -66,6 +65,7 @@ namespace PimIV_Desktop.Telas
             this.comboStatusFun = new System.Windows.Forms.ComboBox();
             this.btnSalvarLogin = new System.Windows.Forms.Button();
             this.groupDadosPessoais = new System.Windows.Forms.GroupBox();
+            this.txtSalario = new System.Windows.Forms.MaskedTextBox();
             this.groupDadosLogin = new System.Windows.Forms.GroupBox();
             this.groupDadosPessoais.SuspendLayout();
             this.groupDadosLogin.SuspendLayout();
@@ -100,15 +100,6 @@ namespace PimIV_Desktop.Telas
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
-            // 
-            // txtSalario
-            // 
-            this.txtSalario.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSalario.Location = new System.Drawing.Point(606, 210);
-            this.txtSalario.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSalario.Name = "txtSalario";
-            this.txtSalario.Size = new System.Drawing.Size(127, 28);
-            this.txtSalario.TabIndex = 33;
             // 
             // label9
             // 
@@ -255,7 +246,6 @@ namespace PimIV_Desktop.Telas
             this.dudSexo.Name = "dudSexo";
             this.dudSexo.Size = new System.Drawing.Size(90, 28);
             this.dudSexo.TabIndex = 44;
-            this.dudSexo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dudSexo_KeyUp);
             // 
             // label6
             // 
@@ -465,7 +455,6 @@ namespace PimIV_Desktop.Telas
             this.comboStatusHos.Name = "comboStatusHos";
             this.comboStatusHos.Size = new System.Drawing.Size(144, 28);
             this.comboStatusHos.TabIndex = 56;
-            this.comboStatusHos.KeyUp += new System.Windows.Forms.KeyEventHandler(this.comboStatusHos_KeyUp);
             // 
             // comboStatusFun
             // 
@@ -479,7 +468,6 @@ namespace PimIV_Desktop.Telas
             this.comboStatusFun.Name = "comboStatusFun";
             this.comboStatusFun.Size = new System.Drawing.Size(144, 28);
             this.comboStatusFun.TabIndex = 57;
-            this.comboStatusFun.KeyUp += new System.Windows.Forms.KeyEventHandler(this.comboStatusFun_KeyUp);
             // 
             // btnSalvarLogin
             // 
@@ -498,11 +486,11 @@ namespace PimIV_Desktop.Telas
             // 
             // groupDadosPessoais
             // 
+            this.groupDadosPessoais.Controls.Add(this.txtSalario);
             this.groupDadosPessoais.Controls.Add(this.label1);
             this.groupDadosPessoais.Controls.Add(this.label9);
             this.groupDadosPessoais.Controls.Add(this.label8);
             this.groupDadosPessoais.Controls.Add(this.txtPassaporte);
-            this.groupDadosPessoais.Controls.Add(this.txtSalario);
             this.groupDadosPessoais.Controls.Add(this.comboStatusFun);
             this.groupDadosPessoais.Controls.Add(this.label7);
             this.groupDadosPessoais.Controls.Add(this.dudSexo);
@@ -533,6 +521,17 @@ namespace PimIV_Desktop.Telas
             this.groupDadosPessoais.TabIndex = 58;
             this.groupDadosPessoais.TabStop = false;
             this.groupDadosPessoais.Text = "Dados pessoais";
+            // 
+            // txtSalario
+            // 
+            this.txtSalario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSalario.Location = new System.Drawing.Point(613, 206);
+            this.txtSalario.Mask = "00000.00";
+            this.txtSalario.Name = "txtSalario";
+            this.txtSalario.Size = new System.Drawing.Size(91, 29);
+            this.txtSalario.TabIndex = 58;
+            this.txtSalario.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtSalario.ValidatingType = typeof(int);
             // 
             // groupDadosLogin
             // 
@@ -575,7 +574,6 @@ namespace PimIV_Desktop.Telas
 
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.TextBox txtSalario;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.MaskedTextBox txtCPF;
@@ -611,5 +609,6 @@ namespace PimIV_Desktop.Telas
         private System.Windows.Forms.Button btnSalvarLogin;
         private System.Windows.Forms.GroupBox groupDadosPessoais;
         private System.Windows.Forms.GroupBox groupDadosLogin;
+        private System.Windows.Forms.MaskedTextBox txtSalario;
     }
 }

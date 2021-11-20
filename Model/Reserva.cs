@@ -17,6 +17,8 @@ namespace Model
         private string _Status;
         private Hospede _Hospede;
         private Quarto _Quarto;
+        public List<Pagamento> Pagamentos = new List<Pagamento>();
+        public List<Consumo> Consumos = new List<Consumo>();
 
         public int Id { get => _Id; set => _Id = value; }
         public DateTime CheckIn { get => _CheckIn; set => _CheckIn = value; }
@@ -30,6 +32,9 @@ namespace Model
 
         public Reserva()
         {
+            Status = "RESERVADA";
+            _Hospede = new Hospede();
+            _Quarto = new Quarto();
         }
 
         public Reserva(Hospede hosp, Quarto quarto)
@@ -45,14 +50,31 @@ namespace Model
 
         }
 
-        public void Finalizar()
+        public string Finalizar()
         {
-
+            if (Despesas == Consumos.Sum(consumo => consumo.Total))
+            {
+                CheckOut = DateTime.Now;
+                Status = "FINALIZADA";
+                return "Reserva finalizada";
+            }
+            else
+            {
+                return "Pagamento incompleto";
+            }
         }
+
+        public double CalcularDespesas(double aduDiaria, double criDiaria)
+        {
+            int diarias = int.Parse(CheckOut.Subtract(CheckIn).TotalDays.ToString());
+            Despesas = (Quarto.Tipo.Preco * diarias) + (aduDiaria * Adultos)
+                + (criDiaria * Criancas);
+            return Despesas;
+         }
 
         public void Cancelar()
         {
-
+            Status = "CANCELADA";
         }
 
         public bool ReservaValida(out string msg)
@@ -64,10 +86,10 @@ namespace Model
                 valida = false;
                 msg = "Data de CheckIn não pode ser anterior ao dia de hoje";
             }
-            if (CheckOut < CheckIn)
+            if (CheckOut <= CheckIn)
             {
                 valida = false;
-                msg = "Data de saída (CheckOut) não pode ser anterior " +
+                msg = "Data de saída (CheckOut) não pode ser igual ou anterior " +
                     "a data de entrada (CheckIn)";
             }
             return valida;

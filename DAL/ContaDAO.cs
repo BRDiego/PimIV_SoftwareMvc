@@ -10,35 +10,7 @@ namespace DAL
     {
         readonly ConexaoSQLServer _conexao = new ConexaoSQLServer();
         HospedeDAO hDAO = new HospedeDAO();
-        public bool LoginCorreto(string nome, string senha,
-            out string func, out string cargo)
-        {
-            bool correto = false;
-            func = "";
-            cargo = "";
-            using (SqlConnection conn = _conexao.AbrirConexao())
-            {
-                SqlCommand procedure = new SqlCommand("CONT_ValidarFunc", conn);
-                procedure.CommandType = CommandType.StoredProcedure;
-                procedure.Parameters.Add("NomeUsuario", SqlDbType.VarChar).Value = nome;
-                procedure.Parameters.Add("Senha", SqlDbType.VarChar).Value = senha;
-
-                SqlDataReader leitor = procedure.ExecuteReader();
-                leitor.Read();
-                if (leitor.HasRows)
-                {
-                    if (nome.Equals(leitor[0].ToString()) &&
-                        senha.Equals(leitor[1].ToString()))
-                    {
-                        correto = true;
-                        func = leitor[2].ToString();
-                        cargo = leitor[3].ToString();
-                    }
-                }
-            }
-            return correto;
-        }
-
+        
         public string Inserir_Att(Conta conta)
         {
             using (SqlConnection conn = _conexao.AbrirConexao())
@@ -71,32 +43,7 @@ namespace DAL
                 return saida;
             }
         }
-
-        public int PossuiConta(string CPF)
-        {
-            int resultado = 0;
-            try
-            {
-                using (SqlConnection conn = _conexao.AbrirConexao())
-                {
-                    string query = "select C.Id from contaLogin C " +
-                    "inner join Hospede h ON h.id = C.IdHospede " +
-                    "where h.CPF = '"+CPF+"'";
-                    SqlCommand comando = new SqlCommand(query, conn);
-                    object id = comando.ExecuteScalar();
-                    if ( id != null)
-                    {
-                        return int.Parse(id.ToString());
-                    }
-                }
-                return resultado;
-            }
-            catch(Exception err)
-            {
-                throw new Exception(err.Message);
-            }
-        }
-
+        
         public Conta Carregar(int id)
         {
             try
@@ -115,6 +62,62 @@ namespace DAL
                     return conta;
                 }
 
+            }
+            catch(Exception err)
+            {
+                throw new Exception(err.Message);
+            }
+        }
+        
+        //deletar
+
+        public bool ValidarFuncionario(string nome, string senha,
+            out string func, out string cargo)
+        {
+            bool correto = false;
+            func = "";
+            cargo = "";
+            using (SqlConnection conn = _conexao.AbrirConexao())
+            {
+                SqlCommand procedure = new SqlCommand("CONT_ValidarFunc", conn);
+                procedure.CommandType = CommandType.StoredProcedure;
+                procedure.Parameters.Add("NomeUsuario", SqlDbType.VarChar).Value = nome;
+                procedure.Parameters.Add("Senha", SqlDbType.VarChar).Value = senha;
+
+                SqlDataReader leitor = procedure.ExecuteReader();
+                leitor.Read();
+                if (leitor.HasRows)
+                {
+                    if (nome.Equals(leitor[0].ToString()) &&
+                        senha.Equals(leitor[1].ToString()))
+                    {
+                        correto = true;
+                        func = leitor[2].ToString();
+                        cargo = leitor[3].ToString();
+                    }
+                }
+            }
+            return correto;
+        }
+
+        public int HospPossuiConta(string CPF)
+        {
+            int resultado = 0;
+            try
+            {
+                using (SqlConnection conn = _conexao.AbrirConexao())
+                {
+                    string query = "select C.Id from contaLogin C " +
+                    "inner join Hospede h ON h.id = C.IdHospede " +
+                    "where h.CPF = '"+CPF+"'";
+                    SqlCommand comando = new SqlCommand(query, conn);
+                    object id = comando.ExecuteScalar();
+                    if ( id != null)
+                    {
+                        return int.Parse(id.ToString());
+                    }
+                }
+                return resultado;
             }
             catch(Exception err)
             {
@@ -144,7 +147,16 @@ namespace DAL
                             int id = int.Parse(leitor["conid"].ToString());
                             conta = this.Carregar(id);
                             Hospede hosp = new Hospede();
-                            hosp = hDAO.Carregar(leitor["cpf"].ToString());
+                            string identificador = "";
+                            if(leitor["cpf"].ToString() != "")
+                            {
+                                identificador = leitor["cpf"].ToString();
+                            }
+                            else
+                            {
+                                identificador = leitor["passaporte"].ToString();
+                            }
+                            hosp = hDAO.Carregar(identificador);
                             conta.HospAssociado = hosp;
                             return conta;
                         }
