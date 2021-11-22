@@ -85,9 +85,9 @@ namespace DAL
                 total = pDAO.PagoPorReserva(id);
                 return reserva;
             }
-            catch (Exception)
+            catch (Exception err)
             {
-                throw new Exception();
+                throw new Exception(err.Message);
             }
         }
 
@@ -172,6 +172,9 @@ namespace DAL
 
         public List<string> CarregarReservasAtivas()
         {
+            try
+            {
+
             List<string> saida = new List<string>();
             using (SqlConnection conn = _conexao.AbrirConexao())
             {
@@ -185,6 +188,11 @@ namespace DAL
                 }
             }
             return saida;
+            }
+            catch (Exception err)
+            {
+                throw new Exception(err.Message);
+            }
         }
 
         //ocupacao

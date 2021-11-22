@@ -15,7 +15,6 @@ namespace DAL
         ConexaoSQLServer conn = new ConexaoSQLServer();
         HospedeDAO hDAO = new HospedeDAO();
         ContaDAO cDAO = new ContaDAO();
-        
 
         public string Inserir_Att(Funcionario func)
         {
@@ -103,9 +102,9 @@ namespace DAL
                     return null;
                 }
             }
-            catch (Exception)
+            catch (Exception err)
             {
-                throw new Exception();
+                throw new Exception(err.Message);
             }
         }
 

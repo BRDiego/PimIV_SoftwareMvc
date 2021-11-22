@@ -33,9 +33,9 @@ namespace DAL
                     return procedure.Parameters["@Retorno"].Value.ToString();
                 }
             }
-            catch (Exception)
+            catch (Exception err)
             {
-                throw new Exception();
+                throw new Exception(err.Message);
             }
         }
 
@@ -55,9 +55,9 @@ namespace DAL
                 }
                 return total;
             }
-            catch (Exception)
+            catch (Exception err)
             {
-                throw new Exception();
+                throw new Exception(err.Message);
             }
         }
 
@@ -77,9 +77,9 @@ namespace DAL
                 }
                 return tabela;
             }
-            catch (Exception)
+            catch (Exception err)
             {
-                throw new Exception();
+                throw new Exception(err.Message);
             }
         }
     }

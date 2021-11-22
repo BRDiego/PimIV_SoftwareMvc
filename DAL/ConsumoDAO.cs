@@ -41,9 +41,9 @@ namespace DAL
                 }
 
             }
-            catch (Exception)
+            catch (Exception err)
             {
-                throw new Exception();
+                throw new Exception(err.Message);
             }
         }
 
@@ -63,9 +63,9 @@ namespace DAL
                 return tabela;
 
             }
-            catch (Exception)
+            catch (Exception err)
             {
-                throw new Exception();
+                throw new Exception(err.Message);
             }
         }
 
@@ -93,9 +93,9 @@ namespace DAL
                 cons.Produto = prDAO.Carregar(cons.Produto.Nome);
                 return cons;
             }
-            catch(Exception)
+            catch (Exception err)
             {
-                throw new Exception();
+                throw new Exception(err.Message);
             }
         }
 
@@ -119,9 +119,9 @@ namespace DAL
                     return "Erro ao remover consumo";
                 }
             }
-            catch (Exception)
+            catch (Exception err)
             {
-                throw new Exception();
+                throw new Exception(err.Message);
             }
         }
 

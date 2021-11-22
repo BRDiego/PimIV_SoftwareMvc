@@ -34,16 +34,16 @@ namespace DAL
                     procedure.Parameters.Add("@Validade", SqlDbType.Date)
                         .Value = prod.Validade;
                     procedure.Parameters.Add("@Retorno", SqlDbType.VarChar, 100)
-                        .Direction = ParameterDirection.Output; 
+                        .Direction = ParameterDirection.Output;
 
 
                     procedure.ExecuteNonQuery();
                     return procedure.Parameters["@Retorno"].Value.ToString();
                 }
             }
-            catch (Exception)
+            catch (Exception err)
             {
-                throw new Exception();
+                throw new Exception(err.Message);
             }
         }
 
@@ -52,7 +52,7 @@ namespace DAL
             Produto Novo = new Produto();
             try
             {
-                using (SqlConnection conexao = _conexao.AbrirConexao()) 
+                using (SqlConnection conexao = _conexao.AbrirConexao())
                 {
                     string query = "SELECT * FROM PRODUTO WHERE NOME = '" + nome + "'";
                     SqlCommand Comando = new SqlCommand(query, conexao);
@@ -95,20 +95,20 @@ namespace DAL
                 {
                     string query = "Select Id, Nome, EstoqueQtde as [Estoque], " +
                         " Valor, Validade, StatusProd as [Status] from produto " +
-                        " where STATUSPROD = '"+Status+"'";
+                        " where STATUSPROD = '" + Status + "'";
                     SqlCommand Comando = new SqlCommand(query, conexao);
 
                     SqlDataAdapter DA = new SqlDataAdapter(Comando);
                     DataTable Tabela = new DataTable();
                     DA.Fill(Tabela);
-                    return Tabela;                    
+                    return Tabela;
                 }
             }
 
 
-            catch (Exception)
+            catch (Exception err)
             {
-                throw new Exception();
+                throw new Exception(err.Message);
             }
 
         }
@@ -124,8 +124,8 @@ namespace DAL
 
                     procedure.Parameters.Add("@Id", SqlDbType.Int)
                         .Value = deletar.Id;
-                  
-                 
+
+
                     procedure.Parameters.Add("@Retorno", SqlDbType.VarChar, 100)
                         .Direction = ParameterDirection.Output;
 
@@ -134,27 +134,35 @@ namespace DAL
                     return procedure.Parameters["@Retorno"].Value.ToString();
                 }
             }
-            catch (Exception)
+            catch (Exception err)
             {
-                throw new Exception();
+                throw new Exception(err.Message);
             }
         }
 
         public List<string> CarregarProdutosAtivos()
         {
-            List<string> saida = new List<string>();
-            using (SqlConnection conn = _conexao.AbrirConexao())
+            try
             {
-                string query = "SELECT p.Nome from Produto p where" +
-                    " p.StatusProd = 'ATIVO' and p.EstoqueQtde > 0";
-                SqlCommand comando = new SqlCommand(query, conn);
-                SqlDataReader leitor = comando.ExecuteReader();
-                while (leitor.Read())
+
+                List<string> saida = new List<string>();
+                using (SqlConnection conn = _conexao.AbrirConexao())
                 {
-                    saida.Add(leitor["Nome"].ToString());
+                    string query = "SELECT p.Nome from Produto p where" +
+                        " p.StatusProd = 'ATIVO' and p.EstoqueQtde > 0";
+                    SqlCommand comando = new SqlCommand(query, conn);
+                    SqlDataReader leitor = comando.ExecuteReader();
+                    while (leitor.Read())
+                    {
+                        saida.Add(leitor["Nome"].ToString());
+                    }
                 }
+                return saida;
             }
-            return saida;
+            catch (Exception err)
+            {
+                throw new Exception(err.Message);
+            }
         }
 
     }

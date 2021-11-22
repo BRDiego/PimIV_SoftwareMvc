@@ -41,9 +41,9 @@ namespace DAL
             }
 
 
-            catch (Exception)
+            catch (Exception err)
             {
-                throw new Exception();
+                throw new Exception(err.Message);
             }
         }
 
@@ -68,9 +68,9 @@ namespace DAL
             }
 
 
-            catch (Exception)
+            catch (Exception err)
             {
-                throw new Exception();
+                throw new Exception(err.Message);
             }
         }
 
