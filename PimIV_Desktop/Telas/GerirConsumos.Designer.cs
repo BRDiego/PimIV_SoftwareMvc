@@ -29,19 +29,14 @@ namespace PimIV_Desktop.Telas
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgviewConsumos = new System.Windows.Forms.DataGridView();
-            this.IdReservaConsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QuartoConsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProdutoConsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QuantidadeConsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalConsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gboxNovoConsumo = new System.Windows.Forms.GroupBox();
+            this.txtValor = new System.Windows.Forms.TextBox();
             this.comboProdutos = new System.Windows.Forms.ComboBox();
             this.comboRes = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,7 +44,7 @@ namespace PimIV_Desktop.Telas
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.nudQtde = new System.Windows.Forms.NumericUpDown();
-            this.txtValor = new System.Windows.Forms.TextBox();
+            this.btnDeletar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgviewConsumos)).BeginInit();
             this.gboxNovoConsumo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQtde)).BeginInit();
@@ -61,86 +56,51 @@ namespace PimIV_Desktop.Telas
             this.dgviewConsumos.AllowUserToDeleteRows = false;
             this.dgviewConsumos.AllowUserToResizeColumns = false;
             this.dgviewConsumos.AllowUserToResizeRows = false;
+            this.dgviewConsumos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgviewConsumos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgviewConsumos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgviewConsumos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgviewConsumos.ColumnHeadersHeight = 60;
             this.dgviewConsumos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgviewConsumos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdReservaConsumo,
-            this.QuartoConsumo,
-            this.ProdutoConsumo,
-            this.QuantidadeConsumo,
-            this.TotalConsumo});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(80)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgviewConsumos.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(80)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgviewConsumos.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgviewConsumos.Location = new System.Drawing.Point(22, 101);
             this.dgviewConsumos.MultiSelect = false;
             this.dgviewConsumos.Name = "dgviewConsumos";
             this.dgviewConsumos.ReadOnly = true;
             this.dgviewConsumos.RowHeadersVisible = false;
             this.dgviewConsumos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dgviewConsumos.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dgviewConsumos.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgviewConsumos.RowTemplate.Height = 50;
             this.dgviewConsumos.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgviewConsumos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgviewConsumos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgviewConsumos.Size = new System.Drawing.Size(965, 485);
             this.dgviewConsumos.TabIndex = 55;
-            // 
-            // IdReservaConsumo
-            // 
-            this.IdReservaConsumo.HeaderText = "Reserva";
-            this.IdReservaConsumo.Name = "IdReservaConsumo";
-            this.IdReservaConsumo.ReadOnly = true;
-            // 
-            // QuartoConsumo
-            // 
-            this.QuartoConsumo.HeaderText = "Quarto";
-            this.QuartoConsumo.Name = "QuartoConsumo";
-            this.QuartoConsumo.ReadOnly = true;
-            // 
-            // ProdutoConsumo
-            // 
-            this.ProdutoConsumo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ProdutoConsumo.HeaderText = "Produto";
-            this.ProdutoConsumo.Name = "ProdutoConsumo";
-            this.ProdutoConsumo.ReadOnly = true;
-            // 
-            // QuantidadeConsumo
-            // 
-            this.QuantidadeConsumo.HeaderText = "Qtde";
-            this.QuantidadeConsumo.Name = "QuantidadeConsumo";
-            this.QuantidadeConsumo.ReadOnly = true;
-            // 
-            // TotalConsumo
-            // 
-            this.TotalConsumo.HeaderText = "Total";
-            this.TotalConsumo.Name = "TotalConsumo";
-            this.TotalConsumo.ReadOnly = true;
+            this.dgviewConsumos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgviewConsumos_CellDoubleClick);
             // 
             // gboxNovoConsumo
             // 
             this.gboxNovoConsumo.Controls.Add(this.txtValor);
             this.gboxNovoConsumo.Controls.Add(this.comboProdutos);
             this.gboxNovoConsumo.Controls.Add(this.comboRes);
-            this.gboxNovoConsumo.Controls.Add(this.button1);
+            this.gboxNovoConsumo.Controls.Add(this.btnDeletar);
             this.gboxNovoConsumo.Controls.Add(this.btnAdicionar);
             this.gboxNovoConsumo.Controls.Add(this.lblTotal);
             this.gboxNovoConsumo.Controls.Add(this.label3);
@@ -156,6 +116,15 @@ namespace PimIV_Desktop.Telas
             this.gboxNovoConsumo.TabIndex = 56;
             this.gboxNovoConsumo.TabStop = false;
             this.gboxNovoConsumo.Text = "Dados do consumo";
+            this.gboxNovoConsumo.Enter += new System.EventHandler(this.gboxNovoConsumo_Enter);
+            // 
+            // txtValor
+            // 
+            this.txtValor.Location = new System.Drawing.Point(668, 49);
+            this.txtValor.Name = "txtValor";
+            this.txtValor.ReadOnly = true;
+            this.txtValor.Size = new System.Drawing.Size(99, 26);
+            this.txtValor.TabIndex = 3;
             // 
             // comboProdutos
             // 
@@ -165,36 +134,18 @@ namespace PimIV_Desktop.Telas
             this.comboProdutos.Location = new System.Drawing.Point(178, 47);
             this.comboProdutos.Name = "comboProdutos";
             this.comboProdutos.Size = new System.Drawing.Size(299, 28);
-            this.comboProdutos.TabIndex = 61;
+            this.comboProdutos.TabIndex = 1;
+            this.comboProdutos.SelectionChangeCommitted += new System.EventHandler(this.comboProdutos_SelectionChangeCommitted);
             // 
             // comboRes
             // 
             this.comboRes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboRes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboRes.FormattingEnabled = true;
-            this.comboRes.Items.AddRange(new object[] {
-            "10",
-            "241",
-            "44"});
             this.comboRes.Location = new System.Drawing.Point(16, 47);
             this.comboRes.Name = "comboRes";
             this.comboRes.Size = new System.Drawing.Size(132, 28);
-            this.comboRes.TabIndex = 61;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.DarkRed;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(833, 49);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 39);
-            this.button1.TabIndex = 60;
-            this.button1.Text = "Deletar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Visible = false;
+            this.comboRes.TabIndex = 0;
             // 
             // btnAdicionar
             // 
@@ -206,7 +157,7 @@ namespace PimIV_Desktop.Telas
             this.btnAdicionar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(129, 39);
-            this.btnAdicionar.TabIndex = 60;
+            this.btnAdicionar.TabIndex = 4;
             this.btnAdicionar.Text = "Salvar";
             this.btnAdicionar.UseVisualStyleBackColor = false;
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
@@ -259,6 +210,7 @@ namespace PimIV_Desktop.Telas
             // 
             // nudQtde
             // 
+            this.nudQtde.Enabled = false;
             this.nudQtde.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudQtde.Location = new System.Drawing.Point(519, 47);
             this.nudQtde.Margin = new System.Windows.Forms.Padding(2);
@@ -269,14 +221,24 @@ namespace PimIV_Desktop.Telas
             0});
             this.nudQtde.Name = "nudQtde";
             this.nudQtde.Size = new System.Drawing.Size(53, 28);
-            this.nudQtde.TabIndex = 57;
+            this.nudQtde.TabIndex = 2;
+            this.nudQtde.ValueChanged += new System.EventHandler(this.nudQtde_ValueChanged);
             // 
-            // txtValor
+            // btnDeletar
             // 
-            this.txtValor.Location = new System.Drawing.Point(668, 49);
-            this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(99, 26);
-            this.txtValor.TabIndex = 64;
+            this.btnDeletar.BackColor = System.Drawing.Color.DarkRed;
+            this.btnDeletar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeletar.Enabled = false;
+            this.btnDeletar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeletar.ForeColor = System.Drawing.Color.White;
+            this.btnDeletar.Location = new System.Drawing.Point(833, 49);
+            this.btnDeletar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDeletar.Name = "btnDeletar";
+            this.btnDeletar.Size = new System.Drawing.Size(129, 39);
+            this.btnDeletar.TabIndex = 5;
+            this.btnDeletar.Text = "Deletar";
+            this.btnDeletar.UseVisualStyleBackColor = false;
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
             // GerirConsumos
             // 
@@ -287,7 +249,7 @@ namespace PimIV_Desktop.Telas
             this.Controls.Add(this.dgviewConsumos);
             this.Name = "GerirConsumos";
             this.Size = new System.Drawing.Size(1000, 600);
-            this.Load += new System.EventHandler(this.GerirConsumos_Load);
+            this.Leave += new System.EventHandler(this.GerirConsumos_Leave);
             ((System.ComponentModel.ISupportInitialize)(this.dgviewConsumos)).EndInit();
             this.gboxNovoConsumo.ResumeLayout(false);
             this.gboxNovoConsumo.PerformLayout();
@@ -299,11 +261,6 @@ namespace PimIV_Desktop.Telas
         #endregion
 
         private System.Windows.Forms.DataGridView dgviewConsumos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdReservaConsumo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QuartoConsumo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProdutoConsumo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QuantidadeConsumo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalConsumo;
         private System.Windows.Forms.GroupBox gboxNovoConsumo;
         private System.Windows.Forms.NumericUpDown nudQtde;
         private System.Windows.Forms.Label lblTotal;
@@ -313,8 +270,8 @@ namespace PimIV_Desktop.Telas
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.ComboBox comboProdutos;
         private System.Windows.Forms.ComboBox comboRes;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtValor;
+        private System.Windows.Forms.Button btnDeletar;
     }
 }

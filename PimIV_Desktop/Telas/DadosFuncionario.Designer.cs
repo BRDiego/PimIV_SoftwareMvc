@@ -54,8 +54,8 @@ namespace PimIV_Desktop.Telas
             this.btnVoltar = new System.Windows.Forms.Button();
             this.lblAttLogin = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSenha = new System.Windows.Forms.TextBox();
+            this.txtNomeUsuario = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -81,7 +81,7 @@ namespace PimIV_Desktop.Telas
             this.btnLimpar.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(96, 45);
-            this.btnLimpar.TabIndex = 36;
+            this.btnLimpar.TabIndex = 13;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
@@ -96,7 +96,7 @@ namespace PimIV_Desktop.Telas
             this.btnCadastrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(119, 45);
-            this.btnCadastrar.TabIndex = 37;
+            this.btnCadastrar.TabIndex = 12;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
@@ -133,7 +133,7 @@ namespace PimIV_Desktop.Telas
             this.txtCPF.Mask = "000,000,000-00";
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(144, 28);
-            this.txtCPF.TabIndex = 29;
+            this.txtCPF.TabIndex = 5;
             this.txtCPF.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // txtTelefone
@@ -144,7 +144,7 @@ namespace PimIV_Desktop.Telas
             this.txtTelefone.Mask = "(99) 00000-0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(137, 28);
-            this.txtTelefone.TabIndex = 26;
+            this.txtTelefone.TabIndex = 4;
             this.txtTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // dtpNasc
@@ -158,7 +158,7 @@ namespace PimIV_Desktop.Telas
             this.dtpNasc.MinDate = new System.DateTime(1910, 1, 1, 0, 0, 0, 0);
             this.dtpNasc.Name = "dtpNasc";
             this.dtpNasc.Size = new System.Drawing.Size(114, 26);
-            this.dtpNasc.TabIndex = 27;
+            this.dtpNasc.TabIndex = 7;
             // 
             // txtEmail
             // 
@@ -167,7 +167,7 @@ namespace PimIV_Desktop.Telas
             this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(475, 28);
-            this.txtEmail.TabIndex = 28;
+            this.txtEmail.TabIndex = 3;
             // 
             // txtNome
             // 
@@ -176,7 +176,7 @@ namespace PimIV_Desktop.Telas
             this.txtNome.Margin = new System.Windows.Forms.Padding(2);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(537, 28);
-            this.txtNome.TabIndex = 25;
+            this.txtNome.TabIndex = 1;
             // 
             // label5
             // 
@@ -245,7 +245,7 @@ namespace PimIV_Desktop.Telas
             this.dudSexo.Margin = new System.Windows.Forms.Padding(2);
             this.dudSexo.Name = "dudSexo";
             this.dudSexo.Size = new System.Drawing.Size(90, 28);
-            this.dudSexo.TabIndex = 44;
+            this.dudSexo.TabIndex = 2;
             // 
             // label6
             // 
@@ -266,7 +266,7 @@ namespace PimIV_Desktop.Telas
             this.txtPassaporte.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassaporte.Name = "txtPassaporte";
             this.txtPassaporte.Size = new System.Drawing.Size(183, 28);
-            this.txtPassaporte.TabIndex = 47;
+            this.txtPassaporte.TabIndex = 6;
             // 
             // label8
             // 
@@ -288,16 +288,16 @@ namespace PimIV_Desktop.Telas
             this.label10.Location = new System.Drawing.Point(25, 259);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(72, 24);
+            this.label10.Size = new System.Drawing.Size(196, 24);
             this.label10.TabIndex = 45;
-            this.label10.Text = "Status:";
+            this.label10.Text = "Status (funcionário):";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(266, 259);
+            this.label11.Location = new System.Drawing.Point(405, 258);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(327, 24);
@@ -309,7 +309,7 @@ namespace PimIV_Desktop.Telas
             this.lblAttFunc.AutoSize = true;
             this.lblAttFunc.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAttFunc.ForeColor = System.Drawing.Color.White;
-            this.lblAttFunc.Location = new System.Drawing.Point(602, 259);
+            this.lblAttFunc.Location = new System.Drawing.Point(741, 258);
             this.lblAttFunc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAttFunc.Name = "lblAttFunc";
             this.lblAttFunc.Size = new System.Drawing.Size(68, 24);
@@ -323,7 +323,7 @@ namespace PimIV_Desktop.Telas
             this.txtCargo.Margin = new System.Windows.Forms.Padding(2);
             this.txtCargo.Name = "txtCargo";
             this.txtCargo.Size = new System.Drawing.Size(385, 28);
-            this.txtCargo.TabIndex = 33;
+            this.txtCargo.TabIndex = 9;
             // 
             // btnVoltar
             // 
@@ -364,24 +364,24 @@ namespace PimIV_Desktop.Telas
             this.label12.TabIndex = 54;
             this.label12.Text = "Login atualizado em:";
             // 
-            // textBox2
+            // txtSenha
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(203, 59);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(258, 28);
-            this.textBox2.TabIndex = 51;
+            this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenha.Location = new System.Drawing.Point(203, 59);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
+            this.txtSenha.Size = new System.Drawing.Size(258, 28);
+            this.txtSenha.TabIndex = 1;
             // 
-            // textBox1
+            // txtNomeUsuario
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(203, 23);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(258, 28);
-            this.textBox1.TabIndex = 52;
+            this.txtNomeUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeUsuario.Location = new System.Drawing.Point(203, 23);
+            this.txtNomeUsuario.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNomeUsuario.Name = "txtNomeUsuario";
+            this.txtNomeUsuario.Size = new System.Drawing.Size(258, 28);
+            this.txtNomeUsuario.TabIndex = 0;
             // 
             // label13
             // 
@@ -412,7 +412,7 @@ namespace PimIV_Desktop.Telas
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(266, 150);
+            this.label15.Location = new System.Drawing.Point(405, 150);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(308, 24);
@@ -424,7 +424,7 @@ namespace PimIV_Desktop.Telas
             this.lblAttHosp.AutoSize = true;
             this.lblAttHosp.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAttHosp.ForeColor = System.Drawing.Color.White;
-            this.lblAttHosp.Location = new System.Drawing.Point(578, 150);
+            this.lblAttHosp.Location = new System.Drawing.Point(717, 150);
             this.lblAttHosp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAttHosp.Name = "lblAttHosp";
             this.lblAttHosp.Size = new System.Drawing.Size(68, 24);
@@ -439,9 +439,9 @@ namespace PimIV_Desktop.Telas
             this.label17.Location = new System.Drawing.Point(25, 150);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(72, 24);
+            this.label17.Size = new System.Drawing.Size(174, 24);
             this.label17.TabIndex = 45;
-            this.label17.Text = "Status:";
+            this.label17.Text = "Status (hóspede):";
             // 
             // comboStatusHos
             // 
@@ -451,10 +451,10 @@ namespace PimIV_Desktop.Telas
             this.comboStatusHos.Items.AddRange(new object[] {
             "ATIVO",
             "INATIVO"});
-            this.comboStatusHos.Location = new System.Drawing.Point(99, 150);
+            this.comboStatusHos.Location = new System.Drawing.Point(207, 150);
             this.comboStatusHos.Name = "comboStatusHos";
             this.comboStatusHos.Size = new System.Drawing.Size(144, 28);
-            this.comboStatusHos.TabIndex = 56;
+            this.comboStatusHos.TabIndex = 8;
             // 
             // comboStatusFun
             // 
@@ -464,10 +464,10 @@ namespace PimIV_Desktop.Telas
             this.comboStatusFun.Items.AddRange(new object[] {
             "ATIVO",
             "INATIVO"});
-            this.comboStatusFun.Location = new System.Drawing.Point(99, 258);
+            this.comboStatusFun.Location = new System.Drawing.Point(226, 258);
             this.comboStatusFun.Name = "comboStatusFun";
             this.comboStatusFun.Size = new System.Drawing.Size(144, 28);
-            this.comboStatusFun.TabIndex = 57;
+            this.comboStatusFun.TabIndex = 11;
             // 
             // btnSalvarLogin
             // 
@@ -479,7 +479,7 @@ namespace PimIV_Desktop.Telas
             this.btnSalvarLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalvarLogin.Name = "btnSalvarLogin";
             this.btnSalvarLogin.Size = new System.Drawing.Size(119, 45);
-            this.btnSalvarLogin.TabIndex = 37;
+            this.btnSalvarLogin.TabIndex = 2;
             this.btnSalvarLogin.Text = "Salvar";
             this.btnSalvarLogin.UseVisualStyleBackColor = false;
             this.btnSalvarLogin.Click += new System.EventHandler(this.btnSalvarLogin_Click);
@@ -529,19 +529,18 @@ namespace PimIV_Desktop.Telas
             this.txtSalario.Mask = "00000.00";
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.Size = new System.Drawing.Size(91, 29);
-            this.txtSalario.TabIndex = 58;
-            this.txtSalario.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtSalario.TabIndex = 10;
             this.txtSalario.ValidatingType = typeof(int);
             // 
             // groupDadosLogin
             // 
             this.groupDadosLogin.Controls.Add(this.label14);
-            this.groupDadosLogin.Controls.Add(this.textBox2);
+            this.groupDadosLogin.Controls.Add(this.txtSenha);
             this.groupDadosLogin.Controls.Add(this.btnSalvarLogin);
             this.groupDadosLogin.Controls.Add(this.label13);
             this.groupDadosLogin.Controls.Add(this.label12);
             this.groupDadosLogin.Controls.Add(this.lblAttLogin);
-            this.groupDadosLogin.Controls.Add(this.textBox1);
+            this.groupDadosLogin.Controls.Add(this.txtNomeUsuario);
             this.groupDadosLogin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupDadosLogin.Location = new System.Drawing.Point(147, 432);
             this.groupDadosLogin.Name = "groupDadosLogin";
@@ -597,8 +596,8 @@ namespace PimIV_Desktop.Telas
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Label lblAttLogin;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSenha;
+        private System.Windows.Forms.TextBox txtNomeUsuario;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;

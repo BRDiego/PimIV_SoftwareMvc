@@ -86,7 +86,7 @@ namespace PimIV_Desktop.Telas
             this.dgviewHospedes.RowTemplate.Height = 50;
             this.dgviewHospedes.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgviewHospedes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgviewHospedes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgviewHospedes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgviewHospedes.Size = new System.Drawing.Size(959, 496);
             this.dgviewHospedes.TabIndex = 3;
             this.dgviewHospedes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgviewHospedes_CellDoubleClick);
@@ -222,6 +222,7 @@ namespace PimIV_Desktop.Telas
             this.Controls.Add(this.dadosHospede1);
             this.Name = "ListaHospedes";
             this.Size = new System.Drawing.Size(1000, 600);
+            this.Enter += new System.EventHandler(this.ListaHospedes_Enter);
             this.Leave += new System.EventHandler(this.ListaHospedes_Leave);
             ((System.ComponentModel.ISupportInitialize)(this.dgviewHospedes)).EndInit();
             this.gboxBuscaHospede.ResumeLayout(false);

@@ -60,7 +60,7 @@ namespace PimIV_Desktop.Telas
             this.label13 = new System.Windows.Forms.Label();
             this.lblDespesas = new System.Windows.Forms.Label();
             this.GBoxDespesas = new System.Windows.Forms.GroupBox();
-            this.txtSalario = new System.Windows.Forms.MaskedTextBox();
+            this.txtDespesas = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudCriancas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAdultos)).BeginInit();
             this.GBoxDespesas.SuspendLayout();
@@ -73,8 +73,8 @@ namespace PimIV_Desktop.Telas
             this.dudQuartos.Margin = new System.Windows.Forms.Padding(2);
             this.dudQuartos.Name = "dudQuartos";
             this.dudQuartos.Size = new System.Drawing.Size(266, 28);
-            this.dudQuartos.TabIndex = 45;
-            this.dudQuartos.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dudQuartos_KeyUp);
+            this.dudQuartos.TabIndex = 9;
+            this.dudQuartos.SelectedItemChanged += new System.EventHandler(this.dudQuartos_SelectedItemChanged);
             // 
             // label11
             // 
@@ -100,8 +100,7 @@ namespace PimIV_Desktop.Telas
             0});
             this.nudCriancas.Name = "nudCriancas";
             this.nudCriancas.Size = new System.Drawing.Size(53, 28);
-            this.nudCriancas.TabIndex = 44;
-            this.nudCriancas.KeyUp += new System.Windows.Forms.KeyEventHandler(this.nudCriancas_KeyUp);
+            this.nudCriancas.TabIndex = 8;
             // 
             // nudAdultos
             // 
@@ -120,13 +119,12 @@ namespace PimIV_Desktop.Telas
             0});
             this.nudAdultos.Name = "nudAdultos";
             this.nudAdultos.Size = new System.Drawing.Size(53, 28);
-            this.nudAdultos.TabIndex = 43;
+            this.nudAdultos.TabIndex = 7;
             this.nudAdultos.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.nudAdultos.KeyUp += new System.Windows.Forms.KeyEventHandler(this.nudAdultos_KeyUp);
             // 
             // label7
             // 
@@ -162,7 +160,7 @@ namespace PimIV_Desktop.Telas
             this.btnLimpar.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(96, 45);
-            this.btnLimpar.TabIndex = 49;
+            this.btnLimpar.TabIndex = 12;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
@@ -177,7 +175,7 @@ namespace PimIV_Desktop.Telas
             this.btnReservar.Margin = new System.Windows.Forms.Padding(2);
             this.btnReservar.Name = "btnReservar";
             this.btnReservar.Size = new System.Drawing.Size(119, 45);
-            this.btnReservar.TabIndex = 51;
+            this.btnReservar.TabIndex = 11;
             this.btnReservar.Text = "Reservar";
             this.btnReservar.UseVisualStyleBackColor = false;
             this.btnReservar.Click += new System.EventHandler(this.btnReservar_Click);
@@ -186,13 +184,14 @@ namespace PimIV_Desktop.Telas
             // 
             this.btnGerarData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnGerarData.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGerarData.Enabled = false;
             this.btnGerarData.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGerarData.ForeColor = System.Drawing.Color.White;
             this.btnGerarData.Location = new System.Drawing.Point(375, 372);
             this.btnGerarData.Margin = new System.Windows.Forms.Padding(2);
             this.btnGerarData.Name = "btnGerarData";
             this.btnGerarData.Size = new System.Drawing.Size(129, 32);
-            this.btnGerarData.TabIndex = 46;
+            this.btnGerarData.TabIndex = 10;
             this.btnGerarData.Text = "Gerar Data";
             this.btnGerarData.UseVisualStyleBackColor = false;
             this.btnGerarData.Click += new System.EventHandler(this.btnGerarData_Click);
@@ -255,6 +254,7 @@ namespace PimIV_Desktop.Telas
             // 
             // mcaEstadia
             // 
+            this.mcaEstadia.Enabled = false;
             this.mcaEstadia.Location = new System.Drawing.Point(132, 372);
             this.mcaEstadia.Margin = new System.Windows.Forms.Padding(7);
             this.mcaEstadia.MaxDate = new System.DateTime(2022, 12, 31, 0, 0, 0, 0);
@@ -269,8 +269,7 @@ namespace PimIV_Desktop.Telas
             this.txtPassaporte.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassaporte.Name = "txtPassaporte";
             this.txtPassaporte.Size = new System.Drawing.Size(130, 28);
-            this.txtPassaporte.TabIndex = 42;
-            this.txtPassaporte.Text = "X";
+            this.txtPassaporte.TabIndex = 6;
             this.txtPassaporte.TextChanged += new System.EventHandler(this.txtPassaporte_TextChanged);
             // 
             // label3
@@ -293,7 +292,7 @@ namespace PimIV_Desktop.Telas
             this.txtCPF.Mask = "000,000,000-00";
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(143, 28);
-            this.txtCPF.TabIndex = 41;
+            this.txtCPF.TabIndex = 5;
             this.txtCPF.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.txtCPF.TextChanged += new System.EventHandler(this.txtCPF_TextChanged);
             // 
@@ -316,7 +315,7 @@ namespace PimIV_Desktop.Telas
             this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(368, 28);
-            this.txtEmail.TabIndex = 40;
+            this.txtEmail.TabIndex = 4;
             // 
             // label4
             // 
@@ -338,7 +337,7 @@ namespace PimIV_Desktop.Telas
             this.txtTelefone.Mask = "(99) 00000-0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(143, 28);
-            this.txtTelefone.TabIndex = 39;
+            this.txtTelefone.TabIndex = 3;
             this.txtTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // label5
@@ -360,7 +359,7 @@ namespace PimIV_Desktop.Telas
             this.txtHospede.Margin = new System.Windows.Forms.Padding(2);
             this.txtHospede.Name = "txtHospede";
             this.txtHospede.Size = new System.Drawing.Size(584, 28);
-            this.txtHospede.TabIndex = 38;
+            this.txtHospede.TabIndex = 0;
             // 
             // label1
             // 
@@ -381,7 +380,7 @@ namespace PimIV_Desktop.Telas
             this.MtxtNasc.Mask = "00/00/0000";
             this.MtxtNasc.Name = "MtxtNasc";
             this.MtxtNasc.Size = new System.Drawing.Size(100, 28);
-            this.MtxtNasc.TabIndex = 64;
+            this.MtxtNasc.TabIndex = 2;
             this.MtxtNasc.ValidatingType = typeof(System.DateTime);
             // 
             // CboxSexo
@@ -394,8 +393,7 @@ namespace PimIV_Desktop.Telas
             this.CboxSexo.Location = new System.Drawing.Point(132, 83);
             this.CboxSexo.Name = "CboxSexo";
             this.CboxSexo.Size = new System.Drawing.Size(121, 30);
-            this.CboxSexo.TabIndex = 65;
-            this.CboxSexo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CboxSexo_KeyUp);
+            this.CboxSexo.TabIndex = 1;
             // 
             // label12
             // 
@@ -435,7 +433,7 @@ namespace PimIV_Desktop.Telas
             // 
             // GBoxDespesas
             // 
-            this.GBoxDespesas.Controls.Add(this.txtSalario);
+            this.GBoxDespesas.Controls.Add(this.txtDespesas);
             this.GBoxDespesas.Controls.Add(this.lblDespesas);
             this.GBoxDespesas.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GBoxDespesas.ForeColor = System.Drawing.SystemColors.Control;
@@ -446,17 +444,17 @@ namespace PimIV_Desktop.Telas
             this.GBoxDespesas.TabStop = false;
             this.GBoxDespesas.Text = "Valor hospedagem:";
             // 
-            // txtSalario
+            // txtDespesas
             // 
-            this.txtSalario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSalario.Location = new System.Drawing.Point(61, 96);
-            this.txtSalario.Mask = "00000.00";
-            this.txtSalario.Name = "txtSalario";
-            this.txtSalario.ReadOnly = true;
-            this.txtSalario.Size = new System.Drawing.Size(91, 29);
-            this.txtSalario.TabIndex = 63;
-            this.txtSalario.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.txtSalario.ValidatingType = typeof(int);
+            this.txtDespesas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDespesas.Location = new System.Drawing.Point(61, 98);
+            this.txtDespesas.Mask = "00000.00";
+            this.txtDespesas.Name = "txtDespesas";
+            this.txtDespesas.ReadOnly = true;
+            this.txtDespesas.Size = new System.Drawing.Size(91, 29);
+            this.txtDespesas.TabIndex = 63;
+            this.txtDespesas.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtDespesas.ValidatingType = typeof(int);
             // 
             // NovaReserva
             // 
@@ -539,6 +537,6 @@ namespace PimIV_Desktop.Telas
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label lblDespesas;
         private System.Windows.Forms.GroupBox GBoxDespesas;
-        private System.Windows.Forms.MaskedTextBox txtSalario;
+        private System.Windows.Forms.MaskedTextBox txtDespesas;
     }
 }

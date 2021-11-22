@@ -28,17 +28,14 @@ namespace PimIV_Desktop.Telas
             verReserva1.PopularDadosReserva(int.Parse(dgviewReservas[0,e.RowIndex].Value.ToString()));
         }
 
-        private void MapaReservas_VisibleChanged(object sender, EventArgs e)
-        {
-        }
 
         private void checkStatus_CheckedChanged(object sender, EventArgs e)
         {
             if (checkStatus.Checked)
             {
-                checkChin.Checked = false;
-                checkChout.Checked = false;
                 comboStatus.Enabled = true;
+                checkPeriodo.Checked = false;
+                dtpPeriodo.Enabled = false;
             }
             else
             {
@@ -47,49 +44,34 @@ namespace PimIV_Desktop.Telas
             }
         }
 
-        private void checkChin_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkChin.Checked)
-            {
-                checkStatus.Checked = false;
-                btnBuscar.Enabled = true;
-                dtpChin.Enabled = true;
-            }
-            else
-            {
-                dtpChin.Enabled = false;
-            }
-        }
-
-        private void checkChout_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkChout.Checked)
-            {
-                checkStatus.Checked = false;
-                btnBuscar.Enabled = true;
-                dtpChout.Enabled = true;
-            }
-            else
-            {
-                dtpChout.Enabled = false;
-            }
-        }
-
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (comboStatus.Enabled)
-            {
-                if(comboStatus.Text != "")
-                {
-                    dgviewReservas.DataSource = resDAO.ListarStatus(
-                        comboStatus.Text);
-                }
-            }
+            DateTime periodo = dtpPeriodo.Value;
+            dgviewReservas.DataSource = resDAO.ListarData(periodo);
         }
 
 
-        private void MapaReservas_Layout(object sender, LayoutEventArgs e)
+
+        private void checkPeriodo_CheckedChanged(object sender, EventArgs e)
         {
+            if (checkPeriodo.Checked)
+            {
+                checkStatus.Checked = false;
+                comboStatus.Enabled = false;
+                dtpPeriodo.Enabled = true;
+                btnBuscar.Enabled = true;
+            }
+            else
+            {
+                comboStatus.Enabled = true;
+                btnBuscar.Enabled = false;
+            }
+        }
+
+        private void comboStatus_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            dgviewReservas.DataSource = 
+            dgviewReservas.DataSource = resDAO.ListarStatus(comboStatus.Text);
         }
     }
 }

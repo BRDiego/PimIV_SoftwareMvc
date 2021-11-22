@@ -17,16 +17,14 @@ namespace Model
         private string _Status;
         private Hospede _Hospede;
         private Quarto _Quarto;
-        public List<Pagamento> Pagamentos = new List<Pagamento>();
-        public List<Consumo> Consumos = new List<Consumo>();
 
         public int Id { get => _Id; set => _Id = value; }
         public DateTime CheckIn { get => _CheckIn; set => _CheckIn = value; }
         public DateTime CheckOut { get => _CheckOut; set => _CheckOut = value; }
         public int Adultos { get => _Adultos; set => _Adultos = value; }
         public int Criancas { get => _Criancas; set => _Criancas = value; }
-        public double Despesas { get => _Despesas; private set => _Despesas = value; }
-        public string Status { get => _Status; private set => _Status = value; }
+        public double Despesas { get => _Despesas; set => _Despesas = value; }
+        public string Status { get => _Status; set => _Status = value; }
         public Hospede Hospede { get => _Hospede; set => _Hospede = value; }
         public Quarto Quarto { get => _Quarto; set => _Quarto = value; }
 
@@ -47,21 +45,14 @@ namespace Model
 
         public void Iniciar()
         {
-
+            CheckIn = DateTime.Now;
+            Status = "INICIADA";
         }
 
-        public string Finalizar()
+        public void Finalizar()
         {
-            if (Despesas == Consumos.Sum(consumo => consumo.Total))
-            {
-                CheckOut = DateTime.Now;
-                Status = "FINALIZADA";
-                return "Reserva finalizada";
-            }
-            else
-            {
-                return "Pagamento incompleto";
-            }
+            CheckOut = DateTime.Now;
+            Status = "FINALIZADA";
         }
 
         public double CalcularDespesas(double aduDiaria, double criDiaria)
@@ -84,12 +75,12 @@ namespace Model
             if(CheckIn.Date < DateTime.Now.Date)
             {
                 valida = false;
-                msg = "Data de CheckIn não pode ser anterior ao dia de hoje";
+                msg = " Data de CheckIn não pode ser anterior ao dia de hoje";
             }
             if (CheckOut <= CheckIn)
             {
                 valida = false;
-                msg = "Data de saída (CheckOut) não pode ser igual ou anterior " +
+                msg = " Data de saída (CheckOut) não pode ser igual ou anterior " +
                     "a data de entrada (CheckIn)";
             }
             return valida;

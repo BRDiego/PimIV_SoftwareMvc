@@ -79,7 +79,7 @@ namespace PimIV_Desktop.Telas
                 Hospede hosp = new Hospede();
                 hosp.Nome = txtNome.Text;
                 hosp.DataNascimento = dtPickerNasc.Value;
-                hosp.Sexo = dudSexo.SelectedItem.ToString()[0];
+                hosp.Sexo = dudSexo.Text[0];
                 hosp.Email = txtEmail.Text;
                 hosp.Telefone = txtTelefone.Text;
                 hosp.setarCPF(txtCPF.Text);
@@ -98,24 +98,29 @@ namespace PimIV_Desktop.Telas
 
         private void btnSalvarLogin_Click(object sender, EventArgs e)
         {
-            if(txtCPF.Text.Length == 11 || txtPassaporte.Text.Length > 5)
+            ValidacoesForms.ValidarFormulario(groupDadosLogin.Controls,
+                out string mensagem);
+            if (mensagem == "")
             {
-                Hospede hospede = new Hospede();
-                hospede.setarCPF(txtCPF.Text);
-                hospede = _hospedeDAO.Carregar(hospede.CPF);
-                Conta conta = new Conta();
-                conta.NomeUsuario = txtNomeUsuario.Text;
-                conta.Senha = txtSenha.Text;
-                conta.HospAssociado = hospede;
-                string mensagem;
-                ContaDAO cDAO = new ContaDAO();
-                mensagem = cDAO.Inserir_Att(conta);
-                ValidacoesForms.ExibirMensagem(mensagem);
-                LimparDadosHospede();
-            }
-            else
-            {
-                ValidacoesForms.ExibirMensagem("CPF não inserido");
+
+                if (txtCPF.Text.Length == 11 || txtPassaporte.Text.Length > 5)
+                {
+                    Hospede hospede = new Hospede();
+                    hospede.setarCPF(txtCPF.Text);
+                    hospede = _hospedeDAO.Carregar(hospede.CPF);
+                    Conta conta = new Conta();
+                    conta.NomeUsuario = txtNomeUsuario.Text;
+                    conta.Senha = txtSenha.Text;
+                    conta.HospAssociado = hospede;
+                    ContaDAO cDAO = new ContaDAO();
+                    mensagem = cDAO.Inserir_Att(conta);
+                    ValidacoesForms.ExibirMensagem(mensagem);
+                    LimparDadosHospede();
+                }
+                else
+                {
+                    ValidacoesForms.ExibirMensagem("CPF ou passaporte não inserido");
+                }
             }
         }
 

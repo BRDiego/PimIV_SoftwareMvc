@@ -192,7 +192,7 @@ namespace PimIV_Desktop.Telas
             this.dgviewFuncionarios.RowTemplate.Height = 50;
             this.dgviewFuncionarios.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgviewFuncionarios.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgviewFuncionarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgviewFuncionarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgviewFuncionarios.Size = new System.Drawing.Size(958, 505);
             this.dgviewFuncionarios.TabIndex = 3;
             // 

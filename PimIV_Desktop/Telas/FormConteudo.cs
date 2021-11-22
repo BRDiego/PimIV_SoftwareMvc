@@ -122,8 +122,8 @@ namespace PimIV_Desktop.Telas
         {
             MarcarBotao(sender);
             mapaReservas1.BringToFront();
-            //mapaReservas1.Controls["verReserva1"].Visible = false;
-            //mapaReservas1.Controls["dgviewReservas"].BringToFront();
+            mapaReservas1.Controls["verReserva1"].Visible = false;
+            mapaReservas1.Controls["dgviewReservas"].BringToFront();
         }
 
         private void btnMapaQuartos_Click(object sender, EventArgs e)

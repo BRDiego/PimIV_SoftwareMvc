@@ -15,15 +15,29 @@ namespace PimIV_Desktop.Telas
             Control.ControlCollection colecao, out string mensagem)
         {
             mensagem =  "";
+            bool identificador = false;
             foreach (object item in colecao)
             {
                 if (item is TextBox || item is MaskedTextBox)
                 {
                     TextBoxBase aux = item as TextBoxBase;
-                    if (aux.Text == "" || aux.Text.Length < 2)
+                    if (aux.Text == "" || aux.Text.Length < 2 &&
+                        !aux.Name.Contains("alor"))
                     {
-                        mensagem =  "Há dados incorretos. Verifique-os";
+                        if (!aux.Name.Contains("CPF") && !aux.Name.Contains("Passaporte"))
+                        {
+                            mensagem =  "Há dados inválidos. Verifique-os";
+                            break;
+                        }
+                    }
+                    if(aux.Name.Contains("alor") && aux.Text.Contains("."))
+                    {
+                        mensagem = "Utilize ',' no valor monetário, e não '.'(ponto)";
                         break;
+                    }
+                    if(aux.Name.Contains("PF") || aux.Name.Contains("Passaporte"))
+                    {
+                        identificador = true;
                     }
                 }
 
@@ -68,6 +82,10 @@ namespace PimIV_Desktop.Telas
                         break;
                     }
                 }
+            }
+            if(identificador == false)
+            {
+                mensagem = "Informe CPF ou Passaporte ou verifique dados ausentes";
             }
         }
     }

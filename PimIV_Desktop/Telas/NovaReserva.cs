@@ -9,13 +9,18 @@ namespace PimIV_Desktop.Telas
 {
     public partial class NovaReserva : UserControl
     {
+        private ReservaDAO resDAO = new ReservaDAO();
+        private TipoCustoDAO tDAO = new TipoCustoDAO();
+        private QuartoDAO qDAO = new QuartoDAO();
+        private HospedeDAO hDAO = new HospedeDAO();
+        private Reserva atual = new Reserva();
+        private Hospede hospede = new Hospede();
         public static int qtde = 0;
         public NovaReserva()
         {
             InitializeComponent();
             qtde += 1;
             mcaEstadia.MinDate = DateTime.Now.Date;
-
         }
 
         private void LimparNovaReserva()
@@ -33,6 +38,8 @@ namespace PimIV_Desktop.Telas
             nudCriancas.Value = 0;
             dudQuartos.ResetText();
             lblDespesas.ResetText();
+            btnGerarData.Enabled = false;
+            mcaEstadia.Enabled = false;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -54,6 +61,7 @@ namespace PimIV_Desktop.Telas
             else
             {
                 txtCheckOut.Text = mcaEstadia.SelectionEnd.ToShortDateString();
+                PrepararReserva();
             }
         }
 
@@ -62,50 +70,45 @@ namespace PimIV_Desktop.Telas
             LimparNovaReserva();
         }
 
-        private void nudCriancas_KeyUp(object sender, KeyEventArgs e)
-        {
-
-            nudCriancas.Text = "";
-        }
-
-        private void nudAdultos_KeyUp(object sender, KeyEventArgs e)
-        {
-
-            nudAdultos.Text = "";
-        }
-
-        private void dudQuartos_KeyUp(object sender, KeyEventArgs e)
-        {
-
-            //dudQuartos.Text = "";
-        }
-
-        private void CboxSexo_KeyUp(object sender, KeyEventArgs e)
-        {
-            //CboxSexo.Text = "";
-        }
-
         private void btnReservar_Click(object sender, EventArgs e)
         {
-            ValidacoesForms.ValidarFormulario(btnReservar.Parent.Controls,
+            ValidacoesForms.ValidarFormulario(this.Controls,
                 out string mensagem);
-            if (mensagem == "")
+            if (mensagem == "" && atual.Despesas != 0)
             {
-                MessageBox.Show("LEGAL");
+                string tipo = dudQuartos.Text;
+                DateTime entrada = DateTime.Parse(txtCheckIn.Text);
+                if(resDAO.TipoDisponivel(entrada,tipo, out int quarto))
+                {
+                    hospede.Nome = txtHospede.Text;
+                    hospede.Sexo = CboxSexo.Text[0];
+                    hospede.DataNascimento = DateTime.Parse(MtxtNasc.Text);
+                    hospede.Telefone = txtTelefone.Text;
+                    hospede.Email = txtEmail.Text;
+                    hospede.setarCPF(txtCPF.Text);
+                    hospede.Passaporte = txtPassaporte.Text;
+                    mensagem = hDAO.Inserir_Att(hospede);
+                    string cpfPass = txtCPF.Text.Length == 11 ? txtCPF.Text : txtPassaporte.Text;
+                    hospede = hDAO.Carregar(cpfPass);
+                    atual.Hospede = hospede;
+                    atual.Quarto.Numero = quarto;
+                    if(atual.ReservaValida(out mensagem))
+                    {
+                        mensagem = resDAO.Inserir_Att(atual);
+                        LimparNovaReserva();
+                    }
+                }
+                else
+                {
+                    mensagem = "Não há vagas para esta data com essas preferências";
+                }
             }
-            else
-            {
-                //exibir mensagem
-            }
+            ValidacoesForms.ExibirMensagem(mensagem);
         }
 
         private void NovaReserva_Load(object sender, EventArgs e)
         {
-            dudQuartos.Items.Add("1 Solteiro");
-            dudQuartos.Items.Add("2 Solteiro");
-            dudQuartos.Items.Add("1 Casal");
-            dudQuartos.Items.Add("1 Casal 1 Solteiro");
-            dudQuartos.Items.Add("1 Casal 2 Solteiro");
+            dudQuartos.Items.AddRange(tDAO.ListarTiposQuarto());
         }
 
         private void txtPassaporte_TextChanged(object sender, EventArgs e)
@@ -130,6 +133,36 @@ namespace PimIV_Desktop.Telas
             {
                 txtPassaporte.Enabled = false;
             }
+        }
+
+        private void dudQuartos_SelectedItemChanged(object sender, EventArgs e)
+        {
+            mcaEstadia.Enabled = true;
+            btnGerarData.Enabled = true;
+        }
+
+        private void PrepararReserva()
+        {
+            atual.Adultos = int.Parse(nudAdultos.Value.ToString());
+            atual.Criancas = int.Parse(nudCriancas.Value.ToString());
+            atual.CheckIn = DateTime.Parse(txtCheckIn.Text);
+            atual.CheckOut = DateTime.Parse(txtCheckOut.Text);
+            int idTipo = dudQuartos.Items.IndexOf(dudQuartos.Text);
+            double[] diarais = tDAO.DiariasAdueCri();
+            atual.Quarto.Tipo = tDAO.Carregar(idTipo + 1);
+            atual.CalcularDespesas(diarais[0], diarais[1]);
+            txtDespesas.Text = atual.Despesas.ToString();
+        }
+
+        private void PreencherHospede()
+        {
+            txtHospede.Text = hospede.Nome;
+            MtxtNasc.Text = hospede.DataNascimento.Date.ToString();
+            txtEmail.Text = hospede.Email;
+            txtCPF.Text = hospede.CPF;
+            txtPassaporte.Text = hospede.Passaporte;
+            txtTelefone.Text = hospede.Telefone;
+            CboxSexo.Text = hospede.Sexo.ToString();
         }
     }
 }

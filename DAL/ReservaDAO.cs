@@ -9,35 +9,8 @@ namespace DAL
 {
     public class ReservaDAO : IListaPorStatus
     {
-        readonly ConexaoSQLServer  _conexao = new ConexaoSQLServer();
-
-        public List<string> CarregarProdutosAtivos()
-        {
-            //SqlCommand comando = new SqlCommand();
-            //string query = "SELECT p.Nome from Produto p where" +
-            //    " p.StatusProd = 'ATIVO'";
-            List<string> saida = new List<string>();
-            List<Produto> produtos = new List<Produto>();
-            Produto prod = new Produto();
-            Produto prod2 = new Produto();
-            produtos.Add(prod);
-            produtos.Add(prod2);
-            prod.Nome = "Agua";
-            prod.Preco = 22.2;
-            prod.Quantidade = 10;
-            prod.Validade = DateTime.Parse("22-10-22");
-            prod2.Nome = "Laranja";
-            prod2.Preco = 10.2;
-            prod2.Quantidade = 4;
-            prod2.Validade = DateTime.Parse("01-01-22");
-            
-            foreach(Produto p in produtos)
-            {
-                saida.Add(p.Nome);
-            }
-            return saida;
-        }
-
+        private readonly ConexaoSQLServer  _conexao = new ConexaoSQLServer();
+        private PagamentoDAO pDAO = new PagamentoDAO();
         public string Inserir_Att(Reserva reserva)
         {
             try
@@ -78,7 +51,45 @@ namespace DAL
             }
         }
 
-        //carregar
+        public Reserva Carregar(int id, out double total)
+        {
+            try
+            {
+                Reserva reserva = new Reserva();
+                using (SqlConnection conn = _conexao.AbrirConexao())
+                {
+                    SqlCommand procedure = new SqlCommand("RESE_Carregar", conn);
+                    procedure.CommandType = CommandType.StoredProcedure;
+
+                    procedure.Parameters.Add("@Id", SqlDbType.Int).Value = id;
+                    SqlDataReader leitor = procedure.ExecuteReader();
+                    leitor.Read();
+                    reserva.Id = int.Parse(leitor[0].ToString());
+                    reserva.CheckIn = DateTime.Parse(leitor[1].ToString());
+                    reserva.CheckOut = DateTime.Parse(leitor[2].ToString());
+                    reserva.Status = leitor[3].ToString();
+                    reserva.Adultos = int.Parse(leitor[4].ToString());
+                    reserva.Criancas = int.Parse(leitor[5].ToString());
+                    reserva.Despesas = double.Parse(leitor[6].ToString());
+                    reserva.Quarto.Numero = int.Parse(leitor[7].ToString());
+                    reserva.Quarto.Tipo.NomeTipo = leitor[8].ToString();
+                    reserva.Hospede.Nome = leitor[9].ToString();
+                    reserva.Hospede.DataNascimento = DateTime.Parse(leitor[10].ToString());
+                    reserva.Hospede.Sexo = leitor[11].ToString()[0];
+                    reserva.Hospede.Email = leitor[12].ToString();
+                    reserva.Hospede.Telefone = leitor[13].ToString();
+                    reserva.Hospede.setarCPF(leitor[14].ToString());
+                    reserva.Hospede.Passaporte = leitor[15].ToString();
+                    leitor.Close();
+                }
+                total = pDAO.PagoPorReserva(id);
+                return reserva;
+            }
+            catch (Exception)
+            {
+                throw new Exception();
+            }
+        }
 
         public DataTable ListarStatus(string status)
         {
@@ -157,6 +168,23 @@ namespace DAL
             {
                 throw new Exception(err.Message);
             }
+        }
+
+        public List<string> CarregarReservasAtivas()
+        {
+            List<string> saida = new List<string>();
+            using (SqlConnection conn = _conexao.AbrirConexao())
+            {
+                string query = "SELECT r.Id from Reserva r where" +
+                    " r.StatusRes = 'INICIADA'";
+                SqlCommand comando = new SqlCommand(query, conn);
+                SqlDataReader leitor = comando.ExecuteReader();
+                while (leitor.Read())
+                {
+                    saida.Add(leitor["Id"].ToString());
+                }
+            }
+            return saida;
         }
 
         //ocupacao

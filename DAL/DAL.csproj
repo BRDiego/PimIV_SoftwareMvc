@@ -41,12 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsumoDAO.cs" />
     <Compile Include="ContaDAO.cs" />
     <Compile Include="FuncionarioDAO.cs" />
     <Compile Include="HospedeDAO.cs" />
     <Compile Include="IListaPelaReserva.cs" />
     <Compile Include="IListaPorStatus.cs" />
+    <Compile Include="PagamentoDAO.cs" />
+    <Compile Include="ProdutoDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuartoDAO.cs" />
     <Compile Include="ReservaDAO.cs" />
     <Compile Include="TipoCustoDAO.cs" />
   </ItemGroup>

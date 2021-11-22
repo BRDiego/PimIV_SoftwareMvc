@@ -33,7 +33,7 @@ namespace DAL
                     procedure.Parameters.Add("@IdHospede", SqlDbType.Int)
                         .Value = 0;
                     procedure.Parameters.Add("@IdFunc", SqlDbType.Int)
-                        .Value = conta.FuncAssociado.Id;
+                        .Value = conta.FuncAssociado.IdFunc;
                 }
                 procedure.Parameters.Add("@Retorno", SqlDbType.VarChar, 100)
                     .Direction = ParameterDirection.Output;
@@ -68,8 +68,6 @@ namespace DAL
                 throw new Exception(err.Message);
             }
         }
-        
-        //deletar
 
         public bool ValidarFuncionario(string nome, string senha,
             out string func, out string cargo)

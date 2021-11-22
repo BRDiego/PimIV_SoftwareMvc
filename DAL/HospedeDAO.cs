@@ -7,7 +7,7 @@ using ConexaoDB;
 
 namespace DAL
 {
-    public class HospedeDAO
+    public class HospedeDAO : IListaPorStatus
     {
         readonly ConexaoSQLServer _conexao = new ConexaoSQLServer();
                 
@@ -116,6 +116,27 @@ namespace DAL
             }
         }
 
-        //lista status
+        public DataTable ListarStatus(string status)
+        {
+            try
+            {
+                DataTable tabela = new DataTable();
+                using(SqlConnection conn = _conexao.AbrirConexao())
+                {
+                    SqlCommand procedure = new SqlCommand("HOSP_ListarStatus", conn);
+                    procedure.CommandType = CommandType.StoredProcedure;
+
+                    procedure.Parameters.Add("@Status", SqlDbType.VarChar).Value = status;
+
+                    SqlDataAdapter da = new SqlDataAdapter(procedure);
+                    da.Fill(tabela);
+                }
+                return tabela;
+            }
+            catch(Exception err)
+            {
+                throw new Exception(err.Message);
+            }
+        }
     }
 }

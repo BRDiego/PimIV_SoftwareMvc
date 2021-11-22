@@ -14,6 +14,7 @@ namespace PimIV_Desktop.Telas
 {
     public partial class ListaHospedes : UserControl
     {
+        private HospedeDAO hDAO = new HospedeDAO();
         public ListaHospedes()
         {
             InitializeComponent();
@@ -39,21 +40,18 @@ namespace PimIV_Desktop.Telas
                     MessageBox.Show("CPF não registrado");
                 }
             }
-
-            //if (txtBuscaCPF.Text != "")
-            //{
-            //    Hospede h = new Hospede();
-            //    h.CPF = txtBuscaCPF.Text;
-            //    btnNovoHospede_Click(btnNovoHospede, e, h);
-            //}
-            //else if (comboStatus.SelectedItem != null)
-            //{
-            //    //listar por status
-            //}
-            //else
-            //{
-            //    btnListarTodos_Click(btnListarTodos,e);
-            //}
+            else
+            {
+                if (comboStatus.Text != "") 
+                {
+                    dgviewHospedes.DataSource = hDAO.ListarStatus(comboStatus.Text);
+                }
+                else
+                {
+                    dgviewHospedes.DataSource = hDAO.ListarStatus("ATIVO");
+                }
+            }
+            txtBuscaCPF.Text = "";
         }
 
         private void btnNovoHospede_Click(object sender, EventArgs e)
@@ -99,6 +97,11 @@ namespace PimIV_Desktop.Telas
         {
             //nao precisa, da pra usar o bring to front
             btnNovoHospede_Click(btnNovoHospede, e, new Hospede());
+        }
+
+        private void ListaHospedes_Enter(object sender, EventArgs e)
+        {
+            dgviewHospedes.DataSource = hDAO.ListarStatus("ATIVO");
         }
     }
 }

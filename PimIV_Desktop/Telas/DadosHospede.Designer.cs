@@ -114,7 +114,7 @@ namespace PimIV_Desktop.Telas
             this.dtPickerNasc.Location = new System.Drawing.Point(406, 89);
             this.dtPickerNasc.Margin = new System.Windows.Forms.Padding(2);
             this.dtPickerNasc.Name = "dtPickerNasc";
-            this.dtPickerNasc.Size = new System.Drawing.Size(115, 26);
+            this.dtPickerNasc.Size = new System.Drawing.Size(109, 26);
             this.dtPickerNasc.TabIndex = 2;
             // 
             // txtEmail

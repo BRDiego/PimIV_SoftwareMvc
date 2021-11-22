@@ -166,6 +166,7 @@ namespace PimIV_Desktop
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormLogin_FormClosed);
             this.Load += new System.EventHandler(this.FormLogin_Load);
             this.SizeChanged += new System.EventHandler(this.FormLogin_SizeChanged);
             this.Layout += new System.Windows.Forms.LayoutEventHandler(this.FormLogin_Layout);

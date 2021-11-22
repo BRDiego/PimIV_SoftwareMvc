@@ -34,13 +34,12 @@ namespace PimIV_Desktop.Telas
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgviewReservas = new System.Windows.Forms.DataGridView();
             this.comboStatus = new System.Windows.Forms.ComboBox();
-            this.dtpChin = new System.Windows.Forms.DateTimePicker();
-            this.dtpChout = new System.Windows.Forms.DateTimePicker();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.checkStatus = new System.Windows.Forms.CheckBox();
-            this.checkChout = new System.Windows.Forms.CheckBox();
-            this.checkChin = new System.Windows.Forms.CheckBox();
+            this.dtpPeriodo = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.checkPeriodo = new System.Windows.Forms.CheckBox();
             this.verReserva1 = new PimIV_Desktop.Telas.VerReserva();
             ((System.ComponentModel.ISupportInitialize)(this.dgviewReservas)).BeginInit();
             this.SuspendLayout();
@@ -105,38 +104,16 @@ namespace PimIV_Desktop.Telas
             this.comboStatus.Name = "comboStatus";
             this.comboStatus.Size = new System.Drawing.Size(179, 28);
             this.comboStatus.TabIndex = 64;
-            // 
-            // dtpChin
-            // 
-            this.dtpChin.Checked = false;
-            this.dtpChin.Enabled = false;
-            this.dtpChin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpChin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpChin.Location = new System.Drawing.Point(410, 44);
-            this.dtpChin.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpChin.Name = "dtpChin";
-            this.dtpChin.Size = new System.Drawing.Size(114, 26);
-            this.dtpChin.TabIndex = 66;
-            // 
-            // dtpChout
-            // 
-            this.dtpChout.Checked = false;
-            this.dtpChout.Enabled = false;
-            this.dtpChout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpChout.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpChout.Location = new System.Drawing.Point(690, 44);
-            this.dtpChout.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpChout.Name = "dtpChout";
-            this.dtpChout.Size = new System.Drawing.Size(114, 26);
-            this.dtpChout.TabIndex = 66;
+            this.comboStatus.SelectionChangeCommitted += new System.EventHandler(this.comboStatus_SelectionChangeCommitted);
             // 
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.Enabled = false;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(839, 35);
+            this.btnBuscar.Location = new System.Drawing.Point(749, 35);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(129, 39);
@@ -153,9 +130,9 @@ namespace PimIV_Desktop.Telas
             this.label3.Location = new System.Drawing.Point(3, 3);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 24);
+            this.label3.Size = new System.Drawing.Size(202, 24);
             this.label3.TabIndex = 65;
-            this.label3.Text = "Busca por:";
+            this.label3.Text = "Buscar reservas por:";
             // 
             // checkStatus
             // 
@@ -170,31 +147,41 @@ namespace PimIV_Desktop.Telas
             this.checkStatus.UseVisualStyleBackColor = true;
             this.checkStatus.CheckedChanged += new System.EventHandler(this.checkStatus_CheckedChanged);
             // 
-            // checkChout
+            // dtpPeriodo
             // 
-            this.checkChout.AutoSize = true;
-            this.checkChout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkChout.ForeColor = System.Drawing.Color.White;
-            this.checkChout.Location = new System.Drawing.Point(582, 46);
-            this.checkChout.Name = "checkChout";
-            this.checkChout.Size = new System.Drawing.Size(103, 24);
-            this.checkChout.TabIndex = 68;
-            this.checkChout.Text = "CheckOut:";
-            this.checkChout.UseVisualStyleBackColor = true;
-            this.checkChout.CheckedChanged += new System.EventHandler(this.checkChout_CheckedChanged);
+            this.dtpPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpPeriodo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpPeriodo.Location = new System.Drawing.Point(621, 40);
+            this.dtpPeriodo.MaxDate = new System.DateTime(2025, 12, 31, 0, 0, 0, 0);
+            this.dtpPeriodo.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.dtpPeriodo.Name = "dtpPeriodo";
+            this.dtpPeriodo.Size = new System.Drawing.Size(123, 29);
+            this.dtpPeriodo.TabIndex = 69;
             // 
-            // checkChin
+            // label6
             // 
-            this.checkChin.AutoSize = true;
-            this.checkChin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkChin.ForeColor = System.Drawing.Color.White;
-            this.checkChin.Location = new System.Drawing.Point(315, 46);
-            this.checkChin.Name = "checkChin";
-            this.checkChin.Size = new System.Drawing.Size(91, 24);
-            this.checkChin.TabIndex = 68;
-            this.checkChin.Text = "CheckIn:";
-            this.checkChin.UseVisualStyleBackColor = true;
-            this.checkChin.CheckedChanged += new System.EventHandler(this.checkChin_CheckedChanged);
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(456, 43);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(160, 24);
+            this.label6.TabIndex = 70;
+            this.label6.Text = "Estava ativa em:";
+            // 
+            // checkPeriodo
+            // 
+            this.checkPeriodo.AutoSize = true;
+            this.checkPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkPeriodo.ForeColor = System.Drawing.Color.White;
+            this.checkPeriodo.Location = new System.Drawing.Point(365, 44);
+            this.checkPeriodo.Name = "checkPeriodo";
+            this.checkPeriodo.Size = new System.Drawing.Size(86, 24);
+            this.checkPeriodo.TabIndex = 68;
+            this.checkPeriodo.Text = "Periodo:";
+            this.checkPeriodo.UseVisualStyleBackColor = true;
+            this.checkPeriodo.CheckedChanged += new System.EventHandler(this.checkPeriodo_CheckedChanged);
             // 
             // verReserva1
             // 
@@ -212,20 +199,17 @@ namespace PimIV_Desktop.Telas
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.Controls.Add(this.checkChin);
-            this.Controls.Add(this.checkChout);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.dtpPeriodo);
+            this.Controls.Add(this.checkPeriodo);
             this.Controls.Add(this.checkStatus);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.dtpChout);
-            this.Controls.Add(this.dtpChin);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboStatus);
             this.Controls.Add(this.dgviewReservas);
             this.Controls.Add(this.verReserva1);
             this.Name = "MapaReservas";
             this.Size = new System.Drawing.Size(1000, 600);
-            this.VisibleChanged += new System.EventHandler(this.MapaReservas_VisibleChanged);
-            this.Layout += new System.Windows.Forms.LayoutEventHandler(this.MapaReservas_Layout);
             ((System.ComponentModel.ISupportInitialize)(this.dgviewReservas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -237,12 +221,11 @@ namespace PimIV_Desktop.Telas
         private System.Windows.Forms.DataGridView dgviewReservas;
         private VerReserva verReserva1;
         private System.Windows.Forms.ComboBox comboStatus;
-        private System.Windows.Forms.DateTimePicker dtpChin;
-        private System.Windows.Forms.DateTimePicker dtpChout;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox checkStatus;
-        private System.Windows.Forms.CheckBox checkChout;
-        private System.Windows.Forms.CheckBox checkChin;
+        private System.Windows.Forms.DateTimePicker dtpPeriodo;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckBox checkPeriodo;
     }
 }

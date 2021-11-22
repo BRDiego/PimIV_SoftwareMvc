@@ -7,39 +7,78 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAL;
+using Model;
 
 namespace PimIV_Desktop.Telas
 {
     public partial class MapaQuartos : UserControl
     {
+        private QuartoDAO qDAO = new QuartoDAO();
+        int numero;
+        string status;
         public MapaQuartos()
         {
             InitializeComponent();
         }
 
-        private void dgviewReservas_Leave(object sender, EventArgs e)
+        private void dgviewQuartos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            panelAcoesQuarto.Enabled = false;
-        }
-
-        private void dgviewQuartos_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
+            if (e.RowIndex < 0)
+            {
+                MessageBox.Show("Para carregar um consumo, dê um duplo clique na linha correspondente");
+                return;
+            }
+            numero = int.Parse(dgviewQuartos[0, e.RowIndex].Value.ToString());
+            status = dgviewQuartos[2, e.RowIndex].Value.ToString();
             panelAcoesQuarto.Enabled = true;
         }
 
-        private void btnNovoConsumo_Click(object sender, EventArgs e)
+        private void btnAlterarStatus_Click(object sender, EventArgs e)
         {
-
+            if(comboAlterar.Text != "")
+            {
+                Quarto quarto = new Quarto();
+                quarto.Numero = numero;
+                quarto.Status = comboAlterar.Text;
+                qDAO.Alterar(quarto);
+                dgviewQuartos.DataSource = qDAO.Listar();
+                comboAlterar.SelectedItem = null;
+            }
+            panelAcoesQuarto.Enabled = false;
         }
 
-        private void MapaQuartos_Load(object sender, EventArgs e)
+        private void panelAcoesQuarto_EnabledChanged(object sender, EventArgs e)
         {
-            dudQuartos.Items.Add("1 Solteiro");
-            dudQuartos.Items.Add("2 Solteiro");
-            dudQuartos.Items.Add("1 Casal");
-            dudQuartos.Items.Add("1 Casal 1 Solteiro");
-            dudQuartos.Items.Add("1 Casal 2 Solteiro");
+            if(panelAcoesQuarto.Enabled)
+            {
+                switch (status)
+                {
+                    case "DISPONIVEL":
+                        comboAlterar.Items.Clear();
+                        comboAlterar.Items.Add("LIMPEZA");
+                        comboAlterar.Items.Add("REPARO");
+                        break;
+                    case "OCUPADO":
+                        comboAlterar.Items.Clear();
+                        break;
+                    case "LIMPEZA":
+                        comboAlterar.Items.Clear();
+                        comboAlterar.Items.Add("DISPONIVEL");
+                        comboAlterar.Items.Add("REPARO");
+                        break;
+                    case "REPARO":
+                        comboAlterar.Items.Clear();
+                        comboAlterar.Items.Add("DISPONIVEL");
+                        comboAlterar.Items.Add("LIMPEZA");
+                        break;
+                }
+            }
+        }
 
+        private void MapaQuartos_Enter(object sender, EventArgs e)
+        {
+            dgviewQuartos.DataSource = qDAO.Listar();
         }
     }
 }
