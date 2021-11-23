@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Model
+﻿namespace Model
 {
     public class Quarto
     {
@@ -26,13 +20,6 @@ namespace Model
         public Quarto(TipoCusto tipo)
         {
             _Tipo = tipo;
-        }
-
-        //METODOS
-
-        public void AlterarStatus()
-        {
-
         }
     }
 }

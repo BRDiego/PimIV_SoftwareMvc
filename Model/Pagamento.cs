@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Model
 {
@@ -22,18 +18,6 @@ namespace Model
 
         public Pagamento()
         {
-        }
-
-        //METODOS
-
-        public bool ValorValido(double valor)
-        {
-            return true;
-        }
-
-        public void SetValor(double valor)
-        {
-
         }
     }
 }

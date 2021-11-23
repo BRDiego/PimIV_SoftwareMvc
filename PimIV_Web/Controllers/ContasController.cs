@@ -74,7 +74,7 @@ namespace PimIV_Web.Controllers
                 hospede.DataNascimento = nasc;
                 hospede.Sexo = sexo[0];
                 hospede.Email = email;
-                if ((cpfPass.Contains(".") || cpfPass.Contains("-")) && cpfPass.Length == 11)
+                if ((cpfPass.Contains(".") || cpfPass.Contains("-")))
                 {
                     hospede.setarCPF(cpfPass);
                 }
