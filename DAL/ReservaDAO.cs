@@ -195,8 +195,64 @@ namespace DAL
             }
         }
 
-        //ocupacao
+        public double[] Ocupacao()
+        {
+            try
+            {
+                double[] valores = new double[5];
+                using (SqlConnection conn = _conexao.AbrirConexao())
+                {
+                    SqlCommand procedure = new SqlCommand("RELAT_Ocupacao", conn);
+                    procedure.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader leitor = procedure.ExecuteReader();
+                    leitor.Read();
+                    if (leitor.HasRows)
+                    {
+                        for (int i = 0; i < 5; i++)
+                        {
+                            if (leitor[i].ToString() != "")
+                            {
+                                valores[i] = double.Parse(leitor[i].ToString());
+                            }
+                        }
+                    }
+                }
+                return valores;
+            }
+            catch (Exception err)
+            {
+                throw new Exception(err.Message);
+            }
+        }
 
-        //receita
+        public double[] Receita()
+        {
+            try
+            {
+                double[] valores = new double[3];
+                using (SqlConnection conn = _conexao.AbrirConexao())
+                {
+                    SqlCommand procedure = new SqlCommand("RELAT_Receita", conn);
+                    procedure.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader leitor = procedure.ExecuteReader();
+                    leitor.Read();
+                    if (leitor.HasRows)
+                    {
+                        for (int i = 0; i < 3; i++)
+                        {
+                            if(leitor[i].ToString() != "")
+                            {
+                                valores[i] = double.Parse(leitor[i].ToString());
+                            }
+                        }
+                    }
+                }
+                return valores;
+            }
+            catch (Exception err)
+            {
+                throw new Exception(err.Message);
+            }
+        }
     }
 }

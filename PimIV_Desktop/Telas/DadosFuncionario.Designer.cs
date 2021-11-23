@@ -106,7 +106,7 @@ namespace PimIV_Desktop.Telas
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(522, 210);
+            this.label9.Location = new System.Drawing.Point(510, 218);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(80, 24);
@@ -118,7 +118,7 @@ namespace PimIV_Desktop.Telas
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(27, 210);
+            this.label7.Location = new System.Drawing.Point(15, 218);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 24);
@@ -128,7 +128,7 @@ namespace PimIV_Desktop.Telas
             // txtCPF
             // 
             this.txtCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCPF.Location = new System.Drawing.Point(99, 103);
+            this.txtCPF.Location = new System.Drawing.Point(83, 104);
             this.txtCPF.Margin = new System.Windows.Forms.Padding(2);
             this.txtCPF.Mask = "000,000,000-00";
             this.txtCPF.Name = "txtCPF";
@@ -152,7 +152,7 @@ namespace PimIV_Desktop.Telas
             this.dtpNasc.Checked = false;
             this.dtpNasc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNasc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNasc.Location = new System.Drawing.Point(711, 105);
+            this.dtpNasc.Location = new System.Drawing.Point(695, 106);
             this.dtpNasc.Margin = new System.Windows.Forms.Padding(2);
             this.dtpNasc.MaxDate = new System.DateTime(2060, 12, 31, 0, 0, 0, 0);
             this.dtpNasc.MinDate = new System.DateTime(1910, 1, 1, 0, 0, 0, 0);
@@ -207,7 +207,7 @@ namespace PimIV_Desktop.Telas
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(581, 106);
+            this.label3.Location = new System.Drawing.Point(565, 107);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(126, 24);
@@ -219,7 +219,7 @@ namespace PimIV_Desktop.Telas
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(39, 105);
+            this.label2.Location = new System.Drawing.Point(23, 106);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 24);
@@ -262,7 +262,7 @@ namespace PimIV_Desktop.Telas
             // txtPassaporte
             // 
             this.txtPassaporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassaporte.Location = new System.Drawing.Point(389, 103);
+            this.txtPassaporte.Location = new System.Drawing.Point(373, 104);
             this.txtPassaporte.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassaporte.Name = "txtPassaporte";
             this.txtPassaporte.Size = new System.Drawing.Size(183, 28);
@@ -273,7 +273,7 @@ namespace PimIV_Desktop.Telas
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(266, 106);
+            this.label8.Location = new System.Drawing.Point(250, 107);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(119, 24);
@@ -285,7 +285,7 @@ namespace PimIV_Desktop.Telas
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(25, 259);
+            this.label10.Location = new System.Drawing.Point(13, 267);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(196, 24);
@@ -297,7 +297,7 @@ namespace PimIV_Desktop.Telas
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(405, 258);
+            this.label11.Location = new System.Drawing.Point(371, 266);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(327, 24);
@@ -309,7 +309,7 @@ namespace PimIV_Desktop.Telas
             this.lblAttFunc.AutoSize = true;
             this.lblAttFunc.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAttFunc.ForeColor = System.Drawing.Color.White;
-            this.lblAttFunc.Location = new System.Drawing.Point(741, 258);
+            this.lblAttFunc.Location = new System.Drawing.Point(697, 267);
             this.lblAttFunc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAttFunc.Name = "lblAttFunc";
             this.lblAttFunc.Size = new System.Drawing.Size(68, 24);
@@ -319,7 +319,7 @@ namespace PimIV_Desktop.Telas
             // txtCargo
             // 
             this.txtCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCargo.Location = new System.Drawing.Point(99, 210);
+            this.txtCargo.Location = new System.Drawing.Point(87, 218);
             this.txtCargo.Margin = new System.Windows.Forms.Padding(2);
             this.txtCargo.Name = "txtCargo";
             this.txtCargo.Size = new System.Drawing.Size(385, 28);
@@ -412,7 +412,7 @@ namespace PimIV_Desktop.Telas
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(405, 150);
+            this.label15.Location = new System.Drawing.Point(359, 158);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(308, 24);
@@ -424,7 +424,7 @@ namespace PimIV_Desktop.Telas
             this.lblAttHosp.AutoSize = true;
             this.lblAttHosp.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAttHosp.ForeColor = System.Drawing.Color.White;
-            this.lblAttHosp.Location = new System.Drawing.Point(717, 150);
+            this.lblAttHosp.Location = new System.Drawing.Point(666, 159);
             this.lblAttHosp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAttHosp.Name = "lblAttHosp";
             this.lblAttHosp.Size = new System.Drawing.Size(68, 24);
@@ -436,7 +436,7 @@ namespace PimIV_Desktop.Telas
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(25, 150);
+            this.label17.Location = new System.Drawing.Point(13, 158);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(174, 24);
@@ -451,7 +451,7 @@ namespace PimIV_Desktop.Telas
             this.comboStatusHos.Items.AddRange(new object[] {
             "ATIVO",
             "INATIVO"});
-            this.comboStatusHos.Location = new System.Drawing.Point(207, 150);
+            this.comboStatusHos.Location = new System.Drawing.Point(195, 158);
             this.comboStatusHos.Name = "comboStatusHos";
             this.comboStatusHos.Size = new System.Drawing.Size(144, 28);
             this.comboStatusHos.TabIndex = 8;
@@ -464,9 +464,9 @@ namespace PimIV_Desktop.Telas
             this.comboStatusFun.Items.AddRange(new object[] {
             "ATIVO",
             "INATIVO"});
-            this.comboStatusFun.Location = new System.Drawing.Point(226, 258);
+            this.comboStatusFun.Location = new System.Drawing.Point(214, 266);
             this.comboStatusFun.Name = "comboStatusFun";
-            this.comboStatusFun.Size = new System.Drawing.Size(144, 28);
+            this.comboStatusFun.Size = new System.Drawing.Size(125, 28);
             this.comboStatusFun.TabIndex = 11;
             // 
             // btnSalvarLogin
@@ -525,11 +525,12 @@ namespace PimIV_Desktop.Telas
             // txtSalario
             // 
             this.txtSalario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSalario.Location = new System.Drawing.Point(613, 206);
-            this.txtSalario.Mask = "00000.00";
+            this.txtSalario.Location = new System.Drawing.Point(601, 214);
+            this.txtSalario.Mask = "0000.00";
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.Size = new System.Drawing.Size(91, 29);
             this.txtSalario.TabIndex = 10;
+            this.txtSalario.Text = "000000";
             this.txtSalario.ValidatingType = typeof(int);
             // 
             // groupDadosLogin

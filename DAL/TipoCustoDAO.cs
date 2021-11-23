@@ -11,6 +11,35 @@ namespace DAL
     {
         readonly ConexaoSQLServer _conn = new ConexaoSQLServer();
 
+        public string Alterar(TipoCusto tipo)
+        {
+            try
+            {
+                using (SqlConnection conn = _conn.AbrirConexao())
+                {
+                    SqlCommand procedure = new SqlCommand("TIPO_Alterar", conn);
+                    procedure.CommandType = CommandType.StoredProcedure;
+
+                    procedure.Parameters.Add("@Id", SqlDbType.Int).Value = tipo.Id;
+                    procedure.Parameters.Add("@Preco", SqlDbType.Decimal).Value = tipo.Preco;
+
+                    int result = procedure.ExecuteNonQuery();
+                    if(result == 1)
+                    {
+                        return "Preço atualizado com sucesso.";
+                    }
+                    else
+                    {
+                        return "Ocorreu um erro durante atualização";
+                    }
+                }
+            }
+            catch(Exception err)
+            {
+                throw new Exception(err.Message);
+            }
+        }
+        
         public TipoCusto Carregar(int id)
         {
             try
@@ -82,6 +111,34 @@ namespace DAL
             catch (Exception)
             {
                 throw new Exception();
+            }
+        }
+
+        public List<TipoCusto> CarregarTipos()
+        {
+            try
+            {
+                List<TipoCusto> saida = new List<TipoCusto>();
+                using(SqlConnection conn = _conn.AbrirConexao())
+                {
+                    string query = "SELECT * FROM TIPOCUSTO";
+                    SqlCommand comando = new SqlCommand(query, conn);
+                    SqlDataReader leitor = comando.ExecuteReader();
+                    while (leitor.Read())
+                    {
+                        TipoCusto tipo = new TipoCusto();
+                        tipo.Id = int.Parse(leitor[0].ToString());
+                        tipo.NomeTipo = leitor[1].ToString();
+                        tipo.Preco = double.Parse(leitor[2].ToString());
+                        tipo.DataAtualizacao = DateTime.Parse(leitor[3].ToString());
+                        saida.Add(tipo);
+                    }
+                }
+                return saida;
+            }
+            catch (Exception err)
+            {
+                throw new Exception(err.Message);
             }
         }
     }

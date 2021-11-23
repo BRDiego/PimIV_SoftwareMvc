@@ -60,43 +60,10 @@ namespace PimIV_Desktop.Telas
             dadosHospede1.Visible = true;
         }
 
-        private void btnNovoHospede_Click(object sender, EventArgs e, Hospede hosp)
-        {
-            dadosHospede1.BringToFront();
-            dadosHospede1.Visible = true;
-            dadosHospede1.PreencherCampos(hosp);
-        }
-
-        private void btnNovoHospede_VisibleChanged(object sender, EventArgs e)
-        {
-            dgviewHospedes.DataSource = null;
-        }
-
-        private void txtBuscaNome_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void txtBuscaCPF_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnListarTodos_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Listando tudo");
-        }
-
         private void ListaHospedes_Leave(object sender, EventArgs e)
         {
             dadosHospede1.SendToBack();
             dadosHospede1.Visible = false;
-        }
-
-        private void dgviewHospedes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //nao precisa, da pra usar o bring to front
-            btnNovoHospede_Click(btnNovoHospede, e, new Hospede());
         }
 
         private void ListaHospedes_Enter(object sender, EventArgs e)

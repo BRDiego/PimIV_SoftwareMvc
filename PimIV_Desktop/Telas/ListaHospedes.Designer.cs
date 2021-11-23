@@ -39,7 +39,6 @@ namespace PimIV_Desktop.Telas
             this.label8 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnListarTodos = new System.Windows.Forms.Button();
             this.btnNovoHospede = new System.Windows.Forms.Button();
             this.dadosHospede1 = new PimIV_Desktop.Telas.DadosHospede();
             ((System.ComponentModel.ISupportInitialize)(this.dgviewHospedes)).BeginInit();
@@ -89,7 +88,6 @@ namespace PimIV_Desktop.Telas
             this.dgviewHospedes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgviewHospedes.Size = new System.Drawing.Size(959, 496);
             this.dgviewHospedes.TabIndex = 3;
-            this.dgviewHospedes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgviewHospedes_CellDoubleClick);
             // 
             // txtBuscaCPF
             // 
@@ -101,7 +99,6 @@ namespace PimIV_Desktop.Telas
             this.txtBuscaCPF.Size = new System.Drawing.Size(139, 28);
             this.txtBuscaCPF.TabIndex = 0;
             this.txtBuscaCPF.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.txtBuscaCPF.TextChanged += new System.EventHandler(this.txtBuscaCPF_TextChanged);
             // 
             // gboxBuscaHospede
             // 
@@ -169,21 +166,6 @@ namespace PimIV_Desktop.Telas
             this.label1.TabIndex = 26;
             this.label1.Text = "CPF:";
             // 
-            // btnListarTodos
-            // 
-            this.btnListarTodos.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnListarTodos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnListarTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListarTodos.ForeColor = System.Drawing.Color.White;
-            this.btnListarTodos.Location = new System.Drawing.Point(816, 30);
-            this.btnListarTodos.Margin = new System.Windows.Forms.Padding(2);
-            this.btnListarTodos.Name = "btnListarTodos";
-            this.btnListarTodos.Size = new System.Drawing.Size(173, 45);
-            this.btnListarTodos.TabIndex = 2;
-            this.btnListarTodos.Text = "Listar todos";
-            this.btnListarTodos.UseVisualStyleBackColor = false;
-            this.btnListarTodos.Click += new System.EventHandler(this.btnListarTodos_Click);
-            // 
             // btnNovoHospede
             // 
             this.btnNovoHospede.BackColor = System.Drawing.Color.DarkGreen;
@@ -197,7 +179,6 @@ namespace PimIV_Desktop.Telas
             this.btnNovoHospede.TabIndex = 1;
             this.btnNovoHospede.Text = "Novo hóspede";
             this.btnNovoHospede.UseVisualStyleBackColor = false;
-            this.btnNovoHospede.VisibleChanged += new System.EventHandler(this.btnNovoHospede_VisibleChanged);
             this.btnNovoHospede.Click += new System.EventHandler(this.btnNovoHospede_Click);
             // 
             // dadosHospede1
@@ -216,7 +197,6 @@ namespace PimIV_Desktop.Telas
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
             this.Controls.Add(this.btnNovoHospede);
-            this.Controls.Add(this.btnListarTodos);
             this.Controls.Add(this.gboxBuscaHospede);
             this.Controls.Add(this.dgviewHospedes);
             this.Controls.Add(this.dadosHospede1);
@@ -238,7 +218,6 @@ namespace PimIV_Desktop.Telas
         private System.Windows.Forms.GroupBox gboxBuscaHospede;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Button btnListarTodos;
         private System.Windows.Forms.Button btnNovoHospede;
         private DadosHospede dadosHospede1;
         private System.Windows.Forms.ComboBox comboStatus;

@@ -60,8 +60,17 @@ namespace PimIV_Desktop.Telas
             }
             else
             {
-                txtCheckOut.Text = mcaEstadia.SelectionEnd.ToShortDateString();
-                PrepararReserva();
+                if(txtCheckOut.Text == "")
+                {
+                    txtCheckOut.Text = mcaEstadia.SelectionEnd.ToShortDateString();
+                    PrepararReserva();
+                }
+                else
+                {
+                    txtCheckOut.Text = "";
+                    txtCheckIn.Text = mcaEstadia.SelectionEnd.ToShortDateString();
+                    txtDespesas.Clear();
+                }
             }
         }
 

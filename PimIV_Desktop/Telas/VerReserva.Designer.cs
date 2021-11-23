@@ -50,14 +50,12 @@ namespace PimIV_Desktop.Telas
             System.Windows.Forms.Label label19;
             System.Windows.Forms.Label label20;
             System.Windows.Forms.Label label21;
-            System.Windows.Forms.Label label22;
-            System.Windows.Forms.Label label23;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblReservaID = new System.Windows.Forms.Label();
             this.lblNumQuarto = new System.Windows.Forms.Label();
             this.lblTipoQuarto = new System.Windows.Forms.Label();
@@ -105,8 +103,6 @@ namespace PimIV_Desktop.Telas
             label19 = new System.Windows.Forms.Label();
             label20 = new System.Windows.Forms.Label();
             label21 = new System.Windows.Forms.Label();
-            label22 = new System.Windows.Forms.Label();
-            label23 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgviewConsumos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgviewPagamentos)).BeginInit();
             this.groupPagamento.SuspendLayout();
@@ -115,44 +111,44 @@ namespace PimIV_Desktop.Telas
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label1.ForeColor = System.Drawing.Color.LightPink;
             label1.Location = new System.Drawing.Point(557, 53);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(137, 29);
+            label1.Size = new System.Drawing.Size(127, 26);
             label1.TabIndex = 0;
             label1.Text = "Reserva ID:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label2.ForeColor = System.Drawing.Color.LightPink;
             label2.Location = new System.Drawing.Point(780, 53);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(124, 29);
+            label2.Size = new System.Drawing.Size(114, 26);
             label2.TabIndex = 0;
             label2.Text = "Nº Quarto:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label3.ForeColor = System.Drawing.Color.LightPink;
             label3.Location = new System.Drawing.Point(557, 88);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(182, 29);
+            label3.Size = new System.Drawing.Size(161, 26);
             label3.TabIndex = 0;
             label3.Text = "Tipo do Quarto:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label4.ForeColor = System.Drawing.Color.LightPink;
             label4.Location = new System.Drawing.Point(28, 53);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(118, 29);
+            label4.Size = new System.Drawing.Size(105, 26);
             label4.TabIndex = 0;
             label4.Text = "Hóspede:";
             // 
@@ -170,77 +166,77 @@ namespace PimIV_Desktop.Telas
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label6.ForeColor = System.Drawing.Color.LightPink;
             label6.Location = new System.Drawing.Point(28, 103);
             label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(202, 29);
+            label6.Size = new System.Drawing.Size(186, 26);
             label6.TabIndex = 0;
             label6.Text = "Data Nascimento:";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label7.ForeColor = System.Drawing.Color.LightPink;
             label7.Location = new System.Drawing.Point(669, 182);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(116, 29);
+            label7.Size = new System.Drawing.Size(101, 26);
             label7.TabIndex = 0;
             label7.Text = "Telefone:";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label8.ForeColor = System.Drawing.Color.LightPink;
             label8.Location = new System.Drawing.Point(29, 182);
             label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(67, 29);
+            label8.Size = new System.Drawing.Size(62, 26);
             label8.TabIndex = 0;
             label8.Text = "CPF:";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label9.ForeColor = System.Drawing.Color.LightPink;
             label9.Location = new System.Drawing.Point(351, 182);
             label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(141, 29);
+            label9.Size = new System.Drawing.Size(128, 26);
             label9.TabIndex = 0;
             label9.Text = "Passaporte:";
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label10.ForeColor = System.Drawing.Color.LightPink;
             label10.Location = new System.Drawing.Point(29, 144);
             label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(80, 29);
+            label10.Size = new System.Drawing.Size(74, 26);
             label10.TabIndex = 0;
             label10.Text = "Email:";
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label11.ForeColor = System.Drawing.Color.LightPink;
             label11.Location = new System.Drawing.Point(557, 121);
             label11.Name = "label11";
-            label11.Size = new System.Drawing.Size(131, 29);
+            label11.Size = new System.Drawing.Size(121, 26);
             label11.TabIndex = 0;
             label11.Text = "Nº Adultos:";
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label12.ForeColor = System.Drawing.Color.LightPink;
             label12.Location = new System.Drawing.Point(776, 121);
             label12.Name = "label12";
-            label12.Size = new System.Drawing.Size(145, 29);
+            label12.Size = new System.Drawing.Size(134, 26);
             label12.TabIndex = 0;
             label12.Text = "Nº Crianças:";
             // 
@@ -282,7 +278,7 @@ namespace PimIV_Desktop.Telas
             label16.AutoSize = true;
             label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label16.ForeColor = System.Drawing.Color.LightPink;
-            label16.Location = new System.Drawing.Point(123, 444);
+            label16.Location = new System.Drawing.Point(120, 432);
             label16.Name = "label16";
             label16.Size = new System.Drawing.Size(185, 29);
             label16.TabIndex = 0;
@@ -302,22 +298,22 @@ namespace PimIV_Desktop.Telas
             // label18
             // 
             label18.AutoSize = true;
-            label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label18.ForeColor = System.Drawing.Color.LightPink;
             label18.Location = new System.Drawing.Point(28, 3);
             label18.Name = "label18";
-            label18.Size = new System.Drawing.Size(295, 36);
+            label18.Size = new System.Drawing.Size(196, 24);
             label18.TabIndex = 0;
             label18.Text = "Dados do Hóspede:";
             // 
             // label19
             // 
             label19.AutoSize = true;
-            label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label19.ForeColor = System.Drawing.Color.LightPink;
             label19.Location = new System.Drawing.Point(563, 3);
             label19.Name = "label19";
-            label19.Size = new System.Drawing.Size(285, 36);
+            label19.Size = new System.Drawing.Size(186, 24);
             label19.TabIndex = 0;
             label19.Text = "Dados da Reserva:";
             // 
@@ -343,34 +339,12 @@ namespace PimIV_Desktop.Telas
             label21.TabIndex = 0;
             label21.Text = "Forma:";
             // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label22.ForeColor = System.Drawing.Color.LightPink;
-            label22.Location = new System.Drawing.Point(506, 220);
-            label22.Name = "label22";
-            label22.Size = new System.Drawing.Size(165, 29);
-            label22.TabIndex = 0;
-            label22.Text = "Pagamentos:";
-            // 
-            // label23
-            // 
-            label23.AutoSize = true;
-            label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label23.ForeColor = System.Drawing.Color.LightPink;
-            label23.Location = new System.Drawing.Point(29, 220);
-            label23.Name = "label23";
-            label23.Size = new System.Drawing.Size(271, 29);
-            label23.TabIndex = 0;
-            label23.Text = "Consumos realizados:";
-            // 
             // lblReservaID
             // 
             this.lblReservaID.AutoSize = true;
             this.lblReservaID.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReservaID.ForeColor = System.Drawing.Color.White;
-            this.lblReservaID.Location = new System.Drawing.Point(700, 56);
+            this.lblReservaID.Location = new System.Drawing.Point(684, 53);
             this.lblReservaID.Name = "lblReservaID";
             this.lblReservaID.Size = new System.Drawing.Size(85, 26);
             this.lblReservaID.TabIndex = 2;
@@ -381,7 +355,7 @@ namespace PimIV_Desktop.Telas
             this.lblNumQuarto.AutoSize = true;
             this.lblNumQuarto.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumQuarto.ForeColor = System.Drawing.Color.White;
-            this.lblNumQuarto.Location = new System.Drawing.Point(910, 56);
+            this.lblNumQuarto.Location = new System.Drawing.Point(895, 53);
             this.lblNumQuarto.Name = "lblNumQuarto";
             this.lblNumQuarto.Size = new System.Drawing.Size(85, 26);
             this.lblNumQuarto.TabIndex = 2;
@@ -392,7 +366,7 @@ namespace PimIV_Desktop.Telas
             this.lblTipoQuarto.AutoSize = true;
             this.lblTipoQuarto.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTipoQuarto.ForeColor = System.Drawing.Color.White;
-            this.lblTipoQuarto.Location = new System.Drawing.Point(732, 91);
+            this.lblTipoQuarto.Location = new System.Drawing.Point(723, 88);
             this.lblTipoQuarto.Name = "lblTipoQuarto";
             this.lblTipoQuarto.Size = new System.Drawing.Size(85, 26);
             this.lblTipoQuarto.TabIndex = 2;
@@ -403,7 +377,7 @@ namespace PimIV_Desktop.Telas
             this.lblHospede.AutoSize = true;
             this.lblHospede.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHospede.ForeColor = System.Drawing.Color.White;
-            this.lblHospede.Location = new System.Drawing.Point(152, 56);
+            this.lblHospede.Location = new System.Drawing.Point(129, 53);
             this.lblHospede.Name = "lblHospede";
             this.lblHospede.Size = new System.Drawing.Size(85, 26);
             this.lblHospede.TabIndex = 2;
@@ -414,7 +388,7 @@ namespace PimIV_Desktop.Telas
             this.lblSexo.AutoSize = true;
             this.lblSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSexo.ForeColor = System.Drawing.Color.White;
-            this.lblSexo.Location = new System.Drawing.Point(407, 106);
+            this.lblSexo.Location = new System.Drawing.Point(394, 106);
             this.lblSexo.Name = "lblSexo";
             this.lblSexo.Size = new System.Drawing.Size(85, 26);
             this.lblSexo.TabIndex = 2;
@@ -425,7 +399,7 @@ namespace PimIV_Desktop.Telas
             this.lblNasc.AutoSize = true;
             this.lblNasc.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNasc.ForeColor = System.Drawing.Color.White;
-            this.lblNasc.Location = new System.Drawing.Point(236, 106);
+            this.lblNasc.Location = new System.Drawing.Point(220, 103);
             this.lblNasc.Name = "lblNasc";
             this.lblNasc.Size = new System.Drawing.Size(85, 26);
             this.lblNasc.TabIndex = 2;
@@ -436,7 +410,7 @@ namespace PimIV_Desktop.Telas
             this.lblTelefone.AutoSize = true;
             this.lblTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTelefone.ForeColor = System.Drawing.Color.White;
-            this.lblTelefone.Location = new System.Drawing.Point(791, 185);
+            this.lblTelefone.Location = new System.Drawing.Point(776, 182);
             this.lblTelefone.Name = "lblTelefone";
             this.lblTelefone.Size = new System.Drawing.Size(85, 26);
             this.lblTelefone.TabIndex = 2;
@@ -447,7 +421,7 @@ namespace PimIV_Desktop.Telas
             this.lblCPF.AutoSize = true;
             this.lblCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCPF.ForeColor = System.Drawing.Color.White;
-            this.lblCPF.Location = new System.Drawing.Point(102, 185);
+            this.lblCPF.Location = new System.Drawing.Point(97, 182);
             this.lblCPF.Name = "lblCPF";
             this.lblCPF.Size = new System.Drawing.Size(85, 26);
             this.lblCPF.TabIndex = 2;
@@ -458,7 +432,7 @@ namespace PimIV_Desktop.Telas
             this.lblPassaporte.AutoSize = true;
             this.lblPassaporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassaporte.ForeColor = System.Drawing.Color.White;
-            this.lblPassaporte.Location = new System.Drawing.Point(498, 185);
+            this.lblPassaporte.Location = new System.Drawing.Point(485, 182);
             this.lblPassaporte.Name = "lblPassaporte";
             this.lblPassaporte.Size = new System.Drawing.Size(85, 26);
             this.lblPassaporte.TabIndex = 2;
@@ -469,7 +443,7 @@ namespace PimIV_Desktop.Telas
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.White;
-            this.lblEmail.Location = new System.Drawing.Point(115, 147);
+            this.lblEmail.Location = new System.Drawing.Point(109, 144);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(85, 26);
             this.lblEmail.TabIndex = 2;
@@ -480,7 +454,7 @@ namespace PimIV_Desktop.Telas
             this.lblAdultos.AutoSize = true;
             this.lblAdultos.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAdultos.ForeColor = System.Drawing.Color.White;
-            this.lblAdultos.Location = new System.Drawing.Point(685, 124);
+            this.lblAdultos.Location = new System.Drawing.Point(684, 121);
             this.lblAdultos.Name = "lblAdultos";
             this.lblAdultos.Size = new System.Drawing.Size(23, 26);
             this.lblAdultos.TabIndex = 2;
@@ -491,7 +465,7 @@ namespace PimIV_Desktop.Telas
             this.lblCriancas.AutoSize = true;
             this.lblCriancas.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCriancas.ForeColor = System.Drawing.Color.White;
-            this.lblCriancas.Location = new System.Drawing.Point(927, 124);
+            this.lblCriancas.Location = new System.Drawing.Point(916, 121);
             this.lblCriancas.Name = "lblCriancas";
             this.lblCriancas.Size = new System.Drawing.Size(23, 26);
             this.lblCriancas.TabIndex = 2;
@@ -535,7 +509,7 @@ namespace PimIV_Desktop.Telas
             this.lblDespesas.AutoSize = true;
             this.lblDespesas.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDespesas.ForeColor = System.Drawing.Color.White;
-            this.lblDespesas.Location = new System.Drawing.Point(311, 447);
+            this.lblDespesas.Location = new System.Drawing.Point(308, 435);
             this.lblDespesas.Name = "lblDespesas";
             this.lblDespesas.Size = new System.Drawing.Size(85, 26);
             this.lblDespesas.TabIndex = 2;
@@ -639,40 +613,40 @@ namespace PimIV_Desktop.Telas
             this.dgviewConsumos.AllowUserToResizeRows = false;
             this.dgviewConsumos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgviewConsumos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle31.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgviewConsumos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgviewConsumos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgviewConsumos.ColumnHeadersHeight = 60;
             this.dgviewConsumos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(80)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgviewConsumos.DefaultCellStyle = dataGridViewCellStyle32;
-            this.dgviewConsumos.Location = new System.Drawing.Point(33, 252);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(80)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgviewConsumos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgviewConsumos.Location = new System.Drawing.Point(32, 241);
             this.dgviewConsumos.MultiSelect = false;
             this.dgviewConsumos.Name = "dgviewConsumos";
             this.dgviewConsumos.ReadOnly = true;
             this.dgviewConsumos.RowHeadersVisible = false;
             this.dgviewConsumos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dgviewConsumos.RowsDefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dgviewConsumos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgviewConsumos.RowTemplate.Height = 50;
             this.dgviewConsumos.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgviewConsumos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgviewConsumos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgviewConsumos.Size = new System.Drawing.Size(459, 176);
+            this.dgviewConsumos.Size = new System.Drawing.Size(475, 176);
             this.dgviewConsumos.TabIndex = 11;
             // 
             // dgviewPagamentos
@@ -683,35 +657,35 @@ namespace PimIV_Desktop.Telas
             this.dgviewPagamentos.AllowUserToResizeRows = false;
             this.dgviewPagamentos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgviewPagamentos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgviewPagamentos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgviewPagamentos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgviewPagamentos.ColumnHeadersHeight = 60;
             this.dgviewPagamentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(80)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgviewPagamentos.DefaultCellStyle = dataGridViewCellStyle35;
-            this.dgviewPagamentos.Location = new System.Drawing.Point(503, 252);
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(80)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgviewPagamentos.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgviewPagamentos.Location = new System.Drawing.Point(521, 241);
             this.dgviewPagamentos.MultiSelect = false;
             this.dgviewPagamentos.Name = "dgviewPagamentos";
             this.dgviewPagamentos.ReadOnly = true;
             this.dgviewPagamentos.RowHeadersVisible = false;
             this.dgviewPagamentos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dgviewPagamentos.RowsDefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dgviewPagamentos.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgviewPagamentos.RowTemplate.Height = 50;
             this.dgviewPagamentos.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgviewPagamentos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -727,9 +701,9 @@ namespace PimIV_Desktop.Telas
             this.groupPagamento.Controls.Add(label21);
             this.groupPagamento.Controls.Add(label20);
             this.groupPagamento.Enabled = false;
-            this.groupPagamento.Location = new System.Drawing.Point(538, 403);
+            this.groupPagamento.Location = new System.Drawing.Point(521, 403);
             this.groupPagamento.Name = "groupPagamento";
-            this.groupPagamento.Size = new System.Drawing.Size(442, 98);
+            this.groupPagamento.Size = new System.Drawing.Size(459, 98);
             this.groupPagamento.TabIndex = 13;
             this.groupPagamento.TabStop = false;
             // 
@@ -771,8 +745,6 @@ namespace PimIV_Desktop.Telas
             this.Controls.Add(label13);
             this.Controls.Add(label12);
             this.Controls.Add(label15);
-            this.Controls.Add(label23);
-            this.Controls.Add(label22);
             this.Controls.Add(label14);
             this.Controls.Add(label11);
             this.Controls.Add(label9);

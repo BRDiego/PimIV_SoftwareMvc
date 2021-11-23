@@ -20,14 +20,14 @@ namespace DAL
         {
             try
             {
-                using(SqlConnection conex = conn.AbrirConexao())
+                using (SqlConnection conex = conn.AbrirConexao())
                 {
                     string cpfPass = func.CPF;
                     Hospede hosp = hDAO.Carregar(func.CPF);
                     if (hosp.Id == 0)
                     {
                         hosp = hDAO.Carregar(func.Passaporte);
-                        if(hosp.Id == 0)
+                        if (hosp.Id == 0)
                         {
                             cpfPass = func.CPF.Length == 11 ? func.CPF : func.Passaporte;
                             hDAO.Inserir_Att(func);
@@ -39,7 +39,7 @@ namespace DAL
                     {
                         func.Id = hosp.Id;
                     }
-                    if(func.Id != 0)
+                    if (func.Id != 0)
                     {
                         SqlCommand procedure = new SqlCommand("FUNC_Inserir", conex);
                         procedure.CommandType = CommandType.StoredProcedure;
@@ -48,7 +48,7 @@ namespace DAL
                         procedure.Parameters.Add("Salario", SqlDbType.Decimal)
                             .Value = func.Salario;
                         procedure.Parameters.Add("StatusFunc", SqlDbType.VarChar)
-                            .Value = func.Status;
+                            .Value = func.StatusFunc;
                         procedure.Parameters.Add("IdHospede", SqlDbType.Int)
                             .Value = func.Id;
                         procedure.Parameters.Add("@Retorno", SqlDbType.VarChar, 100)
@@ -70,7 +70,7 @@ namespace DAL
         {
             try
             {
-                using(SqlConnection conex = conn.AbrirConexao())
+                using (SqlConnection conex = conn.AbrirConexao())
                 {
                     SqlCommand procedure = new SqlCommand("FUNC_Carregar", conex);
                     procedure.CommandType = CommandType.StoredProcedure;
@@ -97,7 +97,7 @@ namespace DAL
                         func.Salario = double.Parse(leitor[12].ToString());
                         func.StatusFunc = leitor[13].ToString();
                         func.DataAtualizacaoFunc = DateTime.Parse(leitor[14].ToString());
-                        return func;    
+                        return func;
                     }
                     return null;
                 }
@@ -124,6 +124,36 @@ namespace DAL
                     da.Fill(tabela);
                 }
                 return tabela;
+            }
+            catch (Exception err)
+            {
+                throw new Exception(err.Message);
+            }
+        }
+
+        public double[] Financas()
+        {
+            try
+            {
+                double[] valores = new double[5];
+                using (SqlConnection conex = conn.AbrirConexao())
+                {
+                    SqlCommand procedure = new SqlCommand("RELAT_Financas", conex);
+                    procedure.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader leitor = procedure.ExecuteReader();
+                    leitor.Read();
+                    if (leitor.HasRows)
+                    {
+                        for (int i = 0; i < 5; i++)
+                        {
+                            if (leitor[i].ToString() != "")
+                            {
+                                valores[i] = double.Parse(leitor[i].ToString());
+                            }
+                        }
+                    }
+                }
+                return valores;
             }
             catch (Exception err)
             {

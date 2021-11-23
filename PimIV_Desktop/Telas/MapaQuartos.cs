@@ -41,9 +41,10 @@ namespace PimIV_Desktop.Telas
                 Quarto quarto = new Quarto();
                 quarto.Numero = numero;
                 quarto.Status = comboAlterar.Text;
-                qDAO.Alterar(quarto);
+                string mensagem = qDAO.Alterar(quarto);
                 dgviewQuartos.DataSource = qDAO.Listar();
                 comboAlterar.SelectedItem = null;
+                ValidacoesForms.ExibirMensagem(mensagem);
             }
             panelAcoesQuarto.Enabled = false;
         }

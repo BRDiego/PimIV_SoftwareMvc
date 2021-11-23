@@ -33,7 +33,6 @@ namespace PimIV_Desktop.Telas
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnNovoFuncionario = new System.Windows.Forms.Button();
-            this.btnListarTodos = new System.Windows.Forms.Button();
             this.gboxBuscaHospede = new System.Windows.Forms.GroupBox();
             this.comboStatus = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -42,6 +41,7 @@ namespace PimIV_Desktop.Telas
             this.txtBuscaCPF = new System.Windows.Forms.MaskedTextBox();
             this.dgviewFuncionarios = new System.Windows.Forms.DataGridView();
             this.dadosFuncionario1 = new PimIV_Desktop.Telas.DadosFuncionario();
+            this.btnListarTodos = new System.Windows.Forms.Button();
             this.gboxBuscaHospede.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgviewFuncionarios)).BeginInit();
             this.SuspendLayout();
@@ -60,20 +60,6 @@ namespace PimIV_Desktop.Telas
             this.btnNovoFuncionario.Text = "Novo funcionário";
             this.btnNovoFuncionario.UseVisualStyleBackColor = false;
             this.btnNovoFuncionario.Click += new System.EventHandler(this.btnNovoFuncionario_Click);
-            // 
-            // btnListarTodos
-            // 
-            this.btnListarTodos.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnListarTodos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnListarTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListarTodos.ForeColor = System.Drawing.Color.White;
-            this.btnListarTodos.Location = new System.Drawing.Point(806, 27);
-            this.btnListarTodos.Margin = new System.Windows.Forms.Padding(2);
-            this.btnListarTodos.Name = "btnListarTodos";
-            this.btnListarTodos.Size = new System.Drawing.Size(184, 45);
-            this.btnListarTodos.TabIndex = 2;
-            this.btnListarTodos.Text = "Listar todos";
-            this.btnListarTodos.UseVisualStyleBackColor = false;
             // 
             // gboxBuscaHospede
             // 
@@ -205,6 +191,20 @@ namespace PimIV_Desktop.Telas
             this.dadosFuncionario1.TabIndex = 57;
             this.dadosFuncionario1.Visible = false;
             // 
+            // btnListarTodos
+            // 
+            this.btnListarTodos.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnListarTodos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnListarTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListarTodos.ForeColor = System.Drawing.Color.White;
+            this.btnListarTodos.Location = new System.Drawing.Point(806, 27);
+            this.btnListarTodos.Margin = new System.Windows.Forms.Padding(2);
+            this.btnListarTodos.Name = "btnListarTodos";
+            this.btnListarTodos.Size = new System.Drawing.Size(184, 45);
+            this.btnListarTodos.TabIndex = 2;
+            this.btnListarTodos.Text = "Listar todos";
+            this.btnListarTodos.UseVisualStyleBackColor = false;
+            // 
             // ListaFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -228,7 +228,6 @@ namespace PimIV_Desktop.Telas
         #endregion
 
         private System.Windows.Forms.Button btnNovoFuncionario;
-        private System.Windows.Forms.Button btnListarTodos;
         private System.Windows.Forms.GroupBox gboxBuscaHospede;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label1;
@@ -237,5 +236,6 @@ namespace PimIV_Desktop.Telas
         private DadosFuncionario dadosFuncionario1;
         private System.Windows.Forms.ComboBox comboStatus;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnListarTodos;
     }
 }

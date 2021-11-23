@@ -29,14 +29,14 @@ namespace PimIV_Desktop.Telas
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnFam2 = new System.Windows.Forms.Button();
+            this.btnFam1 = new System.Windows.Forms.Button();
             this.groupQuarto4 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.mtxtQuarto4 = new System.Windows.Forms.MaskedTextBox();
-            this.lblAtualFam2 = new System.Windows.Forms.Label();
-            this.btnFam1 = new System.Windows.Forms.Button();
-            this.lblAtualFam1 = new System.Windows.Forms.Label();
+            this.lblQuarto4 = new System.Windows.Forms.Label();
+            this.btnCasal = new System.Windows.Forms.Button();
+            this.lblQuarto3 = new System.Windows.Forms.Label();
             this.groupQuarto3 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -46,28 +46,28 @@ namespace PimIV_Desktop.Telas
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.mtxtQuarto2 = new System.Windows.Forms.MaskedTextBox();
-            this.lblAtualSolt2 = new System.Windows.Forms.Label();
+            this.lblQuarto2 = new System.Windows.Forms.Label();
             this.btnSolt1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.groupQuarto1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.mtxtQuarto1 = new System.Windows.Forms.MaskedTextBox();
-            this.lblAtualSolt1 = new System.Windows.Forms.Label();
+            this.lblQuarto1 = new System.Windows.Forms.Label();
             this.groupQuarto5 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.mtxtQuarto5 = new System.Windows.Forms.MaskedTextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.lblAtualFam3 = new System.Windows.Forms.Label();
+            this.btnFam2 = new System.Windows.Forms.Button();
+            this.lblQuarto5 = new System.Windows.Forms.Label();
             this.groupAdultos = new System.Windows.Forms.GroupBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.mtxtAdulto = new System.Windows.Forms.MaskedTextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnDiaAdu = new System.Windows.Forms.Button();
             this.diariaAdultos = new System.Windows.Forms.Label();
             this.diariaCriancas = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnDiaCri = new System.Windows.Forms.Button();
             this.groupCriancas = new System.Windows.Forms.GroupBox();
             this.label15 = new System.Windows.Forms.Label();
             this.mtxtCrianca = new System.Windows.Forms.MaskedTextBox();
@@ -80,27 +80,28 @@ namespace PimIV_Desktop.Telas
             this.groupCriancas.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnFam2
+            // btnFam1
             // 
-            this.btnFam2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnFam2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFam2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFam2.ForeColor = System.Drawing.Color.White;
-            this.btnFam2.Location = new System.Drawing.Point(538, 17);
-            this.btnFam2.Margin = new System.Windows.Forms.Padding(2);
-            this.btnFam2.Name = "btnFam2";
-            this.btnFam2.Size = new System.Drawing.Size(129, 32);
-            this.btnFam2.TabIndex = 1;
-            this.btnFam2.Text = "Atualizar";
-            this.btnFam2.UseVisualStyleBackColor = false;
+            this.btnFam1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnFam1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFam1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFam1.ForeColor = System.Drawing.Color.White;
+            this.btnFam1.Location = new System.Drawing.Point(538, 17);
+            this.btnFam1.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFam1.Name = "btnFam1";
+            this.btnFam1.Size = new System.Drawing.Size(129, 32);
+            this.btnFam1.TabIndex = 1;
+            this.btnFam1.Text = "Atualizar";
+            this.btnFam1.UseVisualStyleBackColor = false;
+            this.btnFam1.Click += new System.EventHandler(this.btnFam1_Click);
             // 
             // groupQuarto4
             // 
             this.groupQuarto4.Controls.Add(this.label6);
             this.groupQuarto4.Controls.Add(this.label8);
             this.groupQuarto4.Controls.Add(this.mtxtQuarto4);
-            this.groupQuarto4.Controls.Add(this.btnFam2);
-            this.groupQuarto4.Controls.Add(this.lblAtualFam2);
+            this.groupQuarto4.Controls.Add(this.btnFam1);
+            this.groupQuarto4.Controls.Add(this.lblQuarto4);
             this.groupQuarto4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupQuarto4.ForeColor = System.Drawing.Color.White;
             this.groupQuarto4.Location = new System.Drawing.Point(79, 265);
@@ -139,57 +140,58 @@ namespace PimIV_Desktop.Telas
             // mtxtQuarto4
             // 
             this.mtxtQuarto4.Location = new System.Drawing.Point(326, 22);
-            this.mtxtQuarto4.Mask = "000.00";
+            this.mtxtQuarto4.Mask = "00.00";
             this.mtxtQuarto4.Name = "mtxtQuarto4";
             this.mtxtQuarto4.Size = new System.Drawing.Size(91, 28);
             this.mtxtQuarto4.TabIndex = 0;
             this.mtxtQuarto4.ValidatingType = typeof(int);
             // 
-            // lblAtualFam2
+            // lblQuarto4
             // 
-            this.lblAtualFam2.AutoSize = true;
-            this.lblAtualFam2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAtualFam2.ForeColor = System.Drawing.Color.White;
-            this.lblAtualFam2.Location = new System.Drawing.Point(99, 26);
-            this.lblAtualFam2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblAtualFam2.Name = "lblAtualFam2";
-            this.lblAtualFam2.Size = new System.Drawing.Size(60, 24);
-            this.lblAtualFam2.TabIndex = 12;
-            this.lblAtualFam2.Text = "40,00";
+            this.lblQuarto4.AutoSize = true;
+            this.lblQuarto4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuarto4.ForeColor = System.Drawing.Color.White;
+            this.lblQuarto4.Location = new System.Drawing.Point(99, 26);
+            this.lblQuarto4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblQuarto4.Name = "lblQuarto4";
+            this.lblQuarto4.Size = new System.Drawing.Size(60, 24);
+            this.lblQuarto4.TabIndex = 12;
+            this.lblQuarto4.Text = "40,00";
             // 
-            // btnFam1
+            // btnCasal
             // 
-            this.btnFam1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnFam1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFam1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFam1.ForeColor = System.Drawing.Color.White;
-            this.btnFam1.Location = new System.Drawing.Point(538, 18);
-            this.btnFam1.Margin = new System.Windows.Forms.Padding(2);
-            this.btnFam1.Name = "btnFam1";
-            this.btnFam1.Size = new System.Drawing.Size(129, 32);
-            this.btnFam1.TabIndex = 1;
-            this.btnFam1.Text = "Atualizar";
-            this.btnFam1.UseVisualStyleBackColor = false;
+            this.btnCasal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCasal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCasal.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCasal.ForeColor = System.Drawing.Color.White;
+            this.btnCasal.Location = new System.Drawing.Point(538, 18);
+            this.btnCasal.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCasal.Name = "btnCasal";
+            this.btnCasal.Size = new System.Drawing.Size(129, 32);
+            this.btnCasal.TabIndex = 1;
+            this.btnCasal.Text = "Atualizar";
+            this.btnCasal.UseVisualStyleBackColor = false;
+            this.btnCasal.Click += new System.EventHandler(this.btnCasal_Click);
             // 
-            // lblAtualFam1
+            // lblQuarto3
             // 
-            this.lblAtualFam1.AutoSize = true;
-            this.lblAtualFam1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAtualFam1.ForeColor = System.Drawing.Color.White;
-            this.lblAtualFam1.Location = new System.Drawing.Point(99, 26);
-            this.lblAtualFam1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblAtualFam1.Name = "lblAtualFam1";
-            this.lblAtualFam1.Size = new System.Drawing.Size(60, 24);
-            this.lblAtualFam1.TabIndex = 12;
-            this.lblAtualFam1.Text = "40,00";
+            this.lblQuarto3.AutoSize = true;
+            this.lblQuarto3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuarto3.ForeColor = System.Drawing.Color.White;
+            this.lblQuarto3.Location = new System.Drawing.Point(99, 26);
+            this.lblQuarto3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblQuarto3.Name = "lblQuarto3";
+            this.lblQuarto3.Size = new System.Drawing.Size(60, 24);
+            this.lblQuarto3.TabIndex = 12;
+            this.lblQuarto3.Text = "40,00";
             // 
             // groupQuarto3
             // 
             this.groupQuarto3.Controls.Add(this.label4);
             this.groupQuarto3.Controls.Add(this.label7);
             this.groupQuarto3.Controls.Add(this.mtxtQuarto3);
-            this.groupQuarto3.Controls.Add(this.btnFam1);
-            this.groupQuarto3.Controls.Add(this.lblAtualFam1);
+            this.groupQuarto3.Controls.Add(this.btnCasal);
+            this.groupQuarto3.Controls.Add(this.lblQuarto3);
             this.groupQuarto3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupQuarto3.ForeColor = System.Drawing.Color.White;
             this.groupQuarto3.Location = new System.Drawing.Point(79, 174);
@@ -228,7 +230,7 @@ namespace PimIV_Desktop.Telas
             // mtxtQuarto3
             // 
             this.mtxtQuarto3.Location = new System.Drawing.Point(326, 20);
-            this.mtxtQuarto3.Mask = "000.00";
+            this.mtxtQuarto3.Mask = "00.00";
             this.mtxtQuarto3.Name = "mtxtQuarto3";
             this.mtxtQuarto3.Size = new System.Drawing.Size(91, 28);
             this.mtxtQuarto3.TabIndex = 0;
@@ -247,6 +249,7 @@ namespace PimIV_Desktop.Telas
             this.btnSolt2.TabIndex = 1;
             this.btnSolt2.Text = "Atualizar";
             this.btnSolt2.UseVisualStyleBackColor = false;
+            this.btnSolt2.Click += new System.EventHandler(this.btnSolt2_Click);
             // 
             // groupQuarto2
             // 
@@ -254,7 +257,7 @@ namespace PimIV_Desktop.Telas
             this.groupQuarto2.Controls.Add(this.label5);
             this.groupQuarto2.Controls.Add(this.mtxtQuarto2);
             this.groupQuarto2.Controls.Add(this.btnSolt2);
-            this.groupQuarto2.Controls.Add(this.lblAtualSolt2);
+            this.groupQuarto2.Controls.Add(this.lblQuarto2);
             this.groupQuarto2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupQuarto2.ForeColor = System.Drawing.Color.White;
             this.groupQuarto2.Location = new System.Drawing.Point(79, 83);
@@ -293,23 +296,23 @@ namespace PimIV_Desktop.Telas
             // mtxtQuarto2
             // 
             this.mtxtQuarto2.Location = new System.Drawing.Point(326, 19);
-            this.mtxtQuarto2.Mask = "000.00";
+            this.mtxtQuarto2.Mask = "00.00";
             this.mtxtQuarto2.Name = "mtxtQuarto2";
             this.mtxtQuarto2.Size = new System.Drawing.Size(91, 28);
             this.mtxtQuarto2.TabIndex = 0;
             this.mtxtQuarto2.ValidatingType = typeof(int);
             // 
-            // lblAtualSolt2
+            // lblQuarto2
             // 
-            this.lblAtualSolt2.AutoSize = true;
-            this.lblAtualSolt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAtualSolt2.ForeColor = System.Drawing.Color.White;
-            this.lblAtualSolt2.Location = new System.Drawing.Point(99, 23);
-            this.lblAtualSolt2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblAtualSolt2.Name = "lblAtualSolt2";
-            this.lblAtualSolt2.Size = new System.Drawing.Size(60, 24);
-            this.lblAtualSolt2.TabIndex = 12;
-            this.lblAtualSolt2.Text = "40,00";
+            this.lblQuarto2.AutoSize = true;
+            this.lblQuarto2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuarto2.ForeColor = System.Drawing.Color.White;
+            this.lblQuarto2.Location = new System.Drawing.Point(99, 25);
+            this.lblQuarto2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblQuarto2.Name = "lblQuarto2";
+            this.lblQuarto2.Size = new System.Drawing.Size(60, 24);
+            this.lblQuarto2.TabIndex = 12;
+            this.lblQuarto2.Text = "40,00";
             // 
             // btnSolt1
             // 
@@ -344,7 +347,7 @@ namespace PimIV_Desktop.Telas
             this.groupQuarto1.Controls.Add(this.mtxtQuarto1);
             this.groupQuarto1.Controls.Add(this.btnSolt1);
             this.groupQuarto1.Controls.Add(this.label3);
-            this.groupQuarto1.Controls.Add(this.lblAtualSolt1);
+            this.groupQuarto1.Controls.Add(this.lblQuarto1);
             this.groupQuarto1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupQuarto1.ForeColor = System.Drawing.Color.White;
             this.groupQuarto1.Location = new System.Drawing.Point(79, 2);
@@ -371,31 +374,31 @@ namespace PimIV_Desktop.Telas
             // mtxtQuarto1
             // 
             this.mtxtQuarto1.Location = new System.Drawing.Point(326, 19);
-            this.mtxtQuarto1.Mask = "000.00";
+            this.mtxtQuarto1.Mask = "00.00";
             this.mtxtQuarto1.Name = "mtxtQuarto1";
             this.mtxtQuarto1.Size = new System.Drawing.Size(91, 28);
             this.mtxtQuarto1.TabIndex = 0;
             this.mtxtQuarto1.ValidatingType = typeof(int);
             // 
-            // lblAtualSolt1
+            // lblQuarto1
             // 
-            this.lblAtualSolt1.AutoSize = true;
-            this.lblAtualSolt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAtualSolt1.ForeColor = System.Drawing.Color.White;
-            this.lblAtualSolt1.Location = new System.Drawing.Point(99, 25);
-            this.lblAtualSolt1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblAtualSolt1.Name = "lblAtualSolt1";
-            this.lblAtualSolt1.Size = new System.Drawing.Size(60, 24);
-            this.lblAtualSolt1.TabIndex = 12;
-            this.lblAtualSolt1.Text = "40,00";
+            this.lblQuarto1.AutoSize = true;
+            this.lblQuarto1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuarto1.ForeColor = System.Drawing.Color.White;
+            this.lblQuarto1.Location = new System.Drawing.Point(99, 25);
+            this.lblQuarto1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblQuarto1.Name = "lblQuarto1";
+            this.lblQuarto1.Size = new System.Drawing.Size(60, 24);
+            this.lblQuarto1.TabIndex = 12;
+            this.lblQuarto1.Text = "40,00";
             // 
             // groupQuarto5
             // 
             this.groupQuarto5.Controls.Add(this.label10);
             this.groupQuarto5.Controls.Add(this.label9);
             this.groupQuarto5.Controls.Add(this.mtxtQuarto5);
-            this.groupQuarto5.Controls.Add(this.button1);
-            this.groupQuarto5.Controls.Add(this.lblAtualFam3);
+            this.groupQuarto5.Controls.Add(this.btnFam2);
+            this.groupQuarto5.Controls.Add(this.lblQuarto5);
             this.groupQuarto5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupQuarto5.ForeColor = System.Drawing.Color.White;
             this.groupQuarto5.Location = new System.Drawing.Point(79, 356);
@@ -434,44 +437,45 @@ namespace PimIV_Desktop.Telas
             // mtxtQuarto5
             // 
             this.mtxtQuarto5.Location = new System.Drawing.Point(326, 19);
-            this.mtxtQuarto5.Mask = "000.00";
+            this.mtxtQuarto5.Mask = "00.00";
             this.mtxtQuarto5.Name = "mtxtQuarto5";
             this.mtxtQuarto5.Size = new System.Drawing.Size(91, 28);
             this.mtxtQuarto5.TabIndex = 0;
             this.mtxtQuarto5.ValidatingType = typeof(int);
             // 
-            // button1
+            // btnFam2
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(538, 17);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 32);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Atualizar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnFam2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnFam2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFam2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFam2.ForeColor = System.Drawing.Color.White;
+            this.btnFam2.Location = new System.Drawing.Point(538, 17);
+            this.btnFam2.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFam2.Name = "btnFam2";
+            this.btnFam2.Size = new System.Drawing.Size(129, 32);
+            this.btnFam2.TabIndex = 1;
+            this.btnFam2.Text = "Atualizar";
+            this.btnFam2.UseVisualStyleBackColor = false;
+            this.btnFam2.Click += new System.EventHandler(this.btnFam2_Click);
             // 
-            // lblAtualFam3
+            // lblQuarto5
             // 
-            this.lblAtualFam3.AutoSize = true;
-            this.lblAtualFam3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAtualFam3.ForeColor = System.Drawing.Color.White;
-            this.lblAtualFam3.Location = new System.Drawing.Point(99, 25);
-            this.lblAtualFam3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblAtualFam3.Name = "lblAtualFam3";
-            this.lblAtualFam3.Size = new System.Drawing.Size(60, 24);
-            this.lblAtualFam3.TabIndex = 12;
-            this.lblAtualFam3.Text = "40,00";
+            this.lblQuarto5.AutoSize = true;
+            this.lblQuarto5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuarto5.ForeColor = System.Drawing.Color.White;
+            this.lblQuarto5.Location = new System.Drawing.Point(99, 25);
+            this.lblQuarto5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblQuarto5.Name = "lblQuarto5";
+            this.lblQuarto5.Size = new System.Drawing.Size(60, 24);
+            this.lblQuarto5.TabIndex = 12;
+            this.lblQuarto5.Text = "40,00";
             // 
             // groupAdultos
             // 
             this.groupAdultos.Controls.Add(this.label13);
             this.groupAdultos.Controls.Add(this.label12);
             this.groupAdultos.Controls.Add(this.mtxtAdulto);
-            this.groupAdultos.Controls.Add(this.button2);
+            this.groupAdultos.Controls.Add(this.btnDiaAdu);
             this.groupAdultos.Controls.Add(this.diariaAdultos);
             this.groupAdultos.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupAdultos.ForeColor = System.Drawing.Color.White;
@@ -511,25 +515,26 @@ namespace PimIV_Desktop.Telas
             // mtxtAdulto
             // 
             this.mtxtAdulto.Location = new System.Drawing.Point(326, 19);
-            this.mtxtAdulto.Mask = "000.00";
+            this.mtxtAdulto.Mask = "00.00";
             this.mtxtAdulto.Name = "mtxtAdulto";
             this.mtxtAdulto.Size = new System.Drawing.Size(91, 28);
             this.mtxtAdulto.TabIndex = 1;
             this.mtxtAdulto.ValidatingType = typeof(int);
             // 
-            // button2
+            // btnDiaAdu
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(538, 17);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(129, 32);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Atualizar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnDiaAdu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnDiaAdu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDiaAdu.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDiaAdu.ForeColor = System.Drawing.Color.White;
+            this.btnDiaAdu.Location = new System.Drawing.Point(538, 17);
+            this.btnDiaAdu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDiaAdu.Name = "btnDiaAdu";
+            this.btnDiaAdu.Size = new System.Drawing.Size(129, 32);
+            this.btnDiaAdu.TabIndex = 1;
+            this.btnDiaAdu.Text = "Atualizar";
+            this.btnDiaAdu.UseVisualStyleBackColor = false;
+            this.btnDiaAdu.Click += new System.EventHandler(this.btnDiaAdu_Click);
             // 
             // diariaAdultos
             // 
@@ -567,25 +572,26 @@ namespace PimIV_Desktop.Telas
             this.label16.TabIndex = 11;
             this.label16.Text = "Atual R$:";
             // 
-            // button3
+            // btnDiaCri
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(538, 17);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(129, 32);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Atualizar";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnDiaCri.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnDiaCri.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDiaCri.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDiaCri.ForeColor = System.Drawing.Color.White;
+            this.btnDiaCri.Location = new System.Drawing.Point(538, 17);
+            this.btnDiaCri.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDiaCri.Name = "btnDiaCri";
+            this.btnDiaCri.Size = new System.Drawing.Size(129, 32);
+            this.btnDiaCri.TabIndex = 1;
+            this.btnDiaCri.Text = "Atualizar";
+            this.btnDiaCri.UseVisualStyleBackColor = false;
+            this.btnDiaCri.Click += new System.EventHandler(this.btnDiaCri_Click);
             // 
             // groupCriancas
             // 
             this.groupCriancas.Controls.Add(this.label15);
             this.groupCriancas.Controls.Add(this.mtxtCrianca);
-            this.groupCriancas.Controls.Add(this.button3);
+            this.groupCriancas.Controls.Add(this.btnDiaCri);
             this.groupCriancas.Controls.Add(this.label16);
             this.groupCriancas.Controls.Add(this.diariaCriancas);
             this.groupCriancas.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -614,7 +620,7 @@ namespace PimIV_Desktop.Telas
             // mtxtCrianca
             // 
             this.mtxtCrianca.Location = new System.Drawing.Point(326, 22);
-            this.mtxtCrianca.Mask = "000.00";
+            this.mtxtCrianca.Mask = "00.00";
             this.mtxtCrianca.Name = "mtxtCrianca";
             this.mtxtCrianca.Size = new System.Drawing.Size(91, 28);
             this.mtxtCrianca.TabIndex = 0;
@@ -634,6 +640,7 @@ namespace PimIV_Desktop.Telas
             this.Controls.Add(this.groupQuarto1);
             this.Name = "EditarPrecos";
             this.Size = new System.Drawing.Size(1000, 600);
+            this.Enter += new System.EventHandler(this.EditarPrecos_Enter);
             this.Leave += new System.EventHandler(this.EditarPrecos_Leave);
             this.groupQuarto4.ResumeLayout(false);
             this.groupQuarto4.PerformLayout();
@@ -655,24 +662,24 @@ namespace PimIV_Desktop.Telas
 
         #endregion
 
-        private System.Windows.Forms.Button btnFam2;
-        private System.Windows.Forms.GroupBox groupQuarto4;
-        private System.Windows.Forms.Label lblAtualFam2;
         private System.Windows.Forms.Button btnFam1;
-        private System.Windows.Forms.Label lblAtualFam1;
+        private System.Windows.Forms.GroupBox groupQuarto4;
+        private System.Windows.Forms.Label lblQuarto4;
+        private System.Windows.Forms.Button btnCasal;
+        private System.Windows.Forms.Label lblQuarto3;
         private System.Windows.Forms.GroupBox groupQuarto3;
         private System.Windows.Forms.Button btnSolt2;
         private System.Windows.Forms.GroupBox groupQuarto2;
-        private System.Windows.Forms.Label lblAtualSolt2;
+        private System.Windows.Forms.Label lblQuarto2;
         private System.Windows.Forms.Button btnSolt1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupQuarto1;
-        private System.Windows.Forms.Label lblAtualSolt1;
+        private System.Windows.Forms.Label lblQuarto1;
         private System.Windows.Forms.GroupBox groupQuarto5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label lblAtualFam3;
+        private System.Windows.Forms.Button btnFam2;
+        private System.Windows.Forms.Label lblQuarto5;
         private System.Windows.Forms.GroupBox groupAdultos;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnDiaAdu;
         private System.Windows.Forms.Label diariaAdultos;
         private System.Windows.Forms.MaskedTextBox mtxtQuarto4;
         private System.Windows.Forms.MaskedTextBox mtxtQuarto3;
@@ -682,7 +689,7 @@ namespace PimIV_Desktop.Telas
         private System.Windows.Forms.MaskedTextBox mtxtAdulto;
         private System.Windows.Forms.Label diariaCriancas;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnDiaCri;
         private System.Windows.Forms.GroupBox groupCriancas;
         private System.Windows.Forms.MaskedTextBox mtxtCrianca;
         private System.Windows.Forms.Label label8;
