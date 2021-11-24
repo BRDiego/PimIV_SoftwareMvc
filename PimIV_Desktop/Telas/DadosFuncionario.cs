@@ -104,28 +104,23 @@ namespace PimIV_Desktop.Telas
 
         private void btnSalvarLogin_Click(object sender, EventArgs e)
         {
-            ValidacoesForms.ValidarFormulario(groupDadosLogin.Controls
-                , out string mensagem);
-            if (mensagem == "")
+            if (txtCPF.Text.Length == 11 || txtPassaporte.Text.Length > 5)
             {
-                if (txtCPF.Text.Length == 11 || txtPassaporte.Text.Length > 5)
-                {
-                    Funcionario funcionario = new Funcionario();
-                    funcionario.setarCPF(txtCPF.Text);
-                    funcionario = fDAO.Carregar(funcionario.CPF);
-                    Conta conta = new Conta();
-                    conta.NomeUsuario = txtNomeUsuario.Text;
-                    conta.Senha = txtSenha.Text;
-                    conta.FuncAssociado = funcionario;
-                    ContaDAO cDAO = new ContaDAO();
-                    mensagem = cDAO.Inserir_Att(conta);
-                    ValidacoesForms.ExibirMensagem(mensagem);
-                    LimparDadosFuncionario();
-                }
-                else
-                {
-                    ValidacoesForms.ExibirMensagem("CPF ou passaporte não inserido");
-                }
+                Funcionario funcionario = new Funcionario();
+                funcionario.setarCPF(txtCPF.Text);
+                funcionario = fDAO.Carregar(funcionario.CPF);
+                Conta conta = new Conta();
+                conta.NomeUsuario = txtNomeUsuario.Text;
+                conta.Senha = txtSenha.Text;
+                conta.FuncAssociado = funcionario;
+                ContaDAO cDAO = new ContaDAO();
+                string mensagem = cDAO.Inserir_Att(conta);
+                ValidacoesForms.ExibirMensagem(mensagem);
+                LimparDadosFuncionario();
+            }
+            else
+            {
+                ValidacoesForms.ExibirMensagem("CPF ou passaporte não inserido");
             }
         }
     }

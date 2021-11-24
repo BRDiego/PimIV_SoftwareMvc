@@ -98,29 +98,23 @@ namespace PimIV_Desktop.Telas
 
         private void btnSalvarLogin_Click(object sender, EventArgs e)
         {
-            ValidacoesForms.ValidarFormulario(groupDadosLogin.Controls,
-                out string mensagem);
-            if (mensagem == "")
+            if (txtCPF.Text.Length == 11 || txtPassaporte.Text.Length > 5)
             {
-
-                if (txtCPF.Text.Length == 11 || txtPassaporte.Text.Length > 5)
-                {
-                    Hospede hospede = new Hospede();
-                    hospede.setarCPF(txtCPF.Text);
-                    hospede = _hospedeDAO.Carregar(hospede.CPF);
-                    Conta conta = new Conta();
-                    conta.NomeUsuario = txtNomeUsuario.Text;
-                    conta.Senha = txtSenha.Text;
-                    conta.HospAssociado = hospede;
-                    ContaDAO cDAO = new ContaDAO();
-                    mensagem = cDAO.Inserir_Att(conta);
-                    ValidacoesForms.ExibirMensagem(mensagem);
-                    LimparDadosHospede();
-                }
-                else
-                {
-                    ValidacoesForms.ExibirMensagem("CPF ou passaporte não inserido");
-                }
+                Hospede hospede = new Hospede();
+                hospede.setarCPF(txtCPF.Text);
+                hospede = _hospedeDAO.Carregar(hospede.CPF);
+                Conta conta = new Conta();
+                conta.NomeUsuario = txtNomeUsuario.Text;
+                conta.Senha = txtSenha.Text;
+                conta.HospAssociado = hospede;
+                ContaDAO cDAO = new ContaDAO();
+                string mensagem = cDAO.Inserir_Att(conta);
+                ValidacoesForms.ExibirMensagem(mensagem);
+                LimparDadosHospede();
+            }
+            else
+            {
+                ValidacoesForms.ExibirMensagem("CPF ou passaporte não inserido");
             }
         }
 
